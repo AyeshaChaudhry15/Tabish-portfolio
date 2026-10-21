@@ -171,20 +171,20 @@ export default function Hero() {
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <Link
                 href="/projects"
-                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-md bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_0_25px_rgba(37,99,235,0.15)] transition hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.25)]"
+                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-md bg-[#2F80FF] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_25px_rgba(37,99,235,0.15)] transition hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.25)]"
               >
                 View My Work
                 <FaArrowRight className="transition-transform group-hover:translate-x-1" />
               </Link>
 
-              <a
+              <Link
                 href="/cv.pdf"
                 download
                 className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md border border-slate-600/60 bg-slate-900/30 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-blue-400 hover:text-blue-300"
               >
                 Download CV
                 <FaDownload className="text-blue-400" />
-              </a>
+              </Link>
             </div>
 
             <div className="mt-6 flex items-center gap-2.5">

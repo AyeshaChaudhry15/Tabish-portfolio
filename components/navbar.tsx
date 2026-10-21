@@ -40,7 +40,7 @@ export default function Navbar() {
 
           <span className="font-bold">
             Kiran
-            <span className="text-blue-400">Fatima</span>
+            <span className="text-[#4c8ef8]">Fatima</span>
           </span>
         </Link>
 
