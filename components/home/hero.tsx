@@ -153,11 +153,7 @@ export default function Hero() {
             </div>
 
             <h1 className="max-w-[650px] font-serif text-5xl font-bold leading-[1.06] tracking-tight sm:text-6xl lg:text-[50px] xl:text-[60px]">
-              I Build
-              <br />
-              <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-slate-200 bg-clip-text text-transparent">
-                Mobile Apps
-              </span>
+              I Build <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-slate-200 bg-clip-text text-transparent">Mobile Apps</span>
               <br />
               That Matter.
             </h1>

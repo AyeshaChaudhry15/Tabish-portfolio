@@ -152,7 +152,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050A14] text-white">
+    <main className="min-h-screen overflow-hidden border-blue-900/30 bg-[#071426] text-white">
       <section className="relative overflow-hidden border-b border-blue-900/30">
         <div className="pointer-events-none absolute left-[-10%] top-[-25%] h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[150px]" />
 
@@ -307,9 +307,7 @@ export default function ContactPage() {
                 <div>
                   <p className="text-xs font-semibold text-white">Email</p>
 
-                  <a
-                    className="mt-1 block text-sm text-slate-400 transition hover:text-blue-300"
-                  >
+                  <a className="mt-1 block text-sm text-slate-400 transition hover:text-blue-300">
                     Kiran_Fatima@gmail.com
                   </a>
                 </div>
@@ -376,8 +374,6 @@ export default function ContactPage() {
                 <FaInstagram className="text-sm" />
               </Link>
 
-           
-
               <Link
                 href="https://www.linkedin.com/in/kiran-fatima-evermont/?isSelfProfile=true"
                 target="_blank"
@@ -387,9 +383,6 @@ export default function ContactPage() {
               >
                 <FaLinkedinIn className="text-sm" />
               </Link>
-
-
-             
             </div>
           </div>
 

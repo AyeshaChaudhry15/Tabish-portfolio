@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -15,21 +16,20 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-blue-900/30 bg-[#060B14] text-slate-300">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[-10%] top-[-20%] h-[350px] w-[350px] rounded-full bg-blue-600/10 blur-[140px]" />
-
-        <div className="absolute bottom-[-20%] right-[-10%] h-[350px] w-[350px] rounded-full bg-cyan-500/10 blur-[140px]" />
-
-        <div className="absolute left-[45%] top-[20%] h-[250px] w-[250px] rounded-full bg-blue-500/5 blur-[120px]" />
+        <div className="absolute left-[-10%] top-[-20%] h-[300px] w-[300px] rounded-full bg-blue-600/10 blur-[120px]" />
+        <div className="absolute bottom-[-20%] right-[-10%] h-[300px] w-[300px] rounded-full bg-cyan-500/10 blur-[120px]" />
+        <div className="absolute left-[45%] top-[20%] h-[220px] w-[220px] rounded-full bg-blue-500/5 blur-[100px]" />
       </div>
 
-      <div className="relative mx-auto max-w-[1500px] px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.8fr_0.8fr_1.3fr]">
+      <div className="relative mx-auto max-w-[1500px] px-6 py-8 sm:px-10 lg:px-12 lg:py-10">
+        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.8fr_0.8fr_1.3fr]">
+          
           <div>
             <Link
               href="/"
               className="inline-flex items-center gap-3 text-2xl font-bold tracking-tight text-white"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-400/30 bg-blue-500/10 text-lg font-black text-blue-400">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/30 bg-blue-500/10 text-lg font-black text-blue-400">
                 K
               </span>
 
@@ -39,24 +39,24 @@ export default function Footer() {
               </span>
             </Link>
 
-            <p className="mt-6 max-w-sm text-sm leading-7 text-slate-400">
+            <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">
               Building digital experiences that are fast, reliable, scalable,
               and designed to make a real impact.
             </p>
 
-            <div className="mt-8 h-px w-12 bg-blue-500" />
+            <div className="mt-5 h-px w-10 bg-blue-500" />
 
-            <p className="mt-7 text-[11px] font-bold uppercase tracking-[0.24em] text-blue-400">
-              Let&apos;s Connect
+            <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.24em] text-blue-400">
+              Let's Connect
             </p>
 
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-4 flex items-center gap-2.5">
               <Link
                 href="https://www.linkedin.com/in/kiran-fatima-evermont"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/5 text-slate-400 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500/10 hover:text-blue-400"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/5 text-slate-400 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500/10 hover:text-blue-400"
               >
                 <FaLinkedinIn className="text-sm" />
               </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/5 text-slate-400 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500/10 hover:text-blue-400"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/5 text-slate-400 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500/10 hover:text-blue-400"
               >
                 <FaGithub className="text-sm" />
               </Link>
@@ -76,7 +76,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/5 text-slate-400 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500/10 hover:text-blue-400"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/5 text-slate-400 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500/10 hover:text-blue-400"
               >
                 <FaFacebookF className="text-sm" />
               </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/5 text-slate-400 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500/10 hover:text-blue-400"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/5 text-slate-400 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500/10 hover:text-blue-400"
               >
                 <FaInstagram className="text-sm" />
               </Link>
@@ -96,19 +96,19 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/5 text-slate-400 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500/10 hover:text-blue-400"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/5 text-slate-400 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500/10 hover:text-blue-400"
               >
                 <FaTiktok className="text-sm" />
               </Link>
             </div>
           </div>
 
-          <div className="border-l border-blue-900/40 pl-8">
+          <div className="border-l border-blue-900/40 pl-7">
             <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-blue-400">
               Navigation
             </p>
 
-            <nav className="mt-7 flex flex-col gap-4">
+            <nav className="mt-5 flex flex-col gap-2.5">
               <Link
                 href="/"
                 className="w-fit text-sm text-slate-400 transition hover:translate-x-1 hover:text-blue-400"
@@ -146,12 +146,12 @@ export default function Footer() {
             </nav>
           </div>
 
-          <div className="border-l border-blue-900/40 pl-8">
+          <div className="border-l border-blue-900/40 pl-7">
             <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-blue-400">
               Quick Links
             </p>
 
-            <nav className="mt-7 flex flex-col gap-4">
+            <nav className="mt-5 flex flex-col gap-2.5">
               <Link
                 href="/#contact"
                 className="w-fit text-sm text-slate-400 transition hover:translate-x-1 hover:text-blue-400"
@@ -159,7 +159,9 @@ export default function Footer() {
                 Contact
               </Link>
 
-              <p className="w-fit text-sm text-slate-400">Bahawalpur, PK</p>
+              <p className="w-fit text-sm text-slate-400">
+                Bahawalpur, PK
+              </p>
 
               <div className="mt-1 flex items-center gap-2 text-sm text-slate-400">
                 <span className="h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
@@ -175,9 +177,9 @@ export default function Footer() {
 
             <div
               id="location"
-              className="mt-6 overflow-hidden rounded-2xl border border-blue-900/50 bg-[#0A1220] shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
+              className="mt-4 overflow-hidden rounded-2xl border border-blue-900/50 bg-[#0A1220] shadow-[0_15px_40px_rgba(0,0,0,0.25)]"
             >
-              <div className="relative h-[220px] w-full overflow-hidden">
+              <div className="relative h-[150px] w-full overflow-hidden">
                 <iframe
                   title="Evermont Global Technologies Location"
                   src="https://www.google.com/maps?q=Evermont%20Global%20Technologies%2C%20Bahawalpur%2C%20Pakistan&output=embed"
@@ -189,18 +191,18 @@ export default function Footer() {
                 <div className="pointer-events-none absolute inset-0 bg-blue-900/5" />
               </div>
 
-              <div className="flex items-center justify-between gap-4 border-t border-blue-900/50 px-5 py-4">
-                <div className="flex min-w-0 items-center gap-3">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-blue-400">
-                    <FaMapMarkerAlt className="text-sm" />
+              <div className="flex items-center justify-between gap-3 border-t border-blue-900/50 px-4 py-3">
+                <div className="flex min-w-0 items-center gap-2.5">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-blue-400">
+                    <FaMapMarkerAlt className="text-xs" />
                   </div>
 
                   <div className="min-w-0">
-                    <p className="truncate text-sm font-semibold text-slate-200">
+                    <p className="truncate text-xs font-semibold text-slate-200">
                       Evermont Global Technologies
                     </p>
 
-                    <p className="mt-0.5 text-xs text-slate-500">
+                    <p className="mt-0.5 text-[11px] text-slate-500">
                       Bahawalpur, Pakistan
                     </p>
                   </div>
@@ -210,17 +212,17 @@ export default function Footer() {
                   href="https://www.google.com/maps/search/?api=1&query=Evermont%20Global%20Technologies%2C%20Bahawalpur%2C%20Pakistan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex shrink-0 items-center gap-2 text-xs font-semibold text-blue-400 transition hover:text-blue-300"
+                  className="group flex shrink-0 items-center gap-1.5 text-xs font-semibold text-blue-400 transition hover:text-blue-300"
                 >
                   View Map
-                  <FaArrowRight className="text-[10px] transition-transform group-hover:translate-x-1" />
+                  <FaArrowRight className="text-[9px] transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 border-t border-blue-900/40 pt-7">
+        <div className="mt-8 border-t border-blue-900/40 pt-5">
           <div className="flex w-full items-center justify-center text-center text-xs text-slate-500">
             <p>© 2026 Kiran Fatima. All rights reserved.</p>
           </div>
