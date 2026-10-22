@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
@@ -15,12 +14,7 @@ import {
   FaStar,
   FaChartBar,
 } from "react-icons/fa";
-import {
-  SiFlutter,
-  SiDart,
-  SiFirebase,
-  SiAndroid,
-} from "react-icons/si";
+import { SiFlutter, SiDart, SiFirebase, SiAndroid } from "react-icons/si";
 
 const stats = [
   {
@@ -80,13 +74,13 @@ export default function Hero() {
           opacity: 1,
           duration: 0.75,
           stagger: 0.12,
-        }
+        },
       )
         .fromTo(
           imageRef.current,
           { scale: 0.9, opacity: 0 },
           { scale: 1, opacity: 1, duration: 0.9 },
-          "-=0.45"
+          "-=0.45",
         )
         .fromTo(
           ".hero-stat",
@@ -97,7 +91,7 @@ export default function Hero() {
             duration: 0.5,
             stagger: 0.1,
           },
-          "-=0.3"
+          "-=0.3",
         );
 
       gsap.to(".orbit-icon", {
@@ -153,15 +147,18 @@ export default function Hero() {
             </div>
 
             <h1 className="max-w-[650px] font-serif text-5xl font-bold leading-[1.06] tracking-tight sm:text-6xl lg:text-[50px] xl:text-[60px]">
-              I Build <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-slate-200 bg-clip-text text-transparent">Mobile Apps</span>
+              I Build{" "}
+              <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-slate-200 bg-clip-text text-transparent">
+                Mobile Apps
+              </span>
               <br />
               That Matter.
             </h1>
 
             <p className="mt-6 max-w-[460px] text-sm leading-7 text-slate-400 sm:text-base">
-              I'm Kiran Fatima, an App Developer crafting beautiful,
-              scalable, and user-friendly mobile applications with Flutter,
-              Dart, and Firebase.
+              I'm Kiran Fatima, an App Developer crafting beautiful, scalable,
+              and user-friendly mobile applications with Flutter, Dart, and
+              Firebase.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -174,12 +171,11 @@ export default function Hero() {
               </Link>
 
               <Link
-                href="/cv.pdf"
-                download
+                href="/contact"
                 className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md border border-slate-600/60 bg-slate-900/30 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-blue-400 hover:text-blue-300"
               >
-                Download CV
-                <FaDownload className="text-blue-400" />
+                Contact Me
+                <FaArrowRight className="transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
 
@@ -246,9 +242,7 @@ export default function Hero() {
                 <p className="text-lg font-bold leading-tight text-slate-50">
                   10+
                 </p>
-                <p className="text-[10px] text-slate-400">
-                  Apps & Projects
-                </p>
+                <p className="text-[10px] text-slate-400">Apps & Projects</p>
               </div>
             </div>
           </div>
@@ -265,9 +259,7 @@ export default function Hero() {
                   index !== 0 ? "border-l border-slate-700/50" : ""
                 } ${
                   index >= 2 ? "border-t border-slate-700/50 lg:border-t-0" : ""
-                } ${
-                  index === 3 ? "sm:border-l-0 lg:border-l" : ""
-                }`}
+                } ${index === 3 ? "sm:border-l-0 lg:border-l" : ""}`}
               >
                 <Icon className={`text-xl ${stat.color}`} />
                 <p className="text-sm font-bold text-slate-100 sm:text-base">
@@ -280,8 +272,6 @@ export default function Hero() {
             );
           })}
         </div>
-
-       
       </div>
     </section>
   );

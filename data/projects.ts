@@ -1,3 +1,4 @@
+
 export type Project = {
   title: string;
   category: string;
@@ -9,22 +10,23 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
-    category: "E-COMMERCE",
+    title: "EatMeat – Meat Delivery App",
+    category: "MOBILE APP",
     description:
-      "A modern e-commerce platform designed with a clean interface, smooth navigation, and a seamless shopping experience.",
+      "A modern meat delivery application designed to make ordering fresh meat simple, fast, and convenient with a smooth mobile shopping experience.",
     image: "/projects/ecommerce-platform.jpeg",
-    tags: ["E-Commerce", "Shopping", "Web App"],
-    liveUrl: "https://your-ecommerce-platform.vercel.app",
+    tags: ["Food Delivery", "E-Commerce", "Mobile App"],
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.carivore.lifestyle.eatmeat",
   },
 
   {
-    title: "Fitness App",
+    title: "Health & Fitness Mobile App UI/UX",
     category: "FITNESS APP",
     description:
       "A modern fitness application designed to help users manage workouts, track progress, and maintain a consistent fitness routine.",
     image: "/projects/fitness-app.jpeg",
-    tags: ["Fitness", "Mobile App", "Health"],
+    tags: ["Fitness", "Health", "Mobile App", "UI/UX"],
     liveUrl: "https://your-fitness-app.vercel.app",
   },
 
@@ -32,39 +34,41 @@ export const projects: Project[] = [
     title: "Multi Device Dashboard",
     category: "DASHBOARD",
     description:
-      "A responsive multi-device dashboard built to present important data, analytics, and application controls in a clean interface.",
+      "A responsive multi-device dashboard designed to present important data, analytics, and application controls through a clean and intuitive interface.",
     image: "/projects/multi-device-dashboard.png",
-    tags: ["Dashboard", "Analytics", "Responsive"],
+    tags: ["Dashboard", "Analytics", "Responsive UI"],
     liveUrl: "https://your-multi-device-dashboard.vercel.app",
   },
 
   {
-    title: "Quotes App",
+    title: "Quotes App – Daily Motivation & Inspiration",
     category: "MOBILE APP",
     description:
-      "A simple and engaging quotes application featuring inspirational content with a clean and user-friendly experience.",
+      "A simple and engaging quotes application featuring inspirational and motivational content through a clean and user-friendly mobile experience.",
     image: "/projects/qoutes-app.jpeg",
-    tags: ["Quotes", "Mobile App", "UI/UX"],
-    liveUrl: "https://your-quotes-app.vercel.app",
+    tags: ["Quotes", "Motivation", "Mobile App", "UI/UX"],
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.mujeebdev.quotes",
   },
 
   {
-    title: "Restaurant App",
-    category: "RESTAURANT",
+    title: "Qatari Bites – Restaurant App",
+    category: "RESTAURANT APP",
     description:
-      "A modern restaurant application designed to showcase menus, restaurant information, and an engaging digital dining experience.",
+      "A modern restaurant application designed to showcase menus, restaurant information, and provide an engaging digital dining experience.",
     image: "/projects/resturent-app.jpeg",
-    tags: ["Restaurant", "Food", "Web App"],
+    tags: ["Restaurant", "Food", "Mobile App", "UI/UX"],
     liveUrl: "https://your-restaurant-app.vercel.app",
   },
 
   {
-    title: "Shopping App",
-    category: "E-COMMERCE",
+    title: "Doctor Appointment App",
+    category: "HEALTH APP",
     description:
-      "A modern shopping application focused on product discovery, smooth browsing, and a simple digital shopping experience.",
+      "A modern doctor appointment application designed to help users discover doctors, manage appointments, and access healthcare services through a simple digital experience.",
     image: "/projects/shopping-app.jpeg",
-    tags: ["Shopping", "E-Commerce", "Mobile App"],
-    liveUrl: "https://your-shopping-app.vercel.app",
+    tags: ["Healthcare", "Doctor Appointment", "Mobile App", "UI/UX"],
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.nexusappstech.doctorapp",
   },
 ];

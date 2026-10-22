@@ -62,7 +62,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[10px] font-semibold text-blue-400 transition hover:text-blue-300"
           >
-            View Live Website
+            View Live
             <FaArrowUpRightFromSquare className="text-[9px]" />
           </Link>
         </div>

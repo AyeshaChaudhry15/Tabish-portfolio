@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
@@ -18,12 +17,7 @@ import {
   FaShieldAlt,
   FaGlobe,
 } from "react-icons/fa";
-import {
-  SiFlutter,
-  SiDart,
-  SiFirebase,
-  SiAndroid,
-} from "react-icons/si";
+import { SiFlutter, SiDart, SiFirebase, SiAndroid } from "react-icons/si";
 
 const developerCode = `const kiran = {
   role: 'Flutter & App Developer',
@@ -89,7 +83,7 @@ export default function About() {
             trigger: sectionRef.current,
             start: "top 75%",
           },
-        }
+        },
       );
 
       gsap.fromTo(
@@ -104,7 +98,7 @@ export default function About() {
             trigger: sectionRef.current,
             start: "top 75%",
           },
-        }
+        },
       );
 
       gsap.to(".about-orbit-icon", {
@@ -160,9 +154,9 @@ export default function About() {
 
           <p className="mt-6 max-w-[680px] text-sm leading-7 text-slate-400 sm:text-base sm:leading-8">
             I'm Kiran Fatima, an App Developer passionate about building
-            reliable, intuitive, and scalable mobile applications. I work
-            with Flutter, Dart, and Firebase to turn ideas into practical
-            digital experiences with clean code and thoughtful UI/UX.
+            reliable, intuitive, and scalable mobile applications. I work with
+            Flutter, Dart, and Firebase to turn ideas into practical digital
+            experiences with clean code and thoughtful UI/UX.
           </p>
 
           <div className="my-8 h-px w-full max-w-[690px] bg-slate-700/50" />
@@ -208,12 +202,11 @@ export default function About() {
             </Link>
 
             <Link
-              href="/cv.pdf"
-              download
+              href="/contact"
               className="inline-flex min-h-14 items-center justify-center gap-3 rounded-lg border border-slate-600/60 bg-[#111C2E]/50 px-6 py-4 text-sm font-semibold text-slate-100 transition hover:border-blue-400/60 hover:text-blue-300"
             >
-              Download Resume
-              <FaDownload className="text-blue-400" />
+              Contact Me{" "}
+              <FaArrowRight className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
@@ -245,11 +238,7 @@ export default function About() {
                 className="inline-flex shrink-0 items-center gap-2 rounded-md border border-slate-700/70 bg-slate-800/40 px-3 py-2 text-xs text-slate-300 transition hover:border-blue-400/50 hover:text-white"
                 aria-label="Copy developer code"
               >
-                {copied ? (
-                  <FaCheck className="text-emerald-400" />
-                ) : (
-                  <FaCopy />
-                )}
+                {copied ? <FaCheck className="text-emerald-400" /> : <FaCopy />}
                 {copied ? "Copied" : "Copy"}
               </button>
             </div>

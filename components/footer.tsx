@@ -117,28 +117,28 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="/#about"
+                href="/about"
                 className="w-fit text-sm text-slate-400 transition hover:translate-x-1 hover:text-blue-400"
               >
-                About Me
+                About
               </Link>
 
               <Link
-                href="/#skills"
+                href="/skills"
                 className="w-fit text-sm text-slate-400 transition hover:translate-x-1 hover:text-blue-400"
               >
                 Skills
               </Link>
 
               <Link
-                href="/#projects"
+                href="/projects"
                 className="w-fit text-sm text-slate-400 transition hover:translate-x-1 hover:text-blue-400"
               >
                 Projects
               </Link>
 
               <Link
-                href="/#experience"
+                href="/experience"
                 className="w-fit text-sm text-slate-400 transition hover:translate-x-1 hover:text-blue-400"
               >
                 Experience
@@ -153,7 +153,7 @@ export default function Footer() {
 
             <nav className="mt-5 flex flex-col gap-2.5">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="w-fit text-sm text-slate-400 transition hover:translate-x-1 hover:text-blue-400"
               >
                 Contact
