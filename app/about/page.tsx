@@ -5,15 +5,11 @@ import MyApproach from "@/components/about/my-approach";
 import MyStory from "@/components/about/my-story";
 import Solutions from "@/components/about/solutions";
 
-const page = () => {
+export default function Page() {
   return (
-    <div
-      style={{
-        width: "100%",
-        minHeight: "100vh",
-        background: "#071225",
-        overflow: "hidden",
-      }}
+    <main
+      className="min-h-screen w-full overflow-hidden"
+      style={{ background: "#071225" }}
     >
       <Hero />
       <MyStory />
@@ -21,8 +17,6 @@ const page = () => {
       <Solutions />
       <MyApproach />
       <CTA />
-    </div>
+    </main>
   );
-};
-
-export default page;
+}

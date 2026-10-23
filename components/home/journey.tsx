@@ -147,36 +147,36 @@ export default function Journey() {
     <section
       ref={sectionRef}
       id="journey"
-      className="relative isolate overflow-hidden bg-[#0B1220] px-5 py-20 text-slate-50 sm:px-8 lg:px-12 lg:py-28"
+      className="relative isolate overflow-hidden bg-[#0B1220] px-4 py-16 text-slate-50 sm:px-6 sm:py-20 md:px-8 md:py-24 lg:px-10 lg:py-28 xl:px-12"
     >
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-[8%] top-10 h-[420px] w-[420px] rounded-full bg-blue-900/15 blur-[140px]" />
+        <div className="absolute left-[5%] top-10 h-[260px] w-[260px] rounded-full bg-blue-900/15 blur-[100px] sm:h-[320px] sm:w-[320px] sm:blur-[120px] lg:h-[420px] lg:w-[420px] lg:blur-[140px]" />
 
-        <div className="absolute right-[10%] top-[30%] h-[350px] w-[350px] rounded-full bg-sky-900/10 blur-[150px]" />
+        <div className="absolute right-[5%] top-[30%] h-[250px] w-[250px] rounded-full bg-sky-900/10 blur-[100px] sm:h-[300px] sm:w-[300px] sm:blur-[120px] lg:h-[350px] lg:w-[350px] lg:blur-[150px]" />
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_35%,rgba(37,99,235,0.07),transparent_42%)]" />
       </div>
 
-      <div className="mx-auto max-w-[1440px]">
+      <div className="mx-auto w-full max-w-[1440px]">
         {/* Header */}
         <div className="journey-header">
-          <div className="mb-4 flex items-center gap-2">
-            <span className="h-px w-7 bg-blue-400" />
+          <div className="mb-3 flex items-center gap-2 sm:mb-4">
+            <span className="h-px w-6 bg-blue-400 sm:w-7" />
 
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-blue-300 sm:text-xs">
+            <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-blue-300 sm:text-[10px] sm:tracking-[0.24em] md:text-xs">
               Professional Journey
             </p>
           </div>
 
-          <h2 className="font-serif text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-[42px]">
+          <h2 className="max-w-full font-serif text-3xl font-bold leading-[1.15] tracking-tight sm:text-4xl md:text-5xl lg:text-[42px]">
             From Learning to{" "}
             <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-slate-200 bg-clip-text italic text-transparent">
               Leadership
             </span>
           </h2>
 
-          <p className="mt-5 max-w-[680px] text-sm leading-7 text-slate-400 sm:text-[15px]">
+          <p className="mt-4 max-w-[680px] text-[13px] leading-6 text-slate-400 sm:mt-5 sm:text-sm sm:leading-7 md:text-[15px]">
             A journey shaped by continuous learning, real-world development,
             and the transition from building applications to leading digital
             products and technology.
@@ -184,22 +184,27 @@ export default function Journey() {
         </div>
 
         {/* Main Content */}
-        <div className="mt-16 grid items-start gap-14 lg:grid-cols-[1.35fr_0.65fr] lg:gap-20">
+        <div className="mt-12 grid items-start gap-12 sm:mt-14 md:mt-16 lg:grid-cols-[minmax(0,1.35fr)_minmax(260px,0.65fr)] lg:gap-14 xl:gap-20">
+          
           {/* Journey */}
           <div className="relative min-w-0">
-            {/* Timeline Line */}
+            
+            {/* Desktop Timeline */}
             <div className="absolute left-0 right-0 top-[9px] hidden h-px bg-gradient-to-r from-slate-500/40 via-blue-400/70 to-sky-300/50 md:block" />
 
+            {/* Mobile Timeline */}
+            <div className="absolute bottom-0 left-[8px] top-0 w-px bg-gradient-to-b from-blue-400/50 via-blue-400/25 to-transparent md:hidden" />
+
             {/* Experience Cards */}
-            <div className="grid gap-14 md:grid-cols-3 md:gap-10">
+            <div className="grid gap-10 sm:gap-12 md:grid-cols-3 md:gap-6 lg:gap-8 xl:gap-10">
               {experiences.map((experience, index) => (
                 <article
                   key={experience.company}
-                  className="journey-experience relative min-w-0 pt-8"
+                  className="journey-experience relative min-w-0 pl-8 pt-0 md:pl-0 md:pt-8"
                 >
                   {/* Timeline Dot */}
                   <div
-                    className={`journey-dot absolute left-0 top-0 h-5 w-5 rounded-full border-2 bg-[#0B1220] ${
+                    className={`journey-dot absolute left-0 top-0 h-[18px] w-[18px] rounded-full border-2 bg-[#0B1220] md:left-0 md:top-0 md:h-5 md:w-5 ${
                       index === 0
                         ? "border-slate-400 shadow-[0_0_0_4px_rgba(148,163,184,0.08),0_0_18px_rgba(148,163,184,0.35)]"
                         : index === 1
@@ -220,7 +225,7 @@ export default function Journey() {
 
                   {/* Company */}
                   <h3
-                    className={`max-w-full break-words text-[21px] font-bold leading-tight tracking-tight sm:text-[23px] ${
+                    className={`max-w-full break-words text-[19px] font-bold leading-tight tracking-tight sm:text-[21px] md:text-[20px] lg:text-[21px] xl:text-[23px] ${
                       index === 0
                         ? "text-slate-100"
                         : index === 1
@@ -232,24 +237,26 @@ export default function Journey() {
                   </h3>
 
                   {/* Position */}
-                  <p className="mt-3 text-sm font-bold leading-6 text-slate-100 sm:text-[15px]">
+                  <p className="mt-2 text-[13px] font-bold leading-5 text-slate-100 sm:mt-3 sm:text-sm md:text-[13px] lg:text-[15px]">
                     {experience.position}
                   </p>
 
                   {/* Location */}
-                  <div className="mt-4 flex items-start gap-2 text-xs leading-5 text-slate-400 sm:text-[13px]">
+                  <div className="mt-3 flex items-start gap-2 text-[11px] leading-5 text-slate-400 sm:text-xs lg:text-[13px]">
                     <FaMapMarkerAlt className="mt-0.5 shrink-0 text-blue-300" />
 
-                    <span>{experience.location}</span>
+                    <span className="break-words">
+                      {experience.location}
+                    </span>
                   </div>
 
                   {/* Date */}
-                  <div className="mt-3 inline-flex rounded-md border border-slate-700/70 bg-slate-900/30 px-3 py-2 text-[11px] text-slate-400">
+                  <div className="mt-3 inline-flex max-w-full rounded-md border border-slate-700/70 bg-slate-900/30 px-2.5 py-1.5 text-[10px] text-slate-400 sm:px-3 sm:py-2 sm:text-[11px]">
                     {experience.date}
                   </div>
 
                   {/* Description */}
-                  <p className="mt-5 max-w-[330px] text-[13px] leading-7 text-slate-400 sm:text-[14px]">
+                  <p className="mt-4 max-w-full text-[12px] leading-6 text-slate-400 sm:text-[13px] sm:leading-7 md:text-[12px] lg:max-w-[330px] lg:text-[14px]">
                     {experience.description}
                   </p>
                 </article>
@@ -259,7 +266,7 @@ export default function Journey() {
             {/* Button */}
             <Link
               href="/journey"
-              className="journey-button group mt-14 inline-flex min-h-12 items-center justify-center gap-3 rounded-md border border-blue-400/40 bg-blue-500/[0.03] px-5 py-3 text-xs font-bold tracking-wide text-slate-100 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400 hover:bg-blue-500/[0.06] hover:shadow-[0_10px_30px_rgba(37,99,235,0.08)]"
+              className="journey-button group mt-10 inline-flex min-h-11 w-full items-center justify-center gap-3 rounded-md border border-blue-400/40 bg-blue-500/[0.03] px-4 py-3 text-[10px] font-bold tracking-wide text-slate-100 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400 hover:bg-blue-500/[0.06] hover:shadow-[0_10px_30px_rgba(37,99,235,0.08)] sm:mt-12 sm:min-h-12 sm:w-auto sm:px-5 sm:text-xs"
             >
               MORE ABOUT MY JOURNEY
 
@@ -268,44 +275,45 @@ export default function Journey() {
           </div>
 
           {/* Skills / Expertise */}
-          <div className="journey-expertise w-full max-w-[360px] justify-self-end rounded-2xl border border-slate-700/60 bg-[#0D1728]/50 p-4 backdrop-blur-sm sm:p-5">
+          <div className="journey-expertise mx-auto w-full max-w-[360px] rounded-2xl border border-slate-700/60 bg-[#0D1728]/50 p-3.5 backdrop-blur-sm sm:p-4 md:max-w-[380px] lg:mx-0 lg:max-w-[360px] lg:justify-self-end xl:max-w-[370px]">
+            
             {/* Header */}
-            <div className="mb-5">
+            <div className="mb-4 sm:mb-5">
               <div className="flex items-center gap-2">
                 <span className="h-px w-5 bg-blue-400" />
 
-                <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-blue-300">
+                <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-blue-300 sm:text-[9px] sm:tracking-[0.2em]">
                   Core Expertise
                 </span>
               </div>
 
-              <h3 className="mt-3 font-serif text-xl text-slate-100">
+              <h3 className="mt-2.5 font-serif text-lg leading-6 text-slate-100 sm:mt-3 sm:text-xl">
                 Technologies I Work With
               </h3>
             </div>
 
             {/* Skills */}
-            <div className="space-y-2.5">
+            <div className="space-y-2 sm:space-y-2.5">
               {expertise.map((item) => {
                 const Icon = item.icon;
 
                 return (
                   <div
                     key={item.title}
-                    className="group flex min-h-[64px] items-center gap-3 rounded-lg border border-slate-700/50 bg-[#0B1220]/70 px-3 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/[0.035] hover:shadow-[0_8px_30px_rgba(37,99,235,0.06)]"
+                    className="group flex min-h-[58px] w-full items-center gap-2.5 rounded-lg border border-slate-700/50 bg-[#0B1220]/70 px-2.5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/[0.035] hover:shadow-[0_8px_30px_rgba(37,99,235,0.06)] sm:min-h-[64px] sm:gap-3 sm:px-3"
                   >
                     {/* Icon */}
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-slate-700/70 bg-[#111C2E] text-blue-300 transition-all duration-300 group-hover:border-blue-400/40 group-hover:bg-blue-500/[0.06] group-hover:text-sky-300 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]">
-                      <Icon className="text-base" />
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-slate-700/70 bg-[#111C2E] text-blue-300 transition-all duration-300 group-hover:border-blue-400/40 group-hover:bg-blue-500/[0.06] group-hover:text-sky-300 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.1)] sm:h-9 sm:w-9">
+                      <Icon className="text-sm sm:text-base" />
                     </div>
 
                     {/* Skill */}
-                    <p className="text-xs font-semibold leading-5 text-slate-300 transition-colors duration-300 group-hover:text-slate-100">
+                    <p className="min-w-0 flex-1 break-words text-[11px] font-semibold leading-5 text-slate-300 transition-colors duration-300 group-hover:text-slate-100 sm:text-xs">
                       {item.title}
                     </p>
 
                     {/* Arrow */}
-                    <FaArrowRight className="ml-auto shrink-0 text-[10px] text-slate-700 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:text-blue-300 group-hover:opacity-100" />
+                    <FaArrowRight className="ml-auto hidden shrink-0 text-[10px] text-slate-700 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:text-blue-300 group-hover:opacity-100 sm:block" />
                   </div>
                 );
               })}
@@ -313,6 +321,59 @@ export default function Journey() {
           </div>
         </div>
       </div>
+
+      {/* Only responsive fixes */}
+      <style jsx>{`
+        @media (max-width: 767px) {
+          #journey {
+            overflow-x: hidden;
+          }
+
+          .journey-experience {
+            width: 100%;
+          }
+
+          .journey-experience > p {
+            max-width: 100%;
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .journey-experience {
+            min-width: 0;
+          }
+        }
+
+        @media (min-width: 1024px) and (max-width: 1199px) {
+          .journey-experience h3 {
+            font-size: 19px;
+          }
+
+          .journey-experience > p {
+            font-size: 12px;
+          }
+        }
+
+        @media (min-width: 1536px) {
+          .journey-experience h3 {
+            font-size: 23px;
+          }
+
+          .journey-experience > p {
+            font-size: 14px;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .journey-expertise {
+            padding: 12px;
+          }
+
+          .journey-experience {
+            padding-left: 28px;
+          }
+        }
+      `}</style>
     </section>
   );
 }

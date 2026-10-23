@@ -3,34 +3,67 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  FaCode,
+  FaBriefcase,
+  FaMobileAlt,
+  FaUserTie,
+  FaUsers,
+} from "react-icons/fa";
+import { FaLocationDot, FaCalendarDays } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const journey = [
+const experiences = [
   {
-    year: "2022",
-    company: "CAS",
-    role: "Freelance App Developer",
+    period: "Jan 2026 — Present",
+    company: "Evermont Global Technologies",
+    role: "CEO & Founder",
+    type: "Leadership",
+    location: "Bahawalpur, Punjab, Pakistan · On-site",
     description:
-      "Started learning and working on real-world applications, building a strong foundation in mobile development, programming and problem solving.",
+      "Founded and currently lead Evermont Global Technologies, helping startups and businesses build scalable digital solutions, software products and modern technology solutions.",
+    icon: FaUserTie,
     side: "left",
   },
+
   {
-    year: "2023 — 2025",
+    period: "Oct 2025 — Jan 2026",
     company: "Code's Thinker",
-    role: "App Developer",
+    role: "Senior Software Engineer",
+    type: "Professional",
+    location: "Bahawalpur, Punjab, Pakistan",
     description:
-      "Worked for 2 years as an App Developer, building production applications, integrating APIs and databases, fixing complex problems and working with modern development workflows.",
+      "Delivered real-time tracking solutions, WebSocket communication and route optimization for fleet management applications while improving operational efficiency and integrating REST API solutions.",
+    icon: FaCode,
     side: "right",
   },
+
+
   {
-    year: "2025 — Present",
-    company: "Evermont Global Technologies",
-    role: "CEO & App Developer",
+    period: "Mar 2023 — Mar 2024",
+    company: "CAS — Center for Advance Solutions",
+    role: "Android Developer",
+    type: "Professional",
+    location: "Punjab, Pakistan",
     description:
-      "Now leading Everont while continuing to work hands-on with technology, product development and digital solutions for businesses and users.",
+      "Developed native Android applications using Java and integrated REST APIs and Firebase for real-time data management and application functionality.",
+    icon: FaCode,
     side: "left",
   },
+
+  {
+    period: "May 2022 — Aug 2025",
+    company: "ITSH Tech Solution House",
+    role: "International IT Recruiter",
+    type: "Freelance",
+    location: "Pakistan · Remote",
+    description:
+      "Identified and recruited qualified candidates for IT and software development roles through LinkedIn, job portals and professional networks while supporting technical recruitment processes.",
+    icon: FaUsers,
+    side: "right",
+  },
+
 ];
 
 export default function Journey() {
@@ -38,32 +71,46 @@ export default function Journey() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".journey-heading", {
-        opacity: 0,
-        y: 35,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 78%",
+      gsap.fromTo(
+        ".journey-heading",
+        {
+          opacity: 0,
+          y: 35,
         },
-      });
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 78%",
+          },
+        }
+      );
 
-      gsap.from(".journey-item", {
-        opacity: 0,
-        y: 45,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".journey-list",
-          start: "top 78%",
+      gsap.fromTo(
+        ".journey-item",
+        {
+          opacity: 0,
+          y: 45,
         },
-      });
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.75,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".journey-list",
+            start: "top 78%",
+          },
+        }
+      );
 
       gsap.to(".journey-core", {
         boxShadow:
-          "0 0 25px rgba(47,128,255,.6),0 0 55px rgba(47,128,255,.18)",
+          "0 0 25px rgba(47,128,255,.6), 0 0 55px rgba(47,128,255,.18)",
         duration: 1.5,
         repeat: -1,
         yoyo: true,
@@ -78,208 +125,223 @@ export default function Journey() {
     <section
       id="journey"
       ref={sectionRef}
-      style={{
-        position: "relative",
-        width: "100%",
-        padding: "140px 5%",
-        overflow: "hidden",
-        background: "#071225",
-        color: "#F4F7FC",
-      }}
+      className="relative w-full overflow-hidden bg-[#071225] px-4 py-20 text-[#F4F7FC] sm:px-6 sm:py-24 md:px-8 lg:px-10 lg:py-28 xl:px-12 xl:py-32"
     >
-      <div
-        style={{
-          width: "min(1000px,100%)",
-          margin: "0 auto",
-        }}
-      >
-        <div
-          className="journey-heading"
-          style={{
-            marginBottom: "75px",
-            textAlign: "center",
-          }}
-        >
-          <span
-            style={{
-              color: "#4DA3FF",
-              fontSize: "10px",
-              fontWeight: 700,
-              letterSpacing: "0.25em",
-              fontFamily: "Arial,sans-serif",
-            }}
-          >
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-40 top-[8%] h-72 w-72 rounded-full bg-blue-500/[0.08] blur-[100px] sm:h-96 sm:w-96 md:h-[500px] md:w-[500px]" />
+
+        <div className="absolute -right-40 bottom-[5%] h-72 w-72 rounded-full bg-blue-500/[0.06] blur-[100px] sm:h-96 sm:w-96 md:h-[500px] md:w-[500px]" />
+
+        <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/[0.025] blur-[120px]" />
+      </div>
+
+      {/* Main Container */}
+      <div className="relative z-10 mx-auto w-full max-w-[1100px]">
+        {/* Heading */}
+        <div className="journey-heading mb-12 text-center sm:mb-16 md:mb-20">
+          <span className="inline-block text-[9px] font-bold uppercase tracking-[0.25em] text-[#4DA3FF] sm:text-[10px]">
             MY JOURNEY
           </span>
 
-          <h2
-            style={{
-              margin: "17px 0 0",
-              color: "#F4F7FC",
-              fontFamily: "Georgia,serif",
-              fontSize: "clamp(40px,6vw,45px)",
-              fontWeight: 400,
-              lineHeight: 1,
-              letterSpacing: "-0.055em",
-            }}
-          >
+          <h2 className="mt-4 font-serif text-[34px] font-normal leading-[1.08] tracking-[-0.05em] text-[#F4F7FC] sm:text-[40px] md:text-[44px] lg:text-[48px]">
             A Journey of{" "}
-            <em
-              style={{
-                color: "#4DA3FF",
-                fontStyle: "italic",
-              }}
-            >
-              Growth.
-            </em>
+            <em className="text-[#4DA3FF]">Growth.</em>
           </h2>
 
-          <p
-            style={{
-              maxWidth: "580px",
-              margin: "22px auto 0",
-              color: "#849AB4",
-              fontSize: "14px",
-              lineHeight: 1.8,
-              fontFamily: "Arial,sans-serif",
-            }}
-          >
+          <p className="mx-auto mt-5 max-w-[600px] text-[12px] leading-7 text-[#849AB4] sm:text-[13px] md:text-[14px]">
             Every experience has shaped the way I approach technology,
             problem-solving and building digital products.
           </p>
         </div>
 
-        <div
-          className="journey-list"
-          style={{
-            position: "relative",
-          }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              top: "0",
-              bottom: "0",
-              left: "50%",
-              width: "1px",
-              transform: "translateX(-50%)",
-              background:
-                "linear-gradient(180deg,transparent,rgba(55,145,255,.45),rgba(55,145,255,.45),transparent)",
-            }}
-          />
+        {/* Timeline */}
+        <div className="journey-list relative">
+          {/* Center Line */}
+          <div className="journey-line absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-blue-400/40 to-transparent" />
 
-          {journey.map((item, index) => {
-            const isLeft = item.side === "left";
+          {experiences.map((experience, index) => {
+            const Icon = experience.icon;
+            const isLeft = experience.side === "left";
 
             return (
               <div
-                key={item.year}
-                className="journey-item"
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  justifyContent: isLeft ? "flex-start" : "flex-end",
-                  marginBottom: index === journey.length - 1 ? "0" : "80px",
-                }}
+                key={`${experience.company}-${experience.role}-${experience.period}-${index}`}
+                className="journey-item relative mb-10 w-full last:mb-0 sm:mb-14 md:mb-16"
               >
-                <div
-                  className="journey-core"
-                  style={{
-                    position: "absolute",
-                    left: "50%",
-                    top: "42px",
-                    zIndex: 5,
-                    width: "11px",
-                    height: "11px",
-                    transform: "translateX(-50%)",
-                    border: "2px solid #071225",
-                    borderRadius: "50%",
-                    background: "#4DA3FF",
-                    boxShadow: "0 0 16px rgba(47,128,255,.55)",
-                  }}
-                />
+                {/* Timeline Dot */}
+                <div className="journey-core absolute left-1/2 top-9 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-[#071225] bg-[#4DA3FF] shadow-[0_0_16px_rgba(47,128,255,.55)]" />
 
+                {/* Card Wrapper */}
                 <div
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-7px)";
-                    e.currentTarget.style.borderColor =
-                      "rgba(70,164,255,.65)";
-                    e.currentTarget.style.boxShadow =
-                      "0 20px 55px rgba(0,0,0,.25),0 0 35px rgba(47,128,255,.12)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.borderColor =
-                      "rgba(120,160,210,.18)";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                  style={{
-                    width: "43%",
-                    padding: "24px",
-                    border: "1px solid rgba(120,160,210,.18)",
-                    borderRadius: "11px",
-                    background:
-                      "linear-gradient(145deg,rgba(14,32,55,.94),rgba(7,19,35,.96))",
-                    transition: "all .35s ease",
-                  }}
+                  className={`flex w-full ${
+                    isLeft ? "justify-start" : "justify-end"
+                  }`}
                 >
-                  <span
-                    style={{
-                      display: "inline-block",
-                      marginBottom: "15px",
-                      padding: "5px 9px",
-                      border: "1px solid rgba(67,157,255,.25)",
-                      borderRadius: "4px",
-                      color: "#4DA3FF",
-                      background: "rgba(47,128,255,.06)",
-                      fontSize: "10px",
-                      fontFamily: "monospace",
-                    }}
-                  >
-                    {item.year}
-                  </span>
+                  <article className="journey-card w-[43%] rounded-xl border border-[rgba(120,160,210,.18)] bg-gradient-to-br from-[rgba(14,32,55,.94)] to-[rgba(7,19,35,.96)] p-5 shadow-none transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-400/60 hover:shadow-[0_20px_55px_rgba(0,0,0,.25),0_0_35px_rgba(47,128,255,.12)] sm:p-6">
+                    {/* Top */}
+                    <div className="flex items-start justify-between gap-4">
+                      <span className="inline-block rounded border border-blue-400/25 bg-blue-500/[0.06] px-2 py-1 font-mono text-[9px] text-[#4DA3FF] sm:text-[10px]">
+                        {experience.period}
+                      </span>
 
-                  <h3
-                    style={{
-                      margin: "0 0 5px",
-                      color: "#F2F6FC",
-                      fontFamily: "Georgia,serif",
-                      fontSize: "15px",
-                      fontWeight: 400,
-                    }}
-                  >
-                    {item.company}
-                  </h3>
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-blue-400/15 bg-blue-500/[0.06] text-blue-400">
+                        <Icon className="text-xs sm:text-sm" />
+                      </div>
+                    </div>
 
-                  <h4
-                    style={{
-                      margin: "0 0 14px",
-                      color: "#4DA3FF",
-                      fontFamily: "Arial,sans-serif",
-                      fontSize: "15px",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {item.role}
-                  </h4>
+                    {/* Company */}
+                    <h3 className="mt-5 font-serif text-[18px] font-normal leading-tight text-[#F2F6FC] sm:text-[20px]">
+                      {experience.company}
+                    </h3>
 
-                  <p
-                    style={{
-                      margin: 0,
-                      color: "#8196B0",
-                      fontSize: "14px",
-                      lineHeight: 1.8,
-                      fontFamily: "Arial,sans-serif",
-                    }}
-                  >
-                    {item.description}
-                  </p>
+                    {/* Role */}
+                    <h4 className="mt-1.5 text-[13px] font-semibold leading-5 text-[#4DA3FF] sm:text-[14px]">
+                      {experience.role}
+                    </h4>
+
+                    {/* Location */}
+                    <div className="mt-3 flex items-start gap-2 text-[10px] leading-5 text-[#71869F] sm:text-[11px]">
+                      <FaLocationDot className="mt-1 shrink-0 text-blue-400/70" />
+
+                      <span>{experience.location}</span>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="my-4 h-px bg-blue-900/40" />
+
+                    {/* Description */}
+                    <p className="text-[11px] leading-6 text-[#8196B0] sm:text-[12px] sm:leading-7">
+                      {experience.description}
+                    </p>
+
+                    {/* Footer */}
+                    <div className="mt-5 flex items-center gap-2 text-[10px] text-[#667C96] sm:text-[11px]">
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(77,163,255,.6)]" />
+
+                      {experience.type}
+                    </div>
+                  </article>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
+
+      {/* Responsive CSS */}
+      <style jsx>{`
+        @media (max-width: 900px) {
+          .journey-list {
+            padding-left: 30px;
+          }
+
+          .journey-line {
+            left: 7px;
+            transform: none;
+          }
+
+          .journey-item {
+            display: block;
+          }
+
+          .journey-core {
+            left: 7px;
+            top: 38px;
+          }
+
+          .journey-item > div {
+            display: block;
+          }
+
+          .journey-card {
+            width: 100%;
+          }
+        }
+
+        @media (max-width: 640px) {
+          #journey {
+            padding-top: 75px;
+            padding-bottom: 75px;
+          }
+
+          .journey-heading {
+            margin-bottom: 45px;
+          }
+
+          .journey-heading h2 {
+            font-size: 34px;
+          }
+
+          .journey-heading p {
+            font-size: 12px;
+            line-height: 1.8;
+          }
+
+          .journey-list {
+            padding-left: 25px;
+          }
+
+          .journey-line {
+            left: 6px;
+          }
+
+          .journey-core {
+            left: 6px;
+            top: 34px;
+            width: 10px;
+            height: 10px;
+          }
+
+          .journey-card {
+            padding: 17px;
+            border-radius: 10px;
+          }
+
+          .journey-card h3 {
+            font-size: 17px;
+          }
+
+          .journey-card h4 {
+            font-size: 12px;
+          }
+
+          .journey-item {
+            margin-bottom: 30px;
+          }
+        }
+
+        @media (max-width: 380px) {
+          #journey {
+            padding-left: 14px;
+            padding-right: 14px;
+          }
+
+          .journey-list {
+            padding-left: 22px;
+          }
+
+          .journey-line {
+            left: 5px;
+          }
+
+          .journey-core {
+            left: 5px;
+          }
+
+          .journey-card {
+            padding: 15px;
+          }
+
+          .journey-card h3 {
+            font-size: 16px;
+          }
+
+          .journey-heading h2 {
+            font-size: 30px;
+          }
+        }
+      `}</style>
     </section>
   );
 }

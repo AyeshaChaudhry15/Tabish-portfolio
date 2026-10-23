@@ -35,7 +35,7 @@ export default function Footer() {
 
               <span>
                 Kiran
-                <span className="text-blue-400">Fatima</span>
+                <span className="text-[#5796fb]">Fatima</span>
               </span>
             </Link>
 
@@ -44,7 +44,7 @@ export default function Footer() {
               and designed to make a real impact.
             </p>
 
-            <div className="mt-5 h-px w-10 bg-blue-500" />
+            <div className="mt-5 h-px w-10 bg-[##5796fb]" />
 
             <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.24em] text-blue-400">
               Let's Connect
@@ -104,7 +104,7 @@ export default function Footer() {
           </div>
 
           <div className="border-l border-blue-900/40 pl-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-blue-400">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-blue-400">
               Navigation
             </p>
 
@@ -147,7 +147,7 @@ export default function Footer() {
           </div>
 
           <div className="border-l border-blue-900/40 pl-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-blue-400">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-blue-400">
               Quick Links
             </p>
 
@@ -171,7 +171,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-blue-400">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-blue-400">
               Our Location
             </p>
 

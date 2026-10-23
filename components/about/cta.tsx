@@ -44,7 +44,7 @@ export default function AboutCTA() {
       style={{
         position: "relative",
         width: "100%",
-        padding: "80px 5% 120px",
+        padding: "clamp(60px, 8vw, 80px) clamp(16px, 5vw, 5%) clamp(80px, 10vw, 120px)",
         overflow: "hidden",
         background: "#071225",
       }}
@@ -53,19 +53,20 @@ export default function AboutCTA() {
         className="cta-box"
         style={{
           position: "relative",
-          width: "min(1120px,100%)",
+          width: "min(1120px, 100%)",
           minHeight: "220px",
           margin: "0 auto",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: "40px",
-          padding: "45px 50px",
+          gap: "clamp(25px, 4vw, 40px)",
+          padding: "clamp(28px, 4vw, 45px) clamp(22px, 4.5vw, 50px)",
           overflow: "hidden",
           border: "1px solid rgba(94,157,220,.2)",
           borderRadius: "15px",
           background:
             "linear-gradient(110deg,rgba(12,29,51,.96),rgba(7,19,36,.98))",
+          boxSizing: "border-box",
         }}
       >
         <div
@@ -74,8 +75,8 @@ export default function AboutCTA() {
             position: "absolute",
             left: "25%",
             top: "-180px",
-            width: "450px",
-            height: "450px",
+            width: "min(450px, 70vw)",
+            height: "min(450px, 70vw)",
             borderRadius: "50%",
             background:
               "radial-gradient(circle,rgba(47,128,255,.12),transparent 68%)",
@@ -84,11 +85,14 @@ export default function AboutCTA() {
           }}
         />
 
+        {/* Content */}
         <div
           style={{
             position: "relative",
             zIndex: 2,
             maxWidth: "700px",
+            width: "100%",
+            minWidth: 0,
           }}
         >
           <span
@@ -101,6 +105,7 @@ export default function AboutCTA() {
               fontWeight: 700,
               letterSpacing: "0.22em",
               fontFamily: "Arial,sans-serif",
+              flexWrap: "wrap",
             }}
           >
             <span
@@ -108,8 +113,10 @@ export default function AboutCTA() {
                 width: "22px",
                 height: "1px",
                 background: "#4DA3FF",
+                flexShrink: 0,
               }}
             />
+
             LET&apos;S WORK TOGETHER
           </span>
 
@@ -118,7 +125,7 @@ export default function AboutCTA() {
               margin: "15px 0 0",
               color: "#F4F7FC",
               fontFamily: "Georgia,serif",
-              fontSize: "clamp(20px,3.5vw,40px)",
+              fontSize: "clamp(26px, 3.5vw, 40px)",
               fontWeight: 400,
               lineHeight: 1.08,
               letterSpacing: "-0.04em",
@@ -126,6 +133,7 @@ export default function AboutCTA() {
           >
             Have an idea in mind?
             <br />
+
             <em
               style={{
                 color: "#4DA3FF",
@@ -137,6 +145,7 @@ export default function AboutCTA() {
           </h2>
         </div>
 
+        {/* Button */}
         <div
           style={{
             position: "relative",
@@ -161,8 +170,10 @@ export default function AboutCTA() {
             style={{
               display: "inline-flex",
               alignItems: "center",
+              justifyContent: "center",
               gap: "18px",
               padding: "15px 21px",
+              minHeight: "48px",
               borderRadius: "5px",
               background: "#2F80FF",
               color: "#FFFFFF",
@@ -171,14 +182,72 @@ export default function AboutCTA() {
               fontWeight: 700,
               fontFamily: "Arial,sans-serif",
               transition: "all .3s ease",
+              whiteSpace: "nowrap",
+              boxSizing: "border-box",
             }}
           >
             Start a Conversation
+
             <span style={{ fontSize: "15px" }}>→</span>
           </Link>
-
         </div>
       </div>
+
+      {/* Responsive Styles */}
+      <style jsx>{`
+        @media (max-width: 900px) {
+          .cta-box {
+            flex-direction: column;
+            align-items: flex-start !important;
+            justify-content: center !important;
+          }
+
+          .cta-box > div:last-child {
+            width: 100%;
+          }
+
+          .cta-box > div:last-child a {
+            width: 100%;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .cta-box {
+            min-height: auto !important;
+            gap: 28px !important;
+            border-radius: 12px !important;
+          }
+
+          .cta-box h2 {
+            font-size: clamp(25px, 8vw, 32px) !important;
+            line-height: 1.12 !important;
+          }
+
+          .cta-box > div:last-child a {
+            padding: 14px 18px !important;
+            font-size: 10px !important;
+          }
+
+          .cta-glow {
+            left: 5% !important;
+            top: -100px !important;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .cta-box {
+            padding: 25px 18px !important;
+          }
+
+          .cta-box h2 {
+            font-size: 25px !important;
+          }
+
+          .cta-box > div:last-child a {
+            gap: 12px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

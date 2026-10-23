@@ -10,52 +10,66 @@ import {
 
 const projects = [
   {
-    title: "Project Management Dashboard",
-    category: "Web Application",
+    title: "EatMeat – Meat Delivery App",
+    category: "MOBILE APP",
     description:
-      "A modern project management dashboard designed to manage projects, teams, tasks, analytics, and overall business performance from one place.",
-    image: "/projects/multi-device-dashboard.png",
-    link: "#",
-  },
-  {
-    title: "Quotes & Motivation App",
-    category: "Mobile App",
-    description:
-      "A clean and engaging mobile application for discovering motivational quotes, saving favorites, exploring categories, and building positive daily habits.",
-    image: "/projects/qoutes-app.jpeg",
-    link: "#",
-  },
-  {
-    title: "Restaurant Management App",
-    category: "Restaurant App",
-    description:
-      "A complete restaurant digital experience featuring menu browsing, food categories, offers, ordering, customer reviews, and restaurant information.",
-    image: "/projects/resturent-app.jpeg",
-    link: "#",
-  },
-  {
-    title: "Shopping Mobile App",
-    category: "E-Commerce App",
-    description:
-      "A modern shopping application with product discovery, categories, offers, wishlist, cart management, and a smooth mobile shopping experience.",
-    image: "/projects/shopping-app.jpeg",
-    link: "#",
-  },
-  {
-    title: "E-Commerce Platform",
-    category: "E-Commerce",
-    description:
-      "A scalable e-commerce platform featuring product management, shopping cart, order tracking, inventory, analytics, and a complete online store experience.",
+      "A modern meat delivery application designed to make ordering fresh meat simple, fast, and convenient with a smooth mobile shopping experience.",
     image: "/projects/ecommerce-platform.jpeg",
-    link: "#",
+    tags: ["Food Delivery", "E-Commerce", "Mobile App"],
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.carivore.lifestyle.eatmeat",
   },
+
   {
-    title: "Fitness & Nutrition App",
-    category: "Fitness App",
+    title: "Health & Fitness Mobile App UI/UX",
+    category: "FITNESS APP",
     description:
-      "A fitness and nutrition mobile application designed to track workouts, calories, nutrition, progress, daily goals, and personalized fitness activities.",
+      "A modern fitness application designed to help users manage workouts, track progress, and maintain a consistent fitness routine.",
     image: "/projects/fitness-app.jpeg",
-    link: "#",
+    tags: ["Fitness", "Health", "Mobile App", "UI/UX"],
+    liveUrl: "https://your-fitness-app.vercel.app",
+  },
+
+  {
+    title: "Multi Device Dashboard",
+    category: "DASHBOARD",
+    description:
+      "A responsive multi-device dashboard designed to present important data, analytics, and application controls through a clean and intuitive interface.",
+    image: "/projects/multi-device-dashboard.png",
+    tags: ["Dashboard", "Analytics", "Responsive UI"],
+    liveUrl: "https://your-multi-device-dashboard.vercel.app",
+  },
+
+  {
+    title: "Quotes App – Daily Motivation & Inspiration",
+    category: "MOBILE APP",
+    description:
+      "A simple and engaging quotes application featuring inspirational and motivational content through a clean and user-friendly mobile experience.",
+    image: "/projects/qoutes-app.jpeg",
+    tags: ["Quotes", "Motivation", "Mobile App", "UI/UX"],
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.mujeebdev.quotes",
+  },
+
+  {
+    title: "Qatari Bites – Restaurant App",
+    category: "RESTAURANT APP",
+    description:
+      "A modern restaurant application designed to showcase menus, restaurant information, and provide an engaging digital dining experience.",
+    image: "/projects/resturent-app.jpeg",
+    tags: ["Restaurant", "Food", "Mobile App", "UI/UX"],
+    liveUrl: "https://your-restaurant-app.vercel.app",
+  },
+
+  {
+    title: "Doctor Appointment App",
+    category: "HEALTH APP",
+    description:
+      "A modern doctor appointment application designed to help users discover doctors, manage appointments, and access healthcare services through a simple digital experience.",
+    image: "/projects/shopping-app.jpeg",
+    tags: ["Healthcare", "Doctor Appointment", "Mobile App", "UI/UX"],
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.nexusappstech.doctorapp",
   },
 ];
 
@@ -85,6 +99,7 @@ export default function Projects() {
       id="projects"
       className="relative overflow-hidden bg-[#0B1220] px-5 py-20 text-slate-50 sm:px-8 lg:px-12 lg:py-28"
     >
+      {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[8%] top-20 h-[320px] w-[320px] rounded-full bg-blue-900/15 blur-[130px]" />
 
@@ -94,6 +109,7 @@ export default function Projects() {
       </div>
 
       <div className="relative mx-auto max-w-[1440px]">
+        {/* Heading */}
         <div>
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-7 bg-blue-400" />
@@ -111,7 +127,9 @@ export default function Projects() {
           </h2>
         </div>
 
+        {/* Slider */}
         <div className="relative mt-14 sm:mt-16">
+          {/* Previous */}
           <button
             type="button"
             onClick={scrollLeft}
@@ -121,6 +139,7 @@ export default function Projects() {
             <FaArrowLeft className="text-sm" />
           </button>
 
+          {/* Next */}
           <button
             type="button"
             onClick={scrollRight}
@@ -152,22 +171,38 @@ export default function Projects() {
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B1220]/40 via-transparent to-transparent opacity-70" />
                 </div>
 
+                {/* Content */}
                 <div className="mt-6">
                   <h3 className="text-xl font-bold leading-snug text-slate-100 sm:text-[21px]">
                     {project.title}
                   </h3>
 
+                  {/* Category */}
                   <div className="mt-4 inline-flex rounded-md border border-blue-400/30 bg-blue-500/10 px-3 py-1.5 text-xs font-semibold text-blue-300">
                     {project.category}
                   </div>
 
+                  {/* Description */}
                   <p className="mt-5 min-h-[96px] text-sm leading-7 text-slate-400">
                     {project.description}
                   </p>
 
+                  {/* Tags */}
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-md border border-slate-700/70 bg-slate-800/30 px-2.5 py-1 text-[10px] font-medium text-slate-400"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Live Demo */}
                   <div className="mt-6 border-t border-slate-700/60 pt-5">
                     <a
-                      href={project.link}
+                      href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group/link inline-flex items-center gap-2 rounded-md border border-blue-400/30 bg-blue-500/5 px-4 py-2.5 text-sm font-semibold text-blue-300 transition-all duration-300 hover:border-blue-400/60 hover:bg-blue-500/10 hover:text-blue-200"
