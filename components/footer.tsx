@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -9,6 +8,8 @@ import {
   FaLinkedinIn,
   FaMapMarkerAlt,
   FaTiktok,
+  FaWhatsapp,
+  FaEnvelope,
 } from "react-icons/fa";
 import Link from "next/link";
 
@@ -23,7 +24,6 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-[1500px] px-6 py-8 sm:px-10 lg:px-12 lg:py-10">
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.8fr_0.8fr_1.3fr]">
-          
           <div>
             <Link
               href="/"
@@ -159,14 +159,32 @@ export default function Footer() {
                 Contact
               </Link>
 
-              <p className="w-fit text-sm text-slate-400">
-                Bahawalpur, PK
-              </p>
+              <p className="w-fit text-sm text-slate-400">Bahawalpur, PK</p>
 
               <div className="mt-1 flex items-center gap-2 text-sm text-slate-400">
                 <span className="h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
                 Available Worldwide
               </div>
+
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/923458717993"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 flex items-center gap-2 text-sm text-slate-400 transition hover:text-blue-300"
+              >
+                <FaWhatsapp className="shrink-0 text-base text-[#25D366]" />
+                +92 3458717993
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:kiranfatima.tech@gmail.com"
+                className="mt-1 flex items-center gap-2 text-sm text-slate-400 transition hover:text-blue-300"
+              >
+                <FaEnvelope className="shrink-0 text-sm text-blue-400" />
+                kiranfatima.tech@gmail.com
+              </a>
             </nav>
           </div>
 

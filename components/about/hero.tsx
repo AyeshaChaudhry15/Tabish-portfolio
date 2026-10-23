@@ -1,123 +1,61 @@
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
-import Link from "next/link";
 import gsap from "gsap";
+import Link from "next/link";
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const elements = [
-        ".hero-eyebrow",
-        ".hero-title",
-        ".hero-description",
-        ".hero-buttons",
-        ".hero-status",
-        ".hero-visual",
-      ];
-
-      gsap.set(elements, {
-        opacity: 1,
-        clearProps: "transform",
+      const tl = gsap.timeline({
+        defaults: {
+          ease: "power3.out",
+        },
       });
 
-      const tl = gsap.timeline();
-
-      tl.fromTo(
-        ".hero-eyebrow",
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.55,
-          ease: "power3.out",
-        }
-      )
-        .fromTo(
+      tl.from(".hero-badge", {
+        opacity: 0,
+        y: 25,
+        duration: 0.7,
+      })
+        .from(
           ".hero-title",
-          { opacity: 0, y: 35 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.85,
-            ease: "power3.out",
-          },
-          "-=0.25"
-        )
-        .fromTo(
-          ".hero-description",
-          { opacity: 0, y: 20 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.65,
-            ease: "power3.out",
-          },
-          "-=0.35"
-        )
-        .fromTo(
-          ".hero-buttons",
-          { opacity: 0, y: 20 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.55,
-            ease: "power3.out",
-          },
-          "-=0.25"
-        )
-        .fromTo(
-          ".hero-status",
-          { opacity: 0, y: 15 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "-=0.2"
-        )
-        .fromTo(
-          ".hero-visual",
           {
             opacity: 0,
-            scale: 0.94,
-            x: 30,
+            y: 35,
+            duration: 0.8,
           },
+          "-=0.4"
+        )
+        .from(
+          ".hero-description",
           {
-            opacity: 1,
-            scale: 1,
-            x: 0,
-            duration: 1,
-            ease: "power3.out",
+            opacity: 0,
+            y: 25,
+            duration: 0.7,
+          },
+          "-=0.45"
+        )
+        .from(
+          ".hero-buttons",
+          {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+          },
+          "-=0.4"
+        )
+        .from(
+          ".hero-card",
+          {
+            opacity: 0,
+            x: 45,
+            duration: 0.9,
           },
           "-=0.7"
         );
-
-      gsap.to(".hero-orbit-one", {
-        rotate: 360,
-        duration: 24,
-        repeat: -1,
-        ease: "none",
-      });
-
-      gsap.to(".hero-orbit-two", {
-        rotate: -360,
-        duration: 30,
-        repeat: -1,
-        ease: "none",
-      });
-
-      gsap.to(".hero-glow", {
-        scale: 1.15,
-        opacity: 0.75,
-        duration: 2.5,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
     }, heroRef);
 
     return () => ctx.revert();
@@ -133,29 +71,42 @@ export default function Hero() {
         display: "flex",
         alignItems: "center",
         overflow: "hidden",
-        padding: "100px 5% 80px",
+        padding: "20px 5% 80px",
         background: "#071225",
         color: "#F4F7FC",
       }}
     >
       {/* Background Glow */}
       <div
-        className="hero-glow"
         style={{
           position: "absolute",
-          top: "-150px",
-          right: "8%",
-          width: "650px",
-          height: "650px",
+          top: "-180px",
+          left: "-100px",
+          width: "500px",
+          height: "500px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle,rgba(47,128,255,.14),transparent 68%)",
+            "radial-gradient(circle, rgba(47,128,255,.12), transparent 68%)",
           filter: "blur(25px)",
           pointerEvents: "none",
         }}
       />
 
-      {/* Main Container */}
+      <div
+        style={{
+          position: "absolute",
+          right: "-150px",
+          bottom: "-180px",
+          width: "500px",
+          height: "500px",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(47,128,255,.08), transparent 68%)",
+          filter: "blur(25px)",
+          pointerEvents: "none",
+        }}
+      />
+
       <div
         className="hero-container"
         style={{
@@ -167,72 +118,71 @@ export default function Hero() {
           gridTemplateColumns: "1fr 0.95fr",
           gap: "60px",
           alignItems: "center",
+
+          /* Hero normal position */
+          transform: "translateY(0)",
         }}
       >
         {/* LEFT CONTENT */}
-        <div className="hero-content">
-          {/* Eyebrow */}
-          <span
-            className="hero-eyebrow"
+        <div>
+          <div
+            className="hero-badge"
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: "10px",
+              gap: "9px",
+              marginBottom: "22px",
               color: "#4DA3FF",
               fontFamily: "Arial,sans-serif",
-              fontSize: "14px",
+              fontSize: "9px",
               fontWeight: 700,
-              letterSpacing: "0.25em",
+              letterSpacing: ".25em",
             }}
           >
             <span
               style={{
-                width: "30px",
+                width: "27px",
                 height: "1px",
-                background: "#3E95FF",
+                background: "#4DA3FF",
               }}
             />
 
             FULL STACK APP DEVELOPER
-          </span>
+          </div>
 
-          {/* Heading */}
           <h1
             className="hero-title"
             style={{
-              margin: "22px 0 25px",
+              margin: 0,
               maxWidth: "700px",
               color: "#F4F7FC",
               fontFamily: "Georgia,serif",
-              fontSize: "clamp(40px,6.3vw,55px)",
+              fontSize: "clamp(45px,7vw,55px)",
               fontWeight: 400,
               lineHeight: 0.98,
-              letterSpacing: "-0.06em",
+              letterSpacing: "-.06em",
             }}
           >
-            Turning Ideas{" "}
-            <span
+            Turning Ideas Into Digital{" "}
+            <em
               style={{
                 color: "#4DA3FF",
                 fontStyle: "italic",
               }}
             >
-              Into Digital
-            </span>
-            <br />
-            Experiences.
+              Experiences.
+            </em>
           </h1>
 
-          {/* Description */}
           <p
             className="hero-description"
             style={{
-              maxWidth: "610px",
-              margin: "0 0 30px",
-              color: "#8FA2BC",
+              maxWidth: "620px",
+              margin: "28px 0 0",
+              color: "#8298B2",
               fontFamily: "Arial,sans-serif",
               fontSize: "15px",
-              lineHeight: 1.9,
+              lineHeight: 1.8,
             }}
           >
             I&apos;m an App Developer crafting beautiful, scalable and
@@ -240,13 +190,14 @@ export default function Hero() {
             architecture and thoughtful user experiences.
           </p>
 
-          {/* Buttons */}
           <div
             className="hero-buttons"
             style={{
               display: "flex",
               flexWrap: "wrap",
+              alignItems: "center",
               gap: "12px",
+              marginTop: "32px",
             }}
           >
             <Link
@@ -254,516 +205,291 @@ export default function Hero() {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                justifyContent: "center",
-                gap: "20px",
-                padding: "15px 22px",
-                borderRadius: "6px",
+                gap: "16px",
+                padding: "14px 20px",
+                borderRadius: "5px",
                 background: "#2F80FF",
                 color: "#FFFFFF",
                 textDecoration: "none",
                 fontFamily: "Arial,sans-serif",
-                fontSize: "14px",
+                fontSize: "11px",
                 fontWeight: 700,
                 transition: "all .3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-3px)";
-                e.currentTarget.style.boxShadow =
-                  "0 12px 35px rgba(47,128,255,.3)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "none";
               }}
             >
               View My Work
-              <span style={{ fontSize: "17px" }}>→</span>
+              <span style={{ fontSize: "15px" }}>→</span>
             </Link>
 
             <Link
-              href="#journey"
+              href="/experience"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                justifyContent: "center",
-                gap: "20px",
-                padding: "14px 22px",
-                border: "1px solid rgba(108,160,215,.25)",
-                borderRadius: "6px",
-                background: "rgba(14,32,55,.45)",
-                color: "#DCE7F5",
+                gap: "14px",
+                padding: "14px 20px",
+                border: "1px solid rgba(77,163,255,.3)",
+                borderRadius: "5px",
+                background: "rgba(47,128,255,.04)",
+                color: "#8EABC8",
                 textDecoration: "none",
                 fontFamily: "Arial,sans-serif",
-                fontSize: "14px",
+                fontSize: "11px",
                 fontWeight: 700,
                 transition: "all .3s ease",
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor =
-                  "rgba(77,163,255,.65)";
-                e.currentTarget.style.boxShadow =
-                  "0 0 25px rgba(47,128,255,.1)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor =
-                  "rgba(108,160,215,.25)";
-                e.currentTarget.style.boxShadow = "none";
-              }}
             >
               View My Journey
-              <span style={{ fontSize: "17px" }}>→</span>
+              <span style={{ fontSize: "14px" }}>↗</span>
             </Link>
-          </div>
-
-          <div
-            className="hero-status"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-              marginTop: "28px",
-              color: "#8297B1",
-              fontFamily: "Arial,sans-serif",
-              fontSize: "11px",
-            }}
-          >
-            <span
-              style={{
-                width: "8px",
-                height: "8px",
-                flexShrink: 0,
-                borderRadius: "50%",
-                background: "#27D98B",
-                boxShadow: "0 0 12px rgba(39,217,139,.55)",
-              }}
-            />
-
-            Building modern digital products
           </div>
         </div>
 
-        {/* RIGHT VISUAL */}
+        {/* RIGHT CARD */}
         <div
-          className="hero-visual"
+          className="hero-card"
           style={{
             position: "relative",
-            minHeight: "500px",
-            display: "grid",
-            placeItems: "center",
+            width: "100%",
+            maxWidth: "460px",
+            margin: "0 auto",
           }}
         >
-          {/* Orbit One */}
           <div
-            className="hero-orbit-one"
             style={{
               position: "absolute",
-              width: "390px",
-              height: "390px",
-              border: "1px solid rgba(49,143,255,.3)",
+              top: "-70px",
+              right: "-70px",
+              width: "250px",
+              height: "250px",
               borderRadius: "50%",
-              boxShadow: "0 0 50px rgba(47,128,255,.06)",
+              background:
+                "radial-gradient(circle,rgba(47,128,255,.13),transparent 70%)",
+              filter: "blur(20px)",
+              pointerEvents: "none",
             }}
           />
 
-          {/* Orbit Two */}
           <div
-            className="hero-orbit-two"
-            style={{
-              position: "absolute",
-              width: "320px",
-              height: "320px",
-              border: "1px solid rgba(76,166,255,.2)",
-              borderRadius: "50%",
-            }}
-          />
-
-          {/* Main Developer Card */}
-          <div
-            className="hero-developer-card"
             style={{
               position: "relative",
-              zIndex: 3,
-              width: "270px",
-              height: "330px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "1px solid rgba(79,160,239,.28)",
-              borderRadius: "18px",
+              padding: "30px",
+              border: "1px solid rgba(120,160,210,.18)",
+              borderRadius: "14px",
               background:
-                "linear-gradient(145deg,rgba(19,43,72,.92),rgba(6,20,37,.96))",
-              boxShadow:
-                "0 30px 80px rgba(0,0,0,.3),0 0 45px rgba(47,128,255,.08)",
-              backdropFilter: "blur(12px)",
+                "linear-gradient(145deg,rgba(13,31,54,.95),rgba(7,19,35,.98))",
+              boxShadow: "0 25px 80px rgba(0,0,0,.25)",
             }}
           >
             <div
               style={{
-                width: "120px",
-                height: "120px",
-                display: "grid",
-                placeItems: "center",
-                marginBottom: "25px",
-                border: "1px solid rgba(74,164,255,.55)",
-                borderRadius: "50%",
-                background:
-                  "radial-gradient(circle,rgba(47,128,255,.2),rgba(6,20,38,.95) 70%)",
-                color: "#59B5FF",
-                fontFamily: "monospace",
-                fontSize: "30px",
-                boxShadow:
-                  "0 0 45px rgba(47,128,255,.2),inset 0 0 25px rgba(47,128,255,.08)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginBottom: "45px",
               }}
             >
-              {"</>"}
+              <span
+                style={{
+                  color: "#45617F",
+                  fontFamily: "monospace",
+                  fontSize: "9px",
+                }}
+              >
+                BUILDING MODERN DIGITAL PRODUCTS
+              </span>
+
+              <span
+                style={{
+                  color: "#4DA3FF",
+                  fontSize: "13px",
+                }}
+              >
+                ↗
+              </span>
             </div>
 
-            <span
+            <div
               style={{
-                color: "#4DA3FF",
-                fontSize: "9px",
-                letterSpacing: ".2em",
-                fontFamily: "monospace",
+                display: "grid",
+                gap: "14px",
               }}
             >
-              DEVELOPER
-            </span>
+              <div
+                style={{
+                  padding: "20px",
+                  border: "1px solid rgba(77,163,255,.16)",
+                  borderRadius: "9px",
+                  background: "rgba(47,128,255,.035)",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginBottom: "18px",
+                  }}
+                >
+                  <span
+                    style={{
+                      color: "#4DA3FF",
+                      fontFamily: "monospace",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {"</>"}
+                  </span>
 
-            <h3
-              style={{
-                margin: "10px 0 6px",
-                color: "#F4F7FC",
-                fontFamily: "Georgia,serif",
-                fontSize: "23px",
-                fontWeight: 400,
-                textAlign: "center",
-              }}
-            >
-              App Developer
-            </h3>
+                  <span
+                    style={{
+                      color: "#45617F",
+                      fontFamily: "monospace",
+                      fontSize: "8px",
+                    }}
+                  >
+                    DEVELOPER
+                  </span>
+                </div>
 
-            <p
-              style={{
-                margin: 0,
-                color: "#8197B0",
-                fontFamily: "Arial,sans-serif",
-                fontSize: "13px",
-                textAlign: "center",
-              }}
-            >
-              Flutter · Next.js · Node.js
-            </p>
-          </div>
+                <h3
+                  style={{
+                    margin: "0 0 7px",
+                    color: "#F1F6FC",
+                    fontFamily: "Georgia,serif",
+                    fontSize: "20px",
+                    fontWeight: 400,
+                  }}
+                >
+                  App Developer
+                </h3>
 
-          {/* Mobile Badge */}
-          <div
-            className="hero-badge-mobile"
-            style={{
-              position: "absolute",
-              top: "20px",
-              right: "20px",
-              padding: "13px 16px",
-              border: "1px solid rgba(75,160,255,.25)",
-              borderRadius: "8px",
-              background: "rgba(8,24,43,.85)",
-              color: "#65B6FF",
-              fontFamily: "monospace",
-              fontSize: "12px",
-              boxShadow: "0 0 25px rgba(47,128,255,.08)",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {"<Mobile />"}
-          </div>
+                <p
+                  style={{
+                    margin: 0,
+                    color: "#7189A5",
+                    fontFamily: "Arial,sans-serif",
+                    fontSize: "11px",
+                  }}
+                >
+                  Flutter · Next.js · Node.js
+                </p>
+              </div>
 
-          {/* API Badge */}
-          <div
-            className="hero-badge-api"
-            style={{
-              position: "absolute",
-              bottom: "35px",
-              left: "5px",
-              padding: "13px 16px",
-              border: "1px solid rgba(75,160,255,.25)",
-              borderRadius: "8px",
-              background: "rgba(8,24,43,.85)",
-              color: "#65B6FF",
-              fontFamily: "monospace",
-              fontSize: "12px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {"API + Cloud"}
+              <div
+                style={{
+                  padding: "20px",
+                  border: "1px solid rgba(77,163,255,.16)",
+                  borderRadius: "9px",
+                  background: "rgba(47,128,255,.025)",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginBottom: "18px",
+                  }}
+                >
+                  <span
+                    style={{
+                      color: "#4DA3FF",
+                      fontFamily: "monospace",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {"</>"}
+                  </span>
+
+                  <span
+                    style={{
+                      color: "#45617F",
+                      fontFamily: "monospace",
+                      fontSize: "8px",
+                    }}
+                  >
+                    DEVELOPER
+                  </span>
+                </div>
+
+                <h3
+                  style={{
+                    margin: "0 0 7px",
+                    color: "#F1F6FC",
+                    fontFamily: "Georgia,serif",
+                    fontSize: "20px",
+                    fontWeight: 400,
+                  }}
+                >
+                  App Developer
+                </h3>
+
+                <p
+                  style={{
+                    margin: 0,
+                    color: "#7189A5",
+                    fontFamily: "Arial,sans-serif",
+                    fontSize: "11px",
+                  }}
+                >
+                  Mobile · Web · Backend · Cloud
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Responsive Styles */}
+      {/* RESPONSIVE */}
       <style jsx>{`
-        /* Large Desktop */
-        @media (min-width: 1440px) {
-          .hero-container {
-            gap: 80px !important;
-          }
-        }
-
-        /* Laptop / Small Desktop */
-        @media (max-width: 1100px) {
-          .hero-container {
-            grid-template-columns: 1fr 0.9fr !important;
-            gap: 35px !important;
-          }
-
-          .hero-title {
-            font-size: clamp(40px, 5vw, 50px) !important;
-          }
-
-          .hero-visual {
-            min-height: 450px !important;
-          }
-
-          .hero-orbit-one {
-            width: 340px !important;
-            height: 340px !important;
-          }
-
-          .hero-orbit-two {
-            width: 280px !important;
-            height: 280px !important;
-          }
-        }
-
-        /* Tablet */
         @media (max-width: 900px) {
-          .hero-section {
+          section {
             min-height: auto !important;
+            padding: 100px 6% 80px !important;
           }
 
           .hero-container {
             grid-template-columns: 1fr !important;
-            gap: 65px !important;
-            max-width: 760px !important;
+            gap: 50px !important;
+            transform: translateY(0) !important;
           }
 
-          .hero-content {
-            text-align: center;
-            margin: 0 auto;
-            width: 100%;
-          }
-
-          .hero-eyebrow {
-            justify-content: center;
-          }
-
-          .hero-title {
-            margin-left: auto !important;
-            margin-right: auto !important;
-            font-size: clamp(42px, 7vw, 58px) !important;
-          }
-
-          .hero-description {
-            margin-left: auto !important;
-            margin-right: auto !important;
-          }
-
-          .hero-buttons {
-            justify-content: center !important;
-          }
-
-          .hero-status {
-            justify-content: center !important;
-          }
-
-          .hero-visual {
-            width: 100%;
-            min-height: 480px !important;
+          .hero-card {
+            max-width: 600px !important;
           }
         }
 
-        /* Mobile */
         @media (max-width: 640px) {
-          .hero-section {
-            min-height: auto !important;
+          section {
+            padding: 90px 5% 70px !important;
           }
 
           .hero-container {
-            gap: 45px !important;
-          }
-
-          .hero-eyebrow {
-            gap: 7px !important;
-            font-size: 9px !important;
-            letter-spacing: 0.18em !important;
-          }
-
-          .hero-eyebrow span {
-            width: 20px !important;
+            gap: 40px !important;
+            transform: translateY(0) !important;
           }
 
           .hero-title {
-            margin-top: 18px !important;
-            margin-bottom: 20px !important;
-            font-size: clamp(34px, 10vw, 45px) !important;
-            line-height: 1.02 !important;
-            letter-spacing: -0.045em !important;
+            font-size: clamp(42px, 13vw, 60px) !important;
           }
 
           .hero-description {
-            margin-bottom: 25px !important;
-            font-size: 13px !important;
-            line-height: 1.8 !important;
+            font-size: 14px !important;
+            line-height: 1.75 !important;
           }
 
           .hero-buttons {
             flex-direction: column !important;
-            width: 100%;
-            gap: 10px !important;
+            align-items: stretch !important;
           }
 
           .hero-buttons a {
-            width: 100%;
-            padding: 14px 18px !important;
+            justify-content: space-between !important;
           }
 
-          .hero-status {
-            margin-top: 22px !important;
-            font-size: 10px !important;
-          }
-
-          .hero-visual {
-            min-height: 390px !important;
-          }
-
-          .hero-orbit-one {
-            width: 280px !important;
-            height: 280px !important;
-          }
-
-          .hero-orbit-two {
-            width: 225px !important;
-            height: 225px !important;
-          }
-
-          .hero-developer-card {
-            width: 210px !important;
-            height: 275px !important;
-            border-radius: 15px !important;
-          }
-
-          .hero-developer-card > div {
-            width: 90px !important;
-            height: 90px !important;
-            margin-bottom: 18px !important;
-            font-size: 24px !important;
-          }
-
-          .hero-developer-card h3 {
-            font-size: 20px !important;
-          }
-
-          .hero-developer-card p {
-            font-size: 11px !important;
-          }
-
-          .hero-badge-mobile {
-            top: 0 !important;
-            right: 0 !important;
-            padding: 9px 11px !important;
-            font-size: 9px !important;
-          }
-
-          .hero-badge-api {
-            bottom: 5px !important;
-            left: 0 !important;
-            padding: 9px 11px !important;
-            font-size: 9px !important;
-          }
-        }
-
-        /* Small Mobile */
-        @media (max-width: 420px) {
-          .hero-container {
-            gap: 35px !important;
-          }
-
-          .hero-title {
-            font-size: 32px !important;
-          }
-
-          .hero-description {
-            font-size: 12px !important;
-            line-height: 1.75 !important;
-          }
-
-          .hero-visual {
-            min-height: 340px !important;
-          }
-
-          .hero-orbit-one {
-            width: 235px !important;
-            height: 235px !important;
-          }
-
-          .hero-orbit-two {
-            width: 190px !important;
-            height: 190px !important;
-          }
-
-          .hero-developer-card {
-            width: 180px !important;
-            height: 240px !important;
-          }
-
-          .hero-developer-card > div {
-            width: 75px !important;
-            height: 75px !important;
-            margin-bottom: 14px !important;
-            font-size: 20px !important;
-          }
-
-          .hero-developer-card h3 {
-            font-size: 17px !important;
-          }
-
-          .hero-developer-card p {
-            font-size: 9px !important;
-          }
-
-          .hero-badge-mobile,
-          .hero-badge-api {
-            padding: 7px 9px !important;
-            font-size: 8px !important;
-          }
-        }
-
-        /* Very Small Phones */
-        @media (max-width: 360px) {
-          .hero-title {
-            font-size: 29px !important;
-          }
-
-          .hero-description {
-            font-size: 11px !important;
-          }
-
-          .hero-visual {
-            min-height: 300px !important;
-          }
-
-          .hero-orbit-one {
-            width: 205px !important;
-            height: 205px !important;
-          }
-
-          .hero-orbit-two {
-            width: 165px !important;
-            height: 165px !important;
-          }
-
-          .hero-developer-card {
-            width: 165px !important;
-            height: 220px !important;
+          .hero-card > div {
+            padding: 22px !important;
           }
         }
       `}</style>

@@ -308,7 +308,7 @@ export default function ContactPage() {
                   <p className="text-xs font-semibold text-white">Email</p>
 
                   <a className="mt-1 block text-sm text-slate-400 transition hover:text-blue-300">
-                    Kiran_Fatima@gmail.com
+                    kiranfatima.tech@gmail.com
                   </a>
                 </div>
               </div>
@@ -325,7 +325,7 @@ export default function ContactPage() {
                     href="tel:+923267100227"
                     className="mt-1 block text-sm text-slate-400 transition hover:text-blue-300"
                   >
-                    +92 326 7100227
+                    +92 3458717993
                   </a>
                 </div>
               </div>
