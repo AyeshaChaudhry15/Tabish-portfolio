@@ -23,14 +23,14 @@ import {
   SiAndroid,
 } from "react-icons/si";
 
-const developerCode = `const kiran = {
+const developerCode = `const tabish = {
   role: 'Flutter & App Developer',
   stack: ['Flutter', 'Dart', 'Firebase', 'Android'],
   passion: 'Building beautiful mobile experiences',
   focus: 'Clean code, performance, and great UX'
 };
 
-console.log(kiran);`;
+console.log(tabish);`;
 
 const stats = [
   {
@@ -51,22 +51,22 @@ const qualities = [
   {
     icon: FaBolt,
     label: "Clean Code",
-    color: "text-blue-400",
+    color: "text-[#B79B5B]",
   },
   {
     icon: FaBullseye,
     label: "Problem Solver",
-    color: "text-sky-300",
+    color: "text-[#D6BE82]",
   },
   {
     icon: FaLightbulb,
     label: "Innovative",
-    color: "text-amber-400",
+    color: "text-[#D6BE82]",
   },
   {
     icon: FaRocket,
     label: "Fast Learner",
-    color: "text-blue-300",
+    color: "text-[#C6A96B]",
   },
 ];
 
@@ -74,22 +74,22 @@ const techStack = [
   {
     icon: SiFlutter,
     label: "Flutter",
-    color: "text-sky-400",
+    color: "text-[#C6A96B]",
   },
   {
     icon: SiDart,
     label: "Dart",
-    color: "text-blue-300",
+    color: "text-[#D6BE82]",
   },
   {
     icon: SiFirebase,
     label: "Firebase",
-    color: "text-amber-400",
+    color: "text-[#D6BE82]",
   },
   {
     icon: SiAndroid,
     label: "Android",
-    color: "text-emerald-400",
+    color: "text-[#B79B5B]",
   },
 ];
 
@@ -183,16 +183,15 @@ export default function About() {
       id="about"
       className="
         relative isolate overflow-hidden
-        bg-[#0B1220]
+        bg-[#100D0E]
         py-16
-        text-slate-50
+        text-[#F3EEE7]
         sm:py-20
         md:py-24
         lg:py-28
         xl:py-32
       "
     >
-      {/* Background */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div
           className="
@@ -202,7 +201,7 @@ export default function About() {
             h-64
             w-64
             rounded-full
-            bg-blue-900/15
+            bg-[#6B4F52]/15
             blur-[90px]
             sm:-left-40
             sm:h-80
@@ -222,7 +221,7 @@ export default function About() {
             h-64
             w-64
             rounded-full
-            bg-sky-900/10
+            bg-[#5A3D42]/10
             blur-[90px]
             sm:-right-32
             sm:h-80
@@ -234,10 +233,9 @@ export default function About() {
           "
         />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(37,99,235,0.06),transparent_35%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(183,155,91,0.07),transparent_35%)]" />
       </div>
 
-      {/* Main Container */}
       <div
         className="
           mx-auto
@@ -260,18 +258,16 @@ export default function About() {
           2xl:gap-20
         "
       >
-        {/* LEFT CONTENT */}
         <div className="about-content mx-auto w-full max-w-[760px] lg:mx-0">
-          {/* Eyebrow */}
-          <div className="mb-5 flex items-center gap-3 sm:mb-6">
-            <span className="h-px w-6 shrink-0 bg-blue-400 sm:w-8" />
 
-            <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-blue-300 sm:text-[10px] sm:tracking-[0.24em] md:text-xs">
+          <div className="mb-5 flex items-center gap-3 sm:mb-6">
+            <span className="h-px w-6 shrink-0 bg-[#B79B5B] sm:w-8" />
+
+            <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#D6BE82] sm:text-[10px] sm:tracking-[0.24em] md:text-xs">
               About Me
             </p>
           </div>
 
-          {/* Heading */}
           <h2
             className="
               max-w-[720px]
@@ -280,7 +276,7 @@ export default function About() {
               font-bold
               leading-[1.08]
               tracking-tight
-              text-slate-50
+              text-[#F3EEE7]
               sm:text-4xl
               md:text-5xl
               lg:text-4xl
@@ -289,19 +285,18 @@ export default function About() {
           >
             Building apps that
             <br className="hidden sm:block" /> make a{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-slate-200 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#B79B5B] via-[#D6BE82] to-[#F3EEE7] bg-clip-text text-transparent">
               real difference
             </span>
           </h2>
 
-          {/* Description */}
           <p
             className="
               mt-5
               max-w-[680px]
               text-[12px]
               leading-6
-              text-slate-400
+              text-[#AFA6A4]
               sm:mt-6
               sm:text-sm
               sm:leading-7
@@ -309,31 +304,28 @@ export default function About() {
               md:leading-8
             "
           >
-            I&apos;m Kiran Fatima, an App Developer passionate about building
+            I&apos;m Tabish , an App Developer passionate about building
             reliable, intuitive, and scalable mobile applications. I work with
             Flutter, Dart, and Firebase to turn ideas into practical digital
             experiences with clean code and thoughtful UI/UX.
           </p>
 
-          {/* Divider */}
-          <div className="my-6 h-px w-full max-w-[690px] bg-slate-700/50 sm:my-8" />
+          <div className="my-6 h-px w-full max-w-[690px] bg-[#3A3032]/60 sm:my-8" />
 
-          {/* Stats */}
           <div className="grid w-full max-w-[690px] grid-cols-3 gap-3 sm:gap-6">
             {stats.map((stat) => (
               <div key={stat.label} className="min-w-0">
-                <h3 className="font-serif text-xl font-bold text-slate-50 sm:text-3xl md:text-4xl lg:text-5xl">
+                <h3 className="font-serif text-xl font-bold text-[#F3EEE7] sm:text-3xl md:text-4xl lg:text-5xl">
                   {stat.value}
                 </h3>
 
-                <p className="mt-1 text-[9px] leading-4 text-slate-400 sm:mt-2 sm:text-sm sm:leading-5">
+                <p className="mt-1 text-[9px] leading-4 text-[#AFA6A4] sm:mt-2 sm:text-sm sm:leading-5">
                   {stat.label}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Qualities */}
           <div className="mt-6 flex w-full max-w-[690px] flex-wrap gap-2 sm:mt-8 sm:gap-3">
             {qualities.map((quality) => {
               const Icon = quality.icon;
@@ -347,14 +339,14 @@ export default function About() {
                     gap-1.5
                     rounded-lg
                     border
-                    border-slate-700/60
-                    bg-[#111C2E]/70
+                    border-[#3A3032]/70
+                    bg-[#171314]/80
                     px-2.5
                     py-2
                     transition
                     duration-300
-                    hover:border-blue-400/50
-                    hover:bg-blue-500/[0.06]
+                    hover:border-[#B79B5B]/60
+                    hover:bg-[#B79B5B]/[0.06]
                     sm:gap-2.5
                     sm:px-4
                     sm:py-3
@@ -364,7 +356,7 @@ export default function About() {
                     className={`text-[10px] sm:text-sm ${quality.color}`}
                   />
 
-                  <span className="whitespace-nowrap text-[9px] font-semibold text-slate-200 sm:text-xs md:text-sm">
+                  <span className="whitespace-nowrap text-[9px] font-semibold text-[#DED5D1] sm:text-xs md:text-sm">
                     {quality.label}
                   </span>
                 </div>
@@ -372,7 +364,6 @@ export default function About() {
             })}
           </div>
 
-          {/* Buttons */}
           <div className="mt-7 flex w-full flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
             <Link
               href="/skills"
@@ -385,15 +376,15 @@ export default function About() {
                 justify-center
                 gap-3
                 rounded-lg
-                bg-blue-600
+                bg-[#B79B5B]
                 px-5
                 py-3
                 text-xs
                 font-semibold
-                text-white
+                text-[#100D0E]
                 transition
                 hover:-translate-y-0.5
-                hover:bg-blue-500
+                hover:bg-[#C6A96B]
                 sm:min-h-14
                 sm:w-auto
                 sm:px-6
@@ -418,16 +409,16 @@ export default function About() {
                 gap-3
                 rounded-lg
                 border
-                border-slate-600/60
-                bg-[#111C2E]/50
+                border-[#554A45]/70
+                bg-[#171314]/70
                 px-5
                 py-3
                 text-xs
                 font-semibold
-                text-slate-100
+                text-[#F3EEE7]
                 transition
-                hover:border-blue-400/60
-                hover:text-blue-300
+                hover:border-[#B79B5B]/70
+                hover:text-[#D6BE82]
                 sm:min-h-14
                 sm:w-auto
                 sm:px-6
@@ -442,7 +433,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* RIGHT CODE SECTION */}
         <div
           className="
             relative
@@ -470,11 +460,11 @@ export default function About() {
               justify-center
               rounded-full
               border
-              border-slate-600/60
-              bg-[#111C2E]
+              border-[#554A45]/70
+              bg-[#171314]
               text-sm
-              text-sky-400
-              shadow-[0_0_25px_rgba(37,99,235,0.12)]
+              text-[#C6A96B]
+              shadow-[0_0_25px_rgba(183,155,91,0.12)]
               sm:-right-3
               sm:-top-5
               sm:h-14
@@ -485,7 +475,6 @@ export default function About() {
             <FaMobileAlt />
           </div>
 
-          {/* Flutter Icon */}
           <div
             className="
               about-orbit-icon
@@ -500,10 +489,10 @@ export default function About() {
               justify-center
               rounded-full
               border
-              border-slate-600/60
-              bg-[#111C2E]
+              border-[#554A45]/70
+              bg-[#171314]
               text-sm
-              text-blue-300
+              text-[#D6BE82]
               shadow-lg
               sm:-bottom-5
               sm:-left-4
@@ -515,7 +504,6 @@ export default function About() {
             <SiFlutter />
           </div>
 
-          {/* Code Card */}
           <div
             className="
               code-card
@@ -524,22 +512,21 @@ export default function About() {
               overflow-hidden
               rounded-xl
               border
-              border-slate-700/70
-              bg-[#080F1D]
-              shadow-[0_25px_80px_rgba(0,0,0,0.25)]
+              border-[#3A3032]/80
+              bg-[#0D0A0B]
+              shadow-[0_25px_80px_rgba(0,0,0,0.35)]
               sm:rounded-2xl
             "
           >
-            {/* Header */}
-            <div className="flex min-h-[54px] items-center justify-between gap-2 border-b border-slate-700/60 px-3 sm:min-h-[70px] sm:gap-3 sm:px-6">
+            <div className="flex min-h-[54px] items-center justify-between gap-2 border-b border-[#3A3032]/70 px-3 sm:min-h-[70px] sm:gap-3 sm:px-6">
               <div className="flex shrink-0 items-center gap-1.5 sm:gap-2.5">
-                <span className="h-2 w-2 rounded-full bg-rose-500 sm:h-3.5 sm:w-3.5" />
-                <span className="h-2 w-2 rounded-full bg-amber-400 sm:h-3.5 sm:w-3.5" />
-                <span className="h-2 w-2 rounded-full bg-emerald-500 sm:h-3.5 sm:w-3.5" />
+                <span className="h-2 w-2 rounded-full bg-[#8F4B56] sm:h-3.5 sm:w-3.5" />
+                <span className="h-2 w-2 rounded-full bg-[#B79B5B] sm:h-3.5 sm:w-3.5" />
+                <span className="h-2 w-2 rounded-full bg-[#8C7A52] sm:h-3.5 sm:w-3.5" />
               </div>
 
-              <p className="min-w-0 flex-1 truncate text-center font-mono text-[9px] text-slate-400 sm:text-xs">
-                kiran.dart
+              <p className="min-w-0 flex-1 truncate text-center font-mono text-[9px] text-[#AFA6A4] sm:text-xs">
+                Tabish.dart
               </p>
 
               <button
@@ -552,15 +539,15 @@ export default function About() {
                   gap-1
                   rounded-md
                   border
-                  border-slate-700/70
-                  bg-slate-800/40
+                  border-[#3A3032]/80
+                  bg-[#211A1B]/70
                   px-2
                   py-1.5
                   text-[8px]
-                  text-slate-300
+                  text-[#C2B8B5]
                   transition
-                  hover:border-blue-400/50
-                  hover:text-white
+                  hover:border-[#B79B5B]/60
+                  hover:text-[#F3EEE7]
                   sm:gap-2
                   sm:px-3
                   sm:py-2
@@ -569,7 +556,7 @@ export default function About() {
                 aria-label="Copy developer code"
               >
                 {copied ? (
-                  <FaCheck className="text-emerald-400" />
+                  <FaCheck className="text-[#B79B5B]" />
                 ) : (
                   <FaCopy />
                 )}
@@ -578,7 +565,6 @@ export default function About() {
               </button>
             </div>
 
-            {/* Code */}
             <div className="w-full max-w-full overflow-x-auto px-3 py-5 sm:px-7 sm:py-8">
               <pre
                 className="
@@ -594,89 +580,87 @@ export default function About() {
                 "
               >
                 <code>
-                  <span className="text-sky-300">const</span>{" "}
-                  <span className="text-blue-300">kiran</span>{" "}
-                  <span className="text-slate-300">= {"{"}</span>
+                  <span className="text-[#D6BE82]">const</span>{" "}
+                  <span className="text-[#C6A96B]">Tabish</span>{" "}
+                  <span className="text-[#DED5D1]">= {"{"}</span>
                   {"\n\n"}
 
                   {"  "}
-                  <span className="text-blue-300">role</span>
-                  <span className="text-slate-400">: </span>
-                  <span className="text-emerald-300">
+                  <span className="text-[#C6A96B]">role</span>
+                  <span className="text-[#AFA6A4]">: </span>
+                  <span className="text-[#B79B5B]">
                     &apos;Flutter &amp; App Developer&apos;
                   </span>
-                  <span className="text-slate-300">,</span>
+                  <span className="text-[#DED5D1]">,</span>
                   {"\n"}
 
                   {"  "}
-                  <span className="text-blue-300">stack</span>
-                  <span className="text-slate-400">: [</span>
-                  <span className="text-emerald-300">&apos;Flutter&apos;</span>
-                  <span className="text-slate-400">, </span>
-                  <span className="text-emerald-300">&apos;Dart&apos;</span>
-                  <span className="text-slate-400">, </span>
-                  <span className="text-emerald-300">
+                  <span className="text-[#C6A96B]">stack</span>
+                  <span className="text-[#AFA6A4]">: [</span>
+                  <span className="text-[#B79B5B]">&apos;Flutter&apos;</span>
+                  <span className="text-[#AFA6A4]">, </span>
+                  <span className="text-[#B79B5B]">&apos;Dart&apos;</span>
+                  <span className="text-[#AFA6A4]">, </span>
+                  <span className="text-[#B79B5B]">
                     &apos;Firebase&apos;
                   </span>
-                  <span className="text-slate-400">, </span>
-                  <span className="text-emerald-300">
+                  <span className="text-[#AFA6A4]">, </span>
+                  <span className="text-[#B79B5B]">
                     &apos;Android&apos;
                   </span>
-                  <span className="text-slate-400">],</span>
+                  <span className="text-[#AFA6A4]">],</span>
                   {"\n"}
 
                   {"  "}
-                  <span className="text-blue-300">passion</span>
-                  <span className="text-slate-400">: </span>
-                  <span className="text-emerald-300">
+                  <span className="text-[#C6A96B]">passion</span>
+                  <span className="text-[#AFA6A4]">: </span>
+                  <span className="text-[#B79B5B]">
                     &apos;Building beautiful mobile experiences&apos;
                   </span>
-                  <span className="text-slate-300">,</span>
+                  <span className="text-[#DED5D1]">,</span>
                   {"\n"}
 
                   {"  "}
-                  <span className="text-blue-300">focus</span>
-                  <span className="text-slate-400">: </span>
-                  <span className="text-emerald-300">
+                  <span className="text-[#C6A96B]">focus</span>
+                  <span className="text-[#AFA6A4]">: </span>
+                  <span className="text-[#B79B5B]">
                     &apos;Clean code, performance, and great UX&apos;
                   </span>
                   {"\n"}
 
-                  <span className="text-slate-300">{"};"}</span>
+                  <span className="text-[#DED5D1]">{"};"}</span>
 
                   {"\n\n"}
 
-                  <span className="italic text-slate-500">
+                  <span className="italic text-[#756C69]">
                     {"// Turning ideas into useful mobile products"}
                   </span>
 
                   {"\n\n"}
 
-                  <span className="text-sky-300">console</span>
-                  <span className="text-slate-300">.</span>
-                  <span className="text-blue-300">log</span>
-                  <span className="text-slate-300">(</span>
-                  <span className="text-blue-300">kiran</span>
-                  <span className="text-slate-300">);</span>
+                  <span className="text-[#D6BE82]">console</span>
+                  <span className="text-[#DED5D1]">.</span>
+                  <span className="text-[#C6A96B]">log</span>
+                  <span className="text-[#DED5D1]">(</span>
+                  <span className="text-[#C6A96B]">Tabish</span>
+                  <span className="text-[#DED5D1]">);</span>
                 </code>
               </pre>
             </div>
 
-            {/* Footer */}
-            <div className="flex flex-col gap-2 border-t border-slate-700/60 px-3 py-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3 sm:px-6 sm:py-5">
-              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-700/70 bg-slate-800/40 px-3 py-2 text-[9px] text-slate-300 sm:text-xs">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 sm:h-2 sm:w-2" />
+            <div className="flex flex-col gap-2 border-t border-[#3A3032]/70 px-3 py-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3 sm:px-6 sm:py-5">
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#3A3032]/80 bg-[#211A1B]/70 px-3 py-2 text-[9px] text-[#C2B8B5] sm:text-xs">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#B79B5B] sm:h-2 sm:w-2" />
                 App Development
               </div>
 
-              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-700/70 bg-slate-800/40 px-3 py-2 text-[9px] text-slate-300 sm:text-xs">
-                <FaGlobe className="text-blue-400" />
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#3A3032]/80 bg-[#211A1B]/70 px-3 py-2 text-[9px] text-[#C2B8B5] sm:text-xs">
+                <FaGlobe className="text-[#C6A96B]" />
                 Cross-Platform Apps
               </div>
             </div>
           </div>
 
-          {/* Tech Stack */}
           <div className="mt-5 grid grid-cols-2 gap-4 sm:mt-7 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-8 sm:gap-y-4">
             {techStack.map((tech) => {
               const Icon = tech.icon;
@@ -684,7 +668,7 @@ export default function About() {
               return (
                 <div
                   key={tech.label}
-                  className="flex items-center justify-center gap-2 text-[11px] text-slate-400 transition hover:text-slate-100 sm:text-xs"
+                  className="flex items-center justify-center gap-2 text-[11px] text-[#AFA6A4] transition hover:text-[#F3EEE7] sm:text-xs"
                 >
                   <Icon className={`text-base sm:text-lg ${tech.color}`} />
                   {tech.label}

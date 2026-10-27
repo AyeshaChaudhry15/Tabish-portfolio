@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
@@ -45,24 +46,39 @@ export default function MyStory() {
       style={{
         position: "relative",
         width: "100%",
-        padding: "clamp(80px,10vw,140px) clamp(18px,5%,70px)",
+        padding: "clamp(55px,7vw,90px) clamp(18px,5%,70px)",
         overflow: "hidden",
         background: "#071225",
-        color: "#F4F7FC",
+        color: "#FFFFFF",
       }}
     >
       {/* Background Glow */}
       <div
         style={{
           position: "absolute",
-          top: "20%",
-          right: "-150px",
+          top: "10%",
+          right: "-180px",
           width: "clamp(280px,40vw,500px)",
           height: "clamp(280px,40vw,500px)",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle,rgba(47,128,255,0.10),transparent 70%)",
-          filter: "blur(20px)",
+            "radial-gradient(circle,rgba(47,128,255,0.14),transparent 70%)",
+          filter: "blur(30px)",
+          pointerEvents: "none",
+        }}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-200px",
+          left: "-180px",
+          width: "450px",
+          height: "450px",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle,rgba(47,128,255,0.08),transparent 70%)",
+          filter: "blur(30px)",
           pointerEvents: "none",
         }}
       />
@@ -76,7 +92,7 @@ export default function MyStory() {
           margin: "0 auto",
           display: "grid",
           gridTemplateColumns: "minmax(0,0.95fr) minmax(0,1.05fr)",
-          gap: "clamp(40px,7vw,90px)",
+          gap: "clamp(35px,5vw,65px)",
           alignItems: "center",
         }}
       >
@@ -87,12 +103,29 @@ export default function MyStory() {
             position: "relative",
             width: "100%",
             minHeight: "clamp(360px,42vw,470px)",
-            border: "1px solid rgba(120,160,210,0.18)",
+            border: "1px solid rgba(77,163,255,.25)",
             borderRadius: "15px",
             overflow: "hidden",
-            background: "linear-gradient(145deg,#0D203A,#071326)",
+            background: "#FFFFFF",
+            boxShadow: "0 25px 80px rgba(0,0,0,.22)",
           }}
         >
+          {/* Soft Blue Glow */}
+          <div
+            style={{
+              position: "absolute",
+              top: "-100px",
+              right: "-100px",
+              width: "280px",
+              height: "280px",
+              borderRadius: "50%",
+              background:
+                "radial-gradient(circle,rgba(47,128,255,.12),transparent 70%)",
+              filter: "blur(20px)",
+              pointerEvents: "none",
+            }}
+          />
+
           {/* Outer Orbit */}
           <div
             style={{
@@ -101,7 +134,7 @@ export default function MyStory() {
               left: "clamp(25px,4vw,40px)",
               width: "clamp(130px,16vw,180px)",
               height: "clamp(130px,16vw,180px)",
-              border: "1px solid rgba(68,158,255,0.25)",
+              border: "1px solid rgba(47,128,255,.18)",
               borderRadius: "50%",
             }}
           />
@@ -114,9 +147,9 @@ export default function MyStory() {
               left: "clamp(45px,5vw,65px)",
               width: "clamp(95px,12vw,130px)",
               height: "clamp(95px,12vw,130px)",
-              border: "1px solid rgba(68,158,255,0.4)",
+              border: "1px solid rgba(47,128,255,.30)",
               borderRadius: "50%",
-              boxShadow: "0 0 50px rgba(47,128,255,0.12)",
+              boxShadow: "0 0 50px rgba(47,128,255,.08)",
             }}
           />
 
@@ -125,19 +158,21 @@ export default function MyStory() {
             style={{
               position: "absolute",
               left: "50%",
-              top: "45%",
+              top: "43%",
               transform: "translate(-50%,-50%)",
               width: "clamp(105px,13vw,145px)",
               height: "clamp(105px,13vw,145px)",
               display: "grid",
               placeItems: "center",
-              border: "1px solid rgba(79,169,255,0.65)",
+              border: "1px solid rgba(47,128,255,.45)",
               borderRadius: "50%",
               background:
-                "radial-gradient(circle,rgba(47,128,255,0.16),#08172C 70%)",
-              color: "#57B2FF",
+                "radial-gradient(circle,rgba(47,128,255,.10),#FFFFFF 70%)",
+              color: "#071225",
               fontSize: "clamp(30px,4vw,42px)",
-              boxShadow: "0 0 55px rgba(47,128,255,0.22)",
+              fontFamily: "monospace",
+              fontWeight: 500,
+              boxShadow: "0 0 55px rgba(47,128,255,.10)",
             }}
           >
             {"</>"}
@@ -151,18 +186,19 @@ export default function MyStory() {
               left: "clamp(20px,4vw,38px)",
               right: "clamp(20px,4vw,38px)",
               padding: "clamp(15px,2.5vw,20px)",
-              border: "1px solid rgba(120,160,210,0.16)",
+              border: "1px solid #D7E3F2",
               borderRadius: "10px",
-              background: "rgba(5,16,30,0.75)",
-              backdropFilter: "blur(10px)",
+              background: "#F8FBFF",
+              boxShadow: "0 12px 35px rgba(7,18,37,.08)",
             }}
           >
             <span
               style={{
-                color: "#4DA3FF",
+                color: "#287BE8",
                 fontSize: "9px",
                 letterSpacing: "0.18em",
                 fontFamily: "monospace",
+                fontWeight: 700,
               }}
             >
               DEVELOPER
@@ -171,7 +207,7 @@ export default function MyStory() {
             <h3
               style={{
                 margin: "8px 0 5px",
-                color: "#F4F7FC",
+                color: "#071225",
                 fontFamily: "Georgia,serif",
                 fontSize: "clamp(20px,2.5vw,24px)",
                 fontWeight: 400,
@@ -183,7 +219,7 @@ export default function MyStory() {
             <p
               style={{
                 margin: 0,
-                color: "#8197B0",
+                color: "#60758F",
                 fontSize: "clamp(9px,1.2vw,10px)",
                 fontFamily: "Arial,sans-serif",
               }}
@@ -218,7 +254,7 @@ export default function MyStory() {
               style={{
                 width: "28px",
                 height: "1px",
-                background: "#3D91FF",
+                background: "#4DA3FF",
                 flexShrink: 0,
               }}
             />
@@ -230,7 +266,7 @@ export default function MyStory() {
           <h2
             style={{
               margin: "18px 0 25px",
-              color: "#F4F7FC",
+              color: "#FFFFFF",
               fontFamily: "Georgia,serif",
               fontSize: "clamp(36px,5vw,52px)",
               fontWeight: 400,
@@ -253,7 +289,7 @@ export default function MyStory() {
           <p
             style={{
               margin: "0 0 18px",
-              color: "#8FA2BC",
+              color: "#AFC0D5",
               fontSize: "clamp(12px,1.3vw,13px)",
               lineHeight: 1.9,
               fontFamily: "Arial,sans-serif",
@@ -267,7 +303,7 @@ export default function MyStory() {
           <p
             style={{
               margin: "0 0 18px",
-              color: "#8FA2BC",
+              color: "#AFC0D5",
               fontSize: "clamp(12px,1.3vw,13px)",
               lineHeight: 1.9,
               fontFamily: "Arial,sans-serif",
@@ -282,7 +318,7 @@ export default function MyStory() {
           <p
             style={{
               margin: "0 0 30px",
-              color: "#8FA2BC",
+              color: "#AFC0D5",
               fontSize: "clamp(12px,1.3vw,13px)",
               lineHeight: 1.9,
               fontFamily: "Arial,sans-serif",
@@ -311,33 +347,34 @@ export default function MyStory() {
             ].map((skill) => (
               <span
                 key={skill}
+                className="story-skill"
                 style={{
                   padding: "8px 12px",
-                  border: "1px solid rgba(68,153,235,0.22)",
+                  border: "1px solid rgba(77,163,255,.35)",
                   borderRadius: "5px",
-                  color: "#7195BA",
-                  background: "rgba(35,110,190,0.06)",
+                  color: "#DCEBFA",
+                  background: "rgba(255,255,255,.04)",
                   fontFamily: "monospace",
                   fontSize: "clamp(10px,1.2vw,12px)",
                   transition: "all .3s ease",
                   cursor: "default",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor =
-                    "rgba(68,153,235,0.5)";
-                  e.currentTarget.style.color = "#63B3FF";
+                  e.currentTarget.style.borderColor = "#4DA3FF";
+                  e.currentTarget.style.color = "#FFFFFF";
                   e.currentTarget.style.background =
-                    "rgba(35,110,190,0.10)";
+                    "rgba(47,128,255,.16)";
                   e.currentTarget.style.boxShadow =
-                    "0 0 20px rgba(47,128,255,0.08)";
+                    "0 0 20px rgba(47,128,255,.10)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor =
-                    "rgba(68,153,235,0.22)";
-                  e.currentTarget.style.color = "#7195BA";
-                  e.currentTarget.style.background =
-                    "rgba(35,110,190,0.06)";
+                    "rgba(77,163,255,.35)";
+                  e.currentTarget.style.color = "#DCEBFA";
+                  e.currentTarget.style.background = "rgba(255,255,255,.04)";
                   e.currentTarget.style.boxShadow = "none";
+                  e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
                 {skill}
@@ -350,7 +387,7 @@ export default function MyStory() {
       {/* Responsive Styles */}
       <style jsx>{`
         @media (max-width: 900px) {
-          #story > div:nth-child(2) {
+          #story > div:nth-child(3) {
             grid-template-columns: 1fr !important;
             gap: 55px !important;
           }
@@ -368,11 +405,11 @@ export default function MyStory() {
 
         @media (max-width: 600px) {
           #story {
-            padding-top: 80px !important;
-            padding-bottom: 80px !important;
+            padding-top: 55px !important;
+            padding-bottom: 60px !important;
           }
 
-          #story > div:nth-child(2) {
+          #story > div:nth-child(3) {
             gap: 45px !important;
           }
 

@@ -26,77 +26,77 @@ const skills = [
   {
     name: "Flutter",
     icon: SiFlutter,
-    color: "text-sky-400",
+    color: "text-[#C6A96B]",
   },
   {
     name: "Dart",
     icon: SiDart,
-    color: "text-blue-400",
+    color: "text-[#D6BE82]",
   },
   {
     name: "Firebase",
     icon: SiFirebase,
-    color: "text-amber-400",
+    color: "text-[#D6BE82]",
   },
   {
     name: "Android",
     icon: FaAndroid,
-    color: "text-emerald-400",
+    color: "text-[#B79B5B]",
   },
   {
     name: "iOS",
     icon: FaApple,
-    color: "text-slate-200",
+    color: "text-[#F3EEE7]",
   },
   {
     name: "React Native",
     icon: FaReact,
-    color: "text-cyan-400",
+    color: "text-[#C6A96B]",
   },
   {
     name: "Kotlin",
     icon: SiKotlin,
-    color: "text-purple-400",
+    color: "text-[#D6BE82]",
   },
   {
     name: "Swift",
     icon: SiSwift,
-    color: "text-orange-400",
+    color: "text-[#C6A96B]",
   },
   {
     name: "Android Studio",
     icon: SiAndroidstudio,
-    color: "text-green-400",
+    color: "text-[#B79B5B]",
   },
   {
     name: "Mobile UI/UX",
     icon: FaMobileAlt,
-    color: "text-pink-400",
+    color: "text-[#D6BE82]",
   },
   {
     name: "REST APIs",
     icon: FaCode,
-    color: "text-blue-300",
+    color: "text-[#C6A96B]",
   },
   {
     name: "Git",
     icon: FaGitAlt,
-    color: "text-orange-400",
+    color: "text-[#B79B5B]",
   },
   {
     name: "Cloud Services",
     icon: FaCloud,
-    color: "text-sky-300",
+    color: "text-[#D6BE82]",
   },
   {
     name: "Database",
     icon: FaDatabase,
-    color: "text-blue-400",
+    color: "text-[#C6A96B]",
   },
   {
     name: "VS Code",
     icon: VscCode,
-    color: "text-blue-400",
+    color: "text-[#C6A96B]",
   },
 ];
 
@@ -138,11 +138,11 @@ export default function AppSkills() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#0B1220] py-5"
+      className="relative overflow-hidden bg-[#100D0E] py-5"
     >
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#0B1220] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#100D0E] to-transparent" />
 
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#0B1220] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#100D0E] to-transparent" />
 
       <div ref={trackRef} className="flex w-max items-center gap-3">
         {duplicatedSkills.map((skill, index) => {
@@ -151,7 +151,7 @@ export default function AppSkills() {
           return (
             <div
               key={`${skill.name}-${index}`}
-              className="skill-item flex shrink-0 items-center gap-3 rounded-full border border-slate-700/60 bg-[#0D1728]/90 px-5 py-3 text-sm font-semibold text-slate-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.025)] transition hover:border-blue-400/40 hover:bg-[#111C2E]"
+              className="skill-item flex shrink-0 items-center gap-3 rounded-full border border-[#3A3032]/70 bg-[#171314]/90 px-5 py-3 text-sm font-semibold text-[#C2B8B5] shadow-[inset_0_1px_0_rgba(255,255,255,0.025)] transition hover:border-[#B79B5B]/60 hover:bg-[#211A1B]"
             >
               <Icon className={`text-base ${skill.color}`} />
 
