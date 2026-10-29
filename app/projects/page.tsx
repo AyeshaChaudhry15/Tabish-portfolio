@@ -1,22 +1,23 @@
+
+"use client";
+
+import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/projects/project-card";
 import Link from "next/link";
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050914] text-white">
-
-      <section className="relative overflow-hidden border-b border-blue-900/30">
-
+    <main className="min-h-screen overflow-hidden bg-[#071630] text-white">
+      <section className="relative overflow-hidden border-b border-[#24416B]/50">
         <div className="pointer-events-none absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0A1B3A] via-[#071630] to-[#0A1B3A]" />
 
-          <div className="absolute inset-0 bg-gradient-to-br from-[#071226] via-[#050914] to-[#061522]" />
+          <div className="absolute -left-40 -top-40 h-[550px] w-[550px] rounded-full bg-[#3182FF]/15 blur-[160px]" />
 
-          <div className="absolute -left-40 -top-40 h-[550px] w-[550px] rounded-full bg-blue-600/15 blur-[160px]" />
+          <div className="absolute -right-40 top-10 h-[500px] w-[500px] rounded-full bg-[#60A5FA]/10 blur-[160px]" />
 
-          <div className="absolute -right-40 top-10 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[160px]" />
-
-          <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/5 blur-[150px]" />
+          <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3182FF]/5 blur-[150px]" />
 
           <div
             className="absolute inset-0 opacity-[0.035]"
@@ -29,279 +30,349 @@ export default function ProjectsPage() {
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-[1350px] px-6 pb-24 pt-28 sm:px-10 lg:px-14 lg:pb-28 lg:pt-32">
-
           <div className="grid items-center gap-16 lg:grid-cols-[1fr_0.9fr]">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="mb-7 flex items-center gap-3"
+              >
+                <span className="h-px w-10 bg-[#3182FF]" />
 
-            <div>
-
-              <div className="mb-7 flex items-center gap-3">
-                <span className="h-px w-10 bg-blue-400" />
-
-                <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-blue-400">
+                <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#60A5FA]">
                   My Work
                 </span>
-              </div>
+              </motion.div>
 
-              <h1 className="max-w-3xl text-5xl font-semibold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[50px]">
-                Projects That  Drive 
-
-                <span className="block bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-500 bg-clip-text text-transparent">
-                 Impact.
+              <motion.h1
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="max-w-3xl text-5xl font-semibold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[50px]"
+              >
+                Projects That Drive
+                <span className="block bg-gradient-to-r from-[#3182FF] via-[#60A5FA] to-white bg-clip-text text-transparent">
+                  Impact.
                 </span>
-              </h1>
+              </motion.h1>
 
-              <p className="mt-7 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
-                Explore a selection of digital products, business websites,
-                SaaS platforms, and web experiences I&apos;ve built for
-                businesses and startups.
-              </p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="mt-7 max-w-2xl text-base leading-8 text-blue-100/70 sm:text-lg"
+              >
+                Explore a selection of digital products, business websites, SaaS
+                platforms, and web experiences I&apos;ve built for businesses
+                and startups.
+              </motion.p>
 
-              <div className="mt-9 flex flex-wrap gap-4">
-
-                <Link
-                  href="#projects"
-                  className="inline-flex items-center gap-3 rounded-xl bg-blue-500 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_35px_rgba(37,99,235,0.25)] transition hover:bg-blue-400"
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="mt-9 flex flex-wrap gap-4"
+              >
+                <motion.div
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 20 }}
                 >
-                  Explore Projects
-                  <span>→</span>
-                </Link>
+                  <Link
+                    href="#projects"
+                    className="inline-flex items-center gap-3 rounded-xl bg-[#3182FF] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_35px_rgba(49,130,255,0.25)] transition hover:bg-[#2563EB]"
+                  >
+                    Explore Projects
+                    <span>→</span>
+                  </Link>
+                </motion.div>
 
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-3 rounded-xl border border-blue-400/30 bg-blue-500/5 px-6 py-3.5 text-sm font-semibold text-slate-300 transition hover:border-blue-400/60 hover:bg-blue-500/10 hover:text-blue-300"
+                <motion.div
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 20 }}
                 >
-                  Let&apos;s Work Together
-                  <span>↗</span>
-                </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-3 rounded-xl border border-[#3182FF]/40 bg-[#0A1B3A] px-6 py-3.5 text-sm font-semibold text-white transition hover:border-[#60A5FA] hover:bg-[#102951] hover:shadow-[0_10px_30px_rgba(49,130,255,0.12)]"
+                  >
+                    Let&apos;s Work Together
+                    <span>↗</span>
+                  </Link>
+                </motion.div>
+              </motion.div>
 
-              </div>
-
-              <div className="mt-12 flex flex-wrap gap-0">
-
-                <div className="pr-8">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.12,
+                      delayChildren: 0.45,
+                    },
+                  },
+                }}
+                className="mt-12 flex flex-wrap gap-0"
+              >
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 15 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
+                  className="pr-8"
+                >
                   <p className="text-2xl font-bold text-white">
-                    20<span className="text-blue-400">+</span>
+                    20<span className="text-[#60A5FA]">+</span>
                   </p>
 
-                  <p className="mt-1 text-[10px] uppercase tracking-wider text-slate-500">
+                  <p className="mt-1 text-[10px] uppercase tracking-wider text-blue-100/55">
                     Projects
                   </p>
-                </div>
+                </motion.div>
 
-                <div className="border-l border-blue-900/50 px-8">
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 15 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
+                  className="border-l border-[#24416B] px-8"
+                >
                   <p className="text-2xl font-bold text-white">
-                    100<span className="text-blue-400">%</span>
+                    100<span className="text-[#60A5FA]">%</span>
                   </p>
 
-                  <p className="mt-1 text-[10px] uppercase tracking-wider text-slate-500">
+                  <p className="mt-1 text-[10px] uppercase tracking-wider text-blue-100/55">
                     Client Focus
                   </p>
-                </div>
+                </motion.div>
 
-                <div className="border-l border-blue-900/50 px-8">
-                  <p className="text-2xl font-bold text-white">
-                    Modern
-                  </p>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 15 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
+                  className="border-l border-[#24416B] px-8"
+                >
+                  <p className="text-2xl font-bold text-white">Modern</p>
 
-                  <p className="mt-1 text-[10px] uppercase tracking-wider text-slate-500">
+                  <p className="mt-1 text-[10px] uppercase tracking-wider text-blue-100/55">
                     Tech Stack
                   </p>
-                </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
 
-              </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{
+                duration: 0.9,
+                delay: 0.2,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="relative mx-auto h-[430px] w-full max-w-[550px]"
+            >
+              <div className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3182FF]/15 blur-[100px]" />
 
-            </div>
-
-            <div className="relative mx-auto h-[430px] w-full max-w-[550px]">
-
-              <div className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[100px]" />
-
-              <div className="absolute left-1/2 top-1/2 w-[90%] -translate-x-1/2 -translate-y-1/2 rotate-[-2deg] overflow-hidden rounded-2xl border border-blue-400/25 bg-[#091426] shadow-[0_30px_100px_rgba(0,40,120,0.35)]">
-
-                <div className="flex h-10 items-center gap-2 border-b border-blue-900/40 bg-[#0B1729] px-4">
-
+              <motion.div
+                animate={{ y: [0, -7, 0] }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute left-1/2 top-1/2 w-[90%] -translate-x-1/2 -translate-y-1/2 rotate-[-2deg] overflow-hidden rounded-2xl border border-[#D8E5F7] bg-white shadow-[0_30px_100px_rgba(0,40,120,0.25)]"
+              >
+                <div className="flex h-10 items-center gap-2 border-b border-[#E2EAF7] bg-[#F5F8FF] px-4">
                   <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
                   <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/80" />
                   <span className="h-2.5 w-2.5 rounded-full bg-green-400/80" />
 
-                  <div className="ml-3 flex-1 rounded-md border border-blue-900/40 bg-[#07101e] px-3 py-1 text-[8px] text-slate-600">
+                  <div className="ml-3 flex-1 rounded-md border border-[#D8E5F7] bg-white px-3 py-1 text-[8px] text-slate-500">
                     portfolio.dev/projects
                   </div>
-
                 </div>
 
                 <div className="grid grid-cols-[1.15fr_0.85fr] gap-4 p-5">
-
-                  <div className="rounded-xl border border-blue-500/20 bg-[#07101e] p-5">
-
-                    <p className="text-[7px] font-bold uppercase tracking-[0.25em] text-blue-400">
+                  <div className="rounded-xl border border-[#D8E5F7] bg-[#F5F8FF] p-5">
+                    <p className="text-[7px] font-bold uppercase tracking-[0.25em] text-[#3182FF]">
                       Web Development
                     </p>
 
-                    <h3 className="mt-4 max-w-[230px] text-2xl font-semibold leading-tight text-white">
+                    <h3 className="mt-4 max-w-[230px] text-2xl font-semibold leading-tight text-[#102951]">
                       Building digital
-                      <span className="block text-blue-300">
-                        experiences.
-                      </span>
+                      <span className="block text-[#3182FF]">experiences.</span>
                     </h3>
 
-                    <div className="mt-6 h-2 w-full overflow-hidden rounded-full bg-blue-950">
-                      <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" />
+                    <div className="mt-6 h-2 w-full overflow-hidden rounded-full bg-blue-100">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: "78%" }}
+                        transition={{ duration: 1.2, delay: 0.8 }}
+                        className="h-full rounded-full bg-gradient-to-r from-[#3182FF] to-[#60A5FA]"
+                      />
                     </div>
 
                     <div className="mt-6 grid grid-cols-3 gap-2">
-
-                      <div className="rounded-lg border border-blue-900/40 bg-blue-500/5 p-3">
-                        <p className="text-sm font-bold text-white">
-                          72%
-                        </p>
+                      <div className="rounded-lg border border-[#D8E5F7] bg-white p-3">
+                        <p className="text-sm font-bold text-[#102951]">72%</p>
 
                         <p className="mt-1 text-[7px] text-slate-500">
                           Performance
                         </p>
                       </div>
 
-                      <div className="rounded-lg border border-blue-900/40 bg-blue-500/5 p-3">
-                        <p className="text-sm font-bold text-white">
-                          88%
-                        </p>
+                      <div className="rounded-lg border border-[#D8E5F7] bg-white p-3">
+                        <p className="text-sm font-bold text-[#102951]">88%</p>
 
-                        <p className="mt-1 text-[7px] text-slate-500">
-                          UX
-                        </p>
+                        <p className="mt-1 text-[7px] text-slate-500">UX</p>
                       </div>
 
-                      <div className="rounded-lg border border-blue-900/40 bg-blue-500/5 p-3">
-                        <p className="text-sm font-bold text-white">
-                          64%
-                        </p>
+                      <div className="rounded-lg border border-[#D8E5F7] bg-white p-3">
+                        <p className="text-sm font-bold text-[#102951]">64%</p>
 
-                        <p className="mt-1 text-[7px] text-slate-500">
-                          Growth
-                        </p>
+                        <p className="mt-1 text-[7px] text-slate-500">Growth</p>
                       </div>
-
                     </div>
-
                   </div>
 
                   <div className="space-y-3">
+                    {[
+                      "React",
+                      "Next.js",
+                      "TypeScript",
+                      "Tailwind",
+                    ].map((tech, index) => (
+                      <motion.div
+                        key={tech}
+                        initial={{ opacity: 0, x: 15 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.4,
+                          delay: 0.65 + index * 0.12,
+                        }}
+                        className="rounded-lg border border-[#D8E5F7] bg-white p-3"
+                      >
+                        <p className="text-[7px] text-slate-500">
+                          0{index + 1}
+                        </p>
 
-                    <div className="rounded-lg border border-blue-900/40 bg-blue-500/5 p-3">
-                      <p className="text-[7px] text-slate-500">
-                        01
-                      </p>
-
-                      <p className="mt-1 text-xs font-semibold text-white">
-                        React
-                      </p>
-                    </div>
-
-                    <div className="rounded-lg border border-blue-900/40 bg-blue-500/5 p-3">
-                      <p className="text-[7px] text-slate-500">
-                        02
-                      </p>
-
-                      <p className="mt-1 text-xs font-semibold text-white">
-                        Next.js
-                      </p>
-                    </div>
-
-                    <div className="rounded-lg border border-blue-900/40 bg-blue-500/5 p-3">
-                      <p className="text-[7px] text-slate-500">
-                        03
-                      </p>
-
-                      <p className="mt-1 text-xs font-semibold text-white">
-                        TypeScript
-                      </p>
-                    </div>
-
-                    <div className="rounded-lg border border-blue-900/40 bg-blue-500/5 p-3">
-                      <p className="text-[7px] text-slate-500">
-                        04
-                      </p>
-
-                      <p className="mt-1 text-xs font-semibold text-white">
-                        Tailwind
-                      </p>
-                    </div>
-
+                        <p className="mt-1 text-xs font-semibold text-[#102951]">
+                          {tech}
+                        </p>
+                      </motion.div>
+                    ))}
                   </div>
-
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="absolute right-[5%] top-[3%] rounded-xl border border-blue-400/30 bg-[#0A1729]/90 px-4 py-2 shadow-[0_10px_40px_rgba(37,99,235,0.2)] backdrop-blur-xl">
-
-                <p className="text-[8px] font-bold uppercase tracking-wider text-blue-400">
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute right-[5%] top-[3%] rounded-xl border border-[#D8E5F7] bg-white px-4 py-2 shadow-[0_10px_40px_rgba(49,130,255,0.15)]"
+              >
+                <p className="text-[8px] font-bold uppercase tracking-wider text-[#3182FF]">
                   Featured
                 </p>
 
-                <p className="mt-1 text-xs font-semibold text-white">
+                <p className="mt-1 text-xs font-semibold text-[#102951]">
                   Digital Products
                 </p>
+              </motion.div>
 
-              </div>
-
-              <div className="absolute bottom-[3%] left-[3%] rounded-xl border border-cyan-400/25 bg-[#091729]/90 px-4 py-2 shadow-[0_10px_40px_rgba(34,211,238,0.15)] backdrop-blur-xl">
-
+              <motion.div
+                animate={{ y: [0, 7, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute bottom-[3%] left-[3%] rounded-xl border border-[#D8E5F7] bg-white px-4 py-2 shadow-[0_10px_40px_rgba(49,130,255,0.12)]"
+              >
                 <p className="text-[8px] uppercase tracking-wider text-slate-500">
                   Stack
                 </p>
 
-                <p className="mt-1 text-xs font-semibold text-cyan-300">
+                <p className="mt-1 text-xs font-semibold text-[#3182FF]">
                   Modern & Scalable
                 </p>
-
-              </div>
-
-            </div>
-
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       <section
         id="projects"
-        className="w-full px-6 pb-24 pt-20 sm:px-10 lg:px-14"
+        className="w-full bg-[#071630] px-6 pb-24 pt-20 sm:px-10 lg:px-14"
       >
-
         <div className="w-full">
-
-          <div className="mb-10 flex items-end justify-between gap-6">
-
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="mb-10 flex items-end justify-between gap-6"
+          >
             <div>
-              <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-blue-400">
+              <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#60A5FA]">
                 Featured Work
               </p>
 
-              <h2 className="mt-3 text-3xl font-semibold">
+              <h2 className="mt-3 text-3xl font-semibold text-white">
                 Some Projects that I&apos;ve Built
               </h2>
             </div>
 
-            <p className="hidden text-xs text-slate-600 sm:block">
+            <p className="hidden text-xs text-blue-100/55 sm:block">
               {projects.length}+ Projects
             </p>
+          </motion.div>
 
-          </div>
-
-          <div className="grid w-full gap-5 md:grid-cols-2 xl:grid-cols-3">
-
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.12,
+                },
+              },
+            }}
+            className="grid w-full gap-5 md:grid-cols-2 xl:grid-cols-3"
+          >
             {projects.map((project) => (
-              <ProjectCard
+              <motion.div
                 key={project.title}
-                project={project}
-              />
+                variants={{
+                  hidden: { opacity: 0, y: 25 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.55, ease: "easeOut" }}
+                whileHover={{ y: -5 }}
+              >
+                <ProjectCard project={project} />
+              </motion.div>
             ))}
-
-          </div>
-
+          </motion.div>
         </div>
-
       </section>
-
     </main>
   );
 }

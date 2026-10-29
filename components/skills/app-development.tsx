@@ -1,6 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   FaAndroid,
-  FaApple,
   FaCloud,
   FaCode,
   FaDatabase,
@@ -40,87 +42,139 @@ const technologies = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 25,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
 export default function AppDevelopment() {
   return (
-    <section className="relative w-full overflow-hidden px-6 pb-24 sm:px-10 lg:px-14 bg-[#0B1323]">
-
+    <section className="relative w-full overflow-hidden bg-[#071630] px-6 pb-24 sm:px-10 lg:px-14">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-[-150px] top-[-100px] h-[450px] w-[450px] rounded-full blur-[150px]" />
+        <div className="absolute left-[-150px] top-[-100px] h-[450px] w-[450px] rounded-full bg-[#3182FF]/10 blur-[150px]" />
 
-        <div className="absolute bottom-[-150px] right-[-100px] h-[450px] w-[450px] rounded-full  blur-[150px]" />
+        <div className="absolute bottom-[-150px] right-[-100px] h-[450px] w-[450px] rounded-full bg-[#60A5FA]/10 blur-[150px]" />
 
-        <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/5 blur-[130px]" />
+        <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3182FF]/5 blur-[130px]" />
       </div>
 
-      <div className="relative w-full overflow-hidden rounded-3xl border border-blue-500/20 bg-gradient-to-br from-[#06152B] via-[#08203D] to-[#061A32] shadow-[0_30px_100px_rgba(0,40,120,0.18)]">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="relative p-8 sm:p-10 lg:p-14">
-            <div className="pointer-events-none absolute left-10 top-16 h-48 w-48 rounded-full bg-blue-500/10 blur-[80px]" />
+      <div className="relative w-full">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <motion.div
+            className="relative p-4 sm:p-6 lg:p-8"
+            initial={{ opacity: 0, x: -35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <div className="pointer-events-none absolute left-10 top-16 h-48 w-48 rounded-full bg-[#3182FF]/10 blur-[80px]" />
 
             <div className="relative">
-              <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-blue-400">
+              <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#60A5FA]">
                 App Development
               </p>
 
               <h2 className="mt-5 max-w-md text-4xl font-semibold leading-tight text-white sm:text-5xl">
                 Building With
-                <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-[#60A5FA] via-[#3182FF] to-white bg-clip-text text-transparent">
                   Mobile Technology.
                 </span>
               </h2>
 
-              <p className="mt-6 max-w-lg text-sm leading-7 text-slate-400">
+              <p className="mt-6 max-w-lg text-sm leading-7 text-slate-300">
                 I specialize in developing reliable mobile applications with
                 clean architecture, scalable code, smooth interfaces, and
                 real-world integrations.
               </p>
 
-              <div className="mt-10 flex items-center gap-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-blue-400/40 bg-blue-500/10 text-blue-400 shadow-[0_0_40px_rgba(37,99,235,0.2)]">
+              <motion.div
+                className="mt-10 flex items-center gap-4"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.25 }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.08, rotate: 5 }}
+                  transition={{ duration: 0.25 }}
+                  className="flex h-16 w-16 items-center justify-center rounded-full bg-[#3182FF]/15 text-[#60A5FA] shadow-[0_0_40px_rgba(49,130,255,0.2)]"
+                >
                   <FaMobileAlt className="text-2xl" />
-                </div>
+                </motion.div>
 
                 <div>
                   <p className="text-sm font-semibold text-white">
                     Flutter Specialist
                   </p>
 
-                  <p className="mt-1 text-xs text-slate-500">
+                  <p className="mt-1 text-xs text-slate-300">
                     Cross-platform mobile applications
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="border-t border-blue-500/20 bg-[#071A31]/50 p-6 sm:p-8 lg:border-l lg:border-t-0 lg:p-10">
+          <motion.div
+            className="p-0 sm:p-2 lg:p-4"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <div className="grid gap-3 sm:grid-cols-2">
               {technologies.map((technology) => {
                 const Icon = technology.icon;
 
                 return (
-                  <div
+                  <motion.div
                     key={technology.title}
-                    className="rounded-xl border border-blue-500/15 bg-blue-500/[0.035] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/[0.07]"
+                    variants={cardVariants}
+                    whileHover={{ y: -5 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="rounded-xl bg-white p-5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(49,130,255,0.15)]"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-400">
-                        <Icon className="text-sm" />
-                      </div>
+                      <motion.div
+                        whileHover={{ scale: 1.1, rotate: 4 }}
+                        transition={{ duration: 0.25 }}
+                        className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3182FF]/10 text-[#3182FF]"
+                      >
+                        <Icon className="text-lg" />
+                      </motion.div>
 
-                      <h3 className="text-sm font-semibold text-slate-200">
+                      <h3 className="text-base font-semibold text-[#071630]">
                         {technology.title}
                       </h3>
                     </div>
 
-                    <p className="mt-3 text-xs leading-5 text-slate-500">
+                    <p className="mt-4 text-sm leading-6 text-slate-600">
                       {technology.description}
                     </p>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

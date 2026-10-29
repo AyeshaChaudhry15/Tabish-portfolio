@@ -126,11 +126,9 @@ export default function Solutions() {
         ref={sectionRef}
         className="solutions-section"
       >
-        {/* Background Glow */}
         <div className="solutions-glow" />
 
         <div className="solutions-container">
-          {/* Header */}
           <div className="solutions-header">
             <span className="solutions-eyebrow">
               <span className="solutions-line" />
@@ -151,17 +149,14 @@ export default function Solutions() {
             </p>
           </div>
 
-          {/* Cards */}
           <div className="solutions-grid">
             {solutions.map((solution) => (
               <div
                 key={solution.number}
                 className="solution-card"
               >
-                {/* Card Glow */}
                 <span className="solution-card-glow" />
 
-                {/* Top */}
                 <div className="solution-top">
                   <span className="solution-number">
                     / {solution.number}
@@ -172,22 +167,18 @@ export default function Solutions() {
                   </span>
                 </div>
 
-                {/* Icon */}
                 <div className="solution-icon">
                   {solution.icon}
                 </div>
 
-                {/* Title */}
                 <h3 className="solution-card-title">
                   {solution.title}
                 </h3>
 
-                {/* Description */}
                 <p className="solution-card-description">
                   {solution.description}
                 </p>
 
-                {/* Tags */}
                 <div className="solution-tags">
                   {solution.tags.map((tag) => (
                     <span
@@ -210,8 +201,8 @@ export default function Solutions() {
           width: 100%;
           padding: 140px 5%;
           overflow: hidden;
-          background: #071225;
-          color: #f4f7fc;
+          background: #071630;
+          color: #ffffff;
         }
 
         .solutions-glow {
@@ -223,7 +214,7 @@ export default function Solutions() {
           border-radius: 50%;
           background: radial-gradient(
             circle,
-            rgba(47, 128, 255, 0.09),
+            rgba(49, 130, 255, 0.12),
             transparent 68%
           );
           filter: blur(25px);
@@ -246,7 +237,7 @@ export default function Solutions() {
           display: inline-flex;
           align-items: center;
           gap: 9px;
-          color: #4da3ff;
+          color: #3182ff;
           font-family: Arial, sans-serif;
           font-size: 9px;
           font-weight: 700;
@@ -257,12 +248,12 @@ export default function Solutions() {
           width: 27px;
           height: 1px;
           flex-shrink: 0;
-          background: #4da3ff;
+          background: #3182ff;
         }
 
         .solutions-title {
           margin: 18px 0 20px;
-          color: #f4f7fc;
+          color: #ffffff;
           font-family: Georgia, serif;
           font-size: clamp(40px, 6vw, 50px);
           font-weight: 400;
@@ -271,14 +262,14 @@ export default function Solutions() {
         }
 
         .solutions-title em {
-          color: #4da3ff;
+          color: #3182ff;
           font-style: italic;
         }
 
         .solutions-description {
           max-width: 620px;
           margin: 0;
-          color: #8298b2;
+          color: #b4c5de;
           font-family: Arial, sans-serif;
           font-size: 14px;
           line-height: 1.8;
@@ -295,13 +286,10 @@ export default function Solutions() {
           min-height: 285px;
           padding: 28px;
           overflow: hidden;
-          border: 1px solid rgba(120, 160, 210, 0.18);
-          border-radius: 11px;
-          background: linear-gradient(
-            145deg,
-            rgba(13, 31, 54, 0.95),
-            rgba(7, 19, 35, 0.98)
-          );
+          border: 1px solid #d1e2ff;
+          border-radius: 14px;
+          background: linear-gradient(145deg, #ffffff, #edf4ff);
+          color: #0b1d3a;
           transition:
             transform 0.35s ease,
             border-color 0.35s ease,
@@ -310,10 +298,10 @@ export default function Solutions() {
 
         .solution-card:hover {
           transform: translateY(-8px);
-          border-color: rgba(72, 163, 255, 0.65);
+          border-color: #3182ff;
           box-shadow:
-            0 20px 60px rgba(0, 0, 0, 0.25),
-            0 0 40px rgba(47, 128, 255, 0.12);
+            0 20px 60px rgba(0, 0, 0, 0.16),
+            0 0 35px rgba(49, 130, 255, 0.12);
         }
 
         .solution-card-glow {
@@ -325,7 +313,7 @@ export default function Solutions() {
           border-radius: 50%;
           background: radial-gradient(
             circle,
-            rgba(47, 128, 255, 0.09),
+            rgba(49, 130, 255, 0.12),
             transparent 70%
           );
           pointer-events: none;
@@ -341,13 +329,13 @@ export default function Solutions() {
         }
 
         .solution-number {
-          color: #45617f;
+          color: #7187a5;
           font-family: monospace;
           font-size: 8px;
         }
 
         .solution-arrow {
-          color: #496783;
+          color: #3182ff;
           font-size: 12px;
         }
 
@@ -359,10 +347,10 @@ export default function Solutions() {
           display: grid;
           place-items: center;
           margin-bottom: 25px;
-          border: 1px solid rgba(64, 157, 255, 0.34);
-          border-radius: 8px;
-          background: rgba(47, 128, 255, 0.06);
-          color: #4da3ff;
+          border: 1px solid #c7dcff;
+          border-radius: 9px;
+          background: #e6f0ff;
+          color: #1769d2;
           font-family: monospace;
           font-size: 12px;
         }
@@ -371,7 +359,7 @@ export default function Solutions() {
           position: relative;
           z-index: 1;
           margin: 0 0 12px;
-          color: #f1f6fc;
+          color: #0b1d3a;
           font-family: Georgia, serif;
           font-size: 19px;
           font-weight: 400;
@@ -382,7 +370,7 @@ export default function Solutions() {
           position: relative;
           z-index: 1;
           margin: 0 0 18px;
-          color: #8095af;
+          color: #506580;
           font-family: Arial, sans-serif;
           font-size: 15px;
           line-height: 1.8;
@@ -398,15 +386,14 @@ export default function Solutions() {
 
         .solution-tag {
           padding: 5px 8px;
-          border: 1px solid rgba(70, 151, 230, 0.18);
+          border: 1px solid #d1e2ff;
           border-radius: 4px;
-          color: #6383a5;
-          background: rgba(47, 128, 255, 0.04);
+          color: #285b9b;
+          background: #eaf2ff;
           font-family: monospace;
           font-size: 10px;
         }
 
-        /* Large Tablet */
         @media (max-width: 1024px) {
           .solutions-section {
             padding: 110px 5%;
@@ -426,7 +413,6 @@ export default function Solutions() {
           }
         }
 
-        /* Tablet */
         @media (max-width: 768px) {
           .solutions-section {
             padding: 90px 24px;
@@ -475,7 +461,6 @@ export default function Solutions() {
           }
         }
 
-        /* Mobile */
         @media (max-width: 640px) {
           .solutions-section {
             padding: 75px 16px;
@@ -523,7 +508,7 @@ export default function Solutions() {
           .solution-card {
             min-height: auto;
             padding: 23px;
-            border-radius: 10px;
+            border-radius: 12px;
           }
 
           .solution-card:hover {
@@ -561,7 +546,6 @@ export default function Solutions() {
           }
         }
 
-        /* Small Mobile */
         @media (max-width: 380px) {
           .solutions-section {
             padding: 65px 14px;

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
@@ -44,9 +45,10 @@ export default function AboutCTA() {
       style={{
         position: "relative",
         width: "100%",
-        padding: "clamp(60px, 8vw, 80px) clamp(16px, 5vw, 5%) clamp(80px, 10vw, 120px)",
+        padding:
+          "clamp(60px, 8vw, 80px) clamp(16px, 5vw, 5%) clamp(80px, 10vw, 120px)",
         overflow: "hidden",
-        background: "#071225",
+        background: "#071630",
       }}
     >
       <div
@@ -62,10 +64,11 @@ export default function AboutCTA() {
           gap: "clamp(25px, 4vw, 40px)",
           padding: "clamp(28px, 4vw, 45px) clamp(22px, 4.5vw, 50px)",
           overflow: "hidden",
-          border: "1px solid rgba(94,157,220,.2)",
-          borderRadius: "15px",
+          border: "1px solid rgba(91, 151, 255, 0.35)",
+          borderRadius: "18px",
           background:
-            "linear-gradient(110deg,rgba(12,29,51,.96),rgba(7,19,36,.98))",
+            "linear-gradient(115deg, #0D2144 0%, #0A1934 55%, #0D2348 100%)",
+          boxShadow: "0 20px 60px rgba(0, 0, 0, 0.16)",
           boxSizing: "border-box",
         }}
       >
@@ -79,7 +82,7 @@ export default function AboutCTA() {
             height: "min(450px, 70vw)",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle,rgba(47,128,255,.12),transparent 68%)",
+              "radial-gradient(circle, rgba(49,130,255,0.22), transparent 68%)",
             filter: "blur(15px)",
             pointerEvents: "none",
           }}
@@ -100,7 +103,7 @@ export default function AboutCTA() {
               display: "inline-flex",
               alignItems: "center",
               gap: "9px",
-              color: "#4DA3FF",
+              color: "#3182FF",
               fontSize: "9px",
               fontWeight: 700,
               letterSpacing: "0.22em",
@@ -112,7 +115,7 @@ export default function AboutCTA() {
               style={{
                 width: "22px",
                 height: "1px",
-                background: "#4DA3FF",
+                background: "#3182FF",
                 flexShrink: 0,
               }}
             />
@@ -123,7 +126,7 @@ export default function AboutCTA() {
           <h2
             style={{
               margin: "15px 0 0",
-              color: "#F4F7FC",
+              color: "#FFFFFF",
               fontFamily: "Georgia,serif",
               fontSize: "clamp(26px, 3.5vw, 40px)",
               fontWeight: 400,
@@ -136,7 +139,7 @@ export default function AboutCTA() {
 
             <em
               style={{
-                color: "#4DA3FF",
+                color: "#3182FF",
                 fontStyle: "italic",
               }}
             >
@@ -161,7 +164,7 @@ export default function AboutCTA() {
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-3px)";
               e.currentTarget.style.boxShadow =
-                "0 10px 35px rgba(47,128,255,.25)";
+                "0 10px 35px rgba(49,130,255,0.35)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
@@ -174,8 +177,8 @@ export default function AboutCTA() {
               gap: "18px",
               padding: "15px 21px",
               minHeight: "48px",
-              borderRadius: "5px",
-              background: "#2F80FF",
+              borderRadius: "7px",
+              background: "#3182FF",
               color: "#FFFFFF",
               textDecoration: "none",
               fontSize: "11px",
@@ -184,6 +187,7 @@ export default function AboutCTA() {
               transition: "all .3s ease",
               whiteSpace: "nowrap",
               boxSizing: "border-box",
+              border: "1px solid #3182FF",
             }}
           >
             Start a Conversation

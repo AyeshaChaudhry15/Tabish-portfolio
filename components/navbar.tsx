@@ -27,20 +27,20 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#3A3032]/70 bg-[#100D0E]/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-[#3182FF]/20 bg-[#071630]/95 backdrop-blur-xl">
       <div className="mx-auto flex h-[76px] w-full max-w-[1500px] items-center px-6 sm:px-10 lg:px-14">
         <Link
           href="/"
           onClick={() => setMenuOpen(false)}
           className="group flex shrink-0 items-center gap-3"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#B79B5B]/40 bg-gradient-to-br from-[#B79B5B]/20 to-[#6B4F52]/20 text-xl font-bold text-[#D6BE82] shadow-[0_0_25px_rgba(183,155,91,0.08)] transition duration-300 group-hover:border-[#D6BE82]/70 group-hover:shadow-[0_0_25px_rgba(183,155,91,0.18)]">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#3182FF]/10 text-xl font-bold text-[#60A5FA] transition duration-300 group-hover:bg-[#3182FF]/20 group-hover:text-white">
             T
           </div>
 
-          <span className="font-bold text-[#F3EEE7]">
+          <span className="font-bold text-white">
             Tabish
-            <span className="text-[#C6A96B]">Rajpoot.</span>
+            <span className="text-[#60A5FA]">Rajpoot.</span>
           </span>
         </Link>
 
@@ -57,14 +57,14 @@ export default function Navbar() {
                 href={link.href}
                 className={`group relative py-7 text-[14px] font-semibold transition duration-300 ${
                   active
-                    ? "text-[#D6BE82]"
-                    : "text-[#AFA6A4] hover:text-[#E0C98B]"
+                    ? "text-[#60A5FA]"
+                    : "text-slate-300 hover:text-white"
                 }`}
               >
                 {link.label}
 
                 <span
-                  className={`absolute bottom-[10px] left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#B79B5B] to-[#D6BE82] transition-all duration-300 ${
+                  className={`absolute bottom-[10px] left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#3182FF] to-[#60A5FA] transition-all duration-300 ${
                     active
                       ? "w-10 opacity-100"
                       : "w-0 opacity-0 group-hover:w-10 group-hover:opacity-100"
@@ -79,17 +79,15 @@ export default function Navbar() {
           href="/contact"
           className={`group hidden shrink-0 items-center gap-3 rounded-lg border px-5 py-2.5 text-[13px] font-semibold transition duration-300 lg:inline-flex ${
             isActive("/contact")
-              ? "border-[#B79B5B] bg-[#B79B5B] text-[#100D0E]"
-              : "border-[#554A45] bg-[#171314] text-[#F3EEE7] hover:border-[#B79B5B] hover:bg-[#B79B5B]/10"
+              ? "border-[#3182FF] bg-[#3182FF] text-white"
+              : "border-[#3182FF]/40 bg-[#0A1B3A] text-white hover:border-[#60A5FA] hover:bg-[#102951]"
           }`}
         >
           Let's Connect
           <ArrowRight
             size={16}
             className={`transition-transform duration-300 group-hover:translate-x-1 ${
-              isActive("/contact")
-                ? "text-[#100D0E]"
-                : "text-[#C6A96B]"
+              isActive("/contact") ? "text-white" : "text-[#60A5FA]"
             }`}
           />
         </Link>
@@ -99,14 +97,14 @@ export default function Navbar() {
           onClick={() => setMenuOpen((open) => !open)}
           aria-label={menuOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={menuOpen}
-          className="ml-auto flex h-10 w-10 items-center justify-center rounded-lg border border-[#554A45] bg-[#171314] text-[#F3EEE7] transition hover:border-[#B79B5B]/60 hover:bg-[#B79B5B]/10 lg:hidden"
+          className="ml-auto flex h-10 w-10 items-center justify-center rounded-lg bg-[#0A1B3A] text-white transition hover:bg-[#102951] lg:hidden"
         >
           {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       {menuOpen && (
-        <div className="border-t border-[#3A3032] bg-[#100D0E]/98 px-6 py-5 shadow-2xl lg:hidden">
+        <div className="border-t border-[#3182FF]/20 bg-[#071630] px-6 py-5 shadow-2xl lg:hidden">
           <nav className="flex flex-col">
             {navLinks.map((link) => {
               const active = isActive(link.href);
@@ -116,10 +114,10 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`border-b border-[#3A3032] px-2 py-4 text-sm font-semibold transition ${
+                  className={`border-b border-white/10 px-2 py-4 text-sm font-semibold transition ${
                     active
-                      ? "text-[#D6BE82]"
-                      : "text-[#AFA6A4] hover:text-[#E0C98B]"
+                      ? "text-[#60A5FA]"
+                      : "text-slate-300 hover:text-white"
                   }`}
                 >
                   {link.label}
@@ -130,7 +128,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-[#B79B5B] px-5 py-3 text-sm font-semibold text-[#100D0E] transition hover:bg-[#D0B976]"
+              className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-[#3182FF] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#60A5FA]"
             >
               Let's Connect
               <ArrowRight size={16} />

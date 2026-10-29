@@ -97,54 +97,49 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-[#100D0E] px-5 py-20 text-[#F3EEE7] sm:px-8 lg:px-12 lg:py-28"
+      className="relative overflow-hidden bg-[#071630] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-28"
     >
-      {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[8%] top-20 h-[320px] w-[320px] rounded-full bg-[#6B4F52]/15 blur-[130px]" />
+        <div className="absolute left-[8%] top-20 h-[320px] w-[320px] rounded-full bg-[#3182FF]/15 blur-[130px]" />
 
-        <div className="absolute right-[8%] top-[35%] h-[320px] w-[320px] rounded-full bg-[#5A3D42]/10 blur-[140px]" />
+        <div className="absolute right-[8%] top-[35%] h-[320px] w-[320px] rounded-full bg-[#2563EB]/15 blur-[140px]" />
 
-        <div className="absolute bottom-0 left-1/2 h-[250px] w-[500px] -translate-x-1/2 rounded-full bg-[#6B4F52]/10 blur-[150px]" />
+        <div className="absolute bottom-0 left-1/2 h-[250px] w-[500px] -translate-x-1/2 rounded-full bg-[#3182FF]/10 blur-[150px]" />
       </div>
 
       <div className="relative mx-auto max-w-[1440px]">
-        {/* Heading */}
         <div>
           <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-7 bg-[#B79B5B]" />
+            <span className="h-px w-7 bg-[#3182FF]" />
 
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#D6BE82] sm:text-xs">
+            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#60A5FA] sm:text-xs">
               Featured Work
             </p>
           </div>
 
           <h2 className="font-serif text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-[40px]">
             Some Projects That I&apos;ve{" "}
-            <span className="bg-gradient-to-r from-[#B79B5B] via-[#D6BE82] to-[#F3EEE7] bg-clip-text italic text-transparent">
+            <span className="bg-gradient-to-r from-[#3182FF] via-[#60A5FA] to-white bg-clip-text italic text-transparent">
               Built
             </span>
           </h2>
         </div>
 
-        {/* Slider */}
         <div className="relative mt-14 sm:mt-16">
-          {/* Previous */}
           <button
             type="button"
             onClick={scrollLeft}
             aria-label="Previous projects"
-            className="absolute left-[-18px] top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#B79B5B]/40 bg-[#100D0E] text-[#D6BE82] shadow-lg shadow-black/30 transition-all duration-300 hover:border-[#B79B5B] hover:bg-[#B79B5B]/10 hover:text-[#F3EEE7] md:flex"
+            className="absolute left-[-18px] top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#3182FF]/40 bg-[#0A1B3A] text-[#60A5FA] shadow-lg shadow-black/30 transition-all duration-300 hover:border-[#3182FF] hover:bg-[#102951] hover:text-white md:flex"
           >
             <FaArrowLeft className="text-sm" />
           </button>
 
-          {/* Next */}
           <button
             type="button"
             onClick={scrollRight}
             aria-label="Next projects"
-            className="absolute right-[-18px] top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#B79B5B]/40 bg-[#100D0E] text-[#D6BE82] shadow-lg shadow-black/30 transition-all duration-300 hover:border-[#B79B5B] hover:bg-[#B79B5B]/10 hover:text-[#F3EEE7] md:flex"
+            className="absolute right-[-18px] top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#3182FF]/40 bg-[#0A1B3A] text-[#60A5FA] shadow-lg shadow-black/30 transition-all duration-300 hover:border-[#3182FF] hover:bg-[#102951] hover:text-white md:flex"
           >
             <FaArrowRight className="text-sm" />
           </button>
@@ -156,10 +151,9 @@ export default function Projects() {
             {projects.map((project) => (
               <article
                 key={project.title}
-                className="group w-[calc(100vw-40px)] shrink-0 snap-start overflow-hidden rounded-2xl border border-[#3A3032]/70 bg-[#171314] p-5 shadow-[0_15px_40px_rgba(0,0,0,0.18)] transition-all duration-500 hover:-translate-y-1 hover:border-[#B79B5B]/50 hover:shadow-[0_20px_50px_rgba(183,155,91,0.10)] sm:w-[420px] lg:w-[384px]"
+                className="group w-[calc(100vw-40px)] shrink-0 snap-start overflow-hidden rounded-2xl border border-[#E2EAF7] bg-white p-5 shadow-[0_15px_40px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-1 hover:border-[#3182FF]/60 hover:shadow-[0_20px_50px_rgba(49,130,255,0.14)] sm:w-[420px] lg:w-[384px]"
               >
-                {/* Project Image */}
-                <div className="relative h-[210px] overflow-hidden rounded-xl border border-[#3A3032]/60 bg-[#100D0E]">
+                <div className="relative h-[210px] overflow-hidden rounded-xl border border-[#D8E5F7] bg-[#F0F6FF]">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -168,44 +162,39 @@ export default function Projects() {
                     sizes="(max-width: 640px) 90vw, 420px"
                   />
 
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#100D0E]/50 via-transparent to-transparent opacity-70" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#071630]/40 via-transparent to-transparent opacity-70" />
                 </div>
 
-                {/* Content */}
                 <div className="mt-6">
-                  <h3 className="text-xl font-bold leading-snug text-[#F3EEE7] sm:text-[21px]">
+                  <h3 className="text-xl font-bold leading-snug text-[#102951] sm:text-[21px]">
                     {project.title}
                   </h3>
 
-                  {/* Category */}
-                  <div className="mt-4 inline-flex rounded-md border border-[#B79B5B]/30 bg-[#B79B5B]/10 px-3 py-1.5 text-xs font-semibold text-[#D6BE82]">
+                  <div className="mt-4 inline-flex rounded-md border border-[#3182FF]/25 bg-[#3182FF]/10 px-3 py-1.5 text-xs font-semibold text-[#2563EB]">
                     {project.category}
                   </div>
 
-                  {/* Description */}
-                  <p className="mt-5 min-h-[96px] text-sm leading-7 text-[#AFA6A4]">
+                  <p className="mt-5 min-h-[96px] text-sm leading-7 text-slate-600">
                     {project.description}
                   </p>
 
-                  {/* Tags */}
                   <div className="mt-5 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md border border-[#3A3032]/70 bg-[#211A1B]/60 px-2.5 py-1 text-[10px] font-medium text-[#AFA6A4]"
+                        className="rounded-md border border-[#D8E5F7] bg-[#F0F6FF] px-2.5 py-1 text-[10px] font-medium text-[#315277]"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  {/* Live Demo */}
-                  <div className="mt-6 border-t border-[#3A3032]/60 pt-5">
+                  <div className="mt-6 border-t border-[#E2EAF7] pt-5">
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/link inline-flex items-center gap-2 rounded-md border border-[#B79B5B]/30 bg-[#B79B5B]/[0.05] px-4 py-2.5 text-sm font-semibold text-[#D6BE82] transition-all duration-300 hover:border-[#B79B5B]/60 hover:bg-[#B79B5B]/10 hover:text-[#F3EEE7]"
+                      className="group/link inline-flex items-center gap-2 rounded-md border border-[#3182FF]/30 bg-[#3182FF]/[0.06] px-4 py-2.5 text-sm font-semibold text-[#2563EB] transition-all duration-300 hover:border-[#3182FF]/60 hover:bg-[#3182FF]/10 hover:text-[#102951]"
                     >
                       Live Demo
 

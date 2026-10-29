@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   FaMagnifyingGlass,
   FaLightbulb,
@@ -86,159 +87,205 @@ const steps = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
 export default function Approach() {
   return (
     <section
       id="approach"
-      className="relative overflow-hidden bg-[#060B14] px-5 py-12 text-white sm:px-8 lg:px-12 lg:py-16"
+      className="relative overflow-hidden bg-[#071630] px-5 py-12 text-white sm:px-8 lg:px-12 lg:py-16"
     >
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[5%] top-[-180px] h-[350px] w-[350px] rounded-full bg-blue-600/[0.07] blur-[130px]" />
+        <div className="absolute left-[5%] top-[-180px] h-[350px] w-[350px] rounded-full bg-blue-500/[0.09] blur-[130px]" />
 
-        <div className="absolute right-[8%] bottom-[-180px] h-[350px] w-[350px] rounded-full bg-cyan-500/[0.06] blur-[130px]" />
+        <div className="absolute right-[8%] bottom-[-180px] h-[350px] w-[350px] rounded-full bg-blue-400/[0.07] blur-[130px]" />
 
-        <div className="absolute left-1/2 top-1/2 h-[250px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/[0.025] blur-[130px]" />
+        <div className="absolute left-1/2 top-1/2 h-[250px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/[0.04] blur-[130px]" />
       </div>
 
       <div className="relative mx-auto max-w-[1500px]">
-
-        <div className="mb-14 flex items-center justify-center gap-6">
+        <motion.div
+          className="mb-14 flex items-center justify-center gap-6"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <div className="hidden h-px w-14 bg-gradient-to-r from-transparent to-blue-500/70 sm:block" />
 
-          <h2 className="text-center text-[20px] font-bold uppercase tracking-[0.24em] text-blue-400 sm:text-[24px]">
+          <h2 className="text-center text-[20px] font-bold uppercase tracking-[0.24em] text-[#3182FF] sm:text-[24px]">
             My Development Approach
           </h2>
 
           <div className="hidden h-px w-14 bg-gradient-to-l from-transparent to-blue-500/70 sm:block" />
-        </div>
+        </motion.div>
 
         <div className="relative hidden lg:block">
+          <div className="absolute left-[10%] right-[10%] top-[118px] h-px bg-gradient-to-r from-blue-500/80 via-blue-400/70 to-blue-500/80" />
 
-          <div className="absolute left-[10%] right-[10%] top-[118px] h-px bg-gradient-to-r from-blue-500/80 via-cyan-400/70 to-blue-500/80" />
+          <div className="absolute left-[18%] top-[114px] h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_12px_rgba(49,130,255,0.9)]" />
 
-          <div className="absolute left-[18%] top-[114px] h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_12px_rgba(59,130,246,0.9)]" />
+          <div className="absolute left-[38%] top-[114px] h-2 w-2 rounded-full bg-blue-300 shadow-[0_0_12px_rgba(49,130,255,0.9)]" />
 
-          <div className="absolute left-[38%] top-[114px] h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
+          <div className="absolute left-[58%] top-[114px] h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_12px_rgba(49,130,255,0.9)]" />
 
-          <div className="absolute left-[58%] top-[114px] h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_12px_rgba(59,130,246,0.9)]" />
+          <div className="absolute left-[78%] top-[114px] h-2 w-2 rounded-full bg-blue-300 shadow-[0_0_12px_rgba(49,130,255,0.9)]" />
 
-          <div className="absolute left-[78%] top-[114px] h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
-
-          <div className="grid grid-cols-5 gap-4">
+          <motion.div
+            className="grid grid-cols-5 gap-4"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {steps.map((step) => {
               const Icon = step.icon;
               const isCyan = step.accent === "cyan";
 
               return (
-                <div
+                <motion.div
                   key={step.number}
+                  variants={itemVariants}
                   className="group relative flex flex-col items-center text-center"
                 >
-
-                  <div
+                  <motion.div
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.25 }}
                     className={`relative z-20 flex h-12 w-12 items-center justify-center rounded-full border ${
                       isCyan
-                        ? "border-cyan-400/70 text-cyan-300"
-                        : "border-blue-400/70 text-blue-300"
-                    } bg-[#060B14] text-sm font-semibold transition-all duration-300 group-hover:scale-105 ${
+                        ? "border-[#8BB9FF] text-[#1769D2]"
+                        : "border-[#3182FF] text-[#1769D2]"
+                    } bg-[#F4F8FF] text-sm font-semibold transition-all duration-300 group-hover:scale-105 ${
                       isCyan
-                        ? "group-hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]"
-                        : "group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]"
+                        ? "group-hover:shadow-[0_0_20px_rgba(49,130,255,0.2)]"
+                        : "group-hover:shadow-[0_0_20px_rgba(49,130,255,0.2)]"
                     }`}
                   >
                     {step.number}
-                  </div>
+                  </motion.div>
 
                   <div
                     className={`relative z-10 mt-1 flex h-[105px] w-[105px] items-center justify-center rounded-full border ${
                       isCyan
-                        ? "border-cyan-400/60 group-hover:border-cyan-300"
-                        : "border-blue-400/60 group-hover:border-blue-300"
-                    } bg-[#060B14] transition-all duration-300 ${
+                        ? "border-[#A8C9FF] group-hover:border-[#3182FF]"
+                        : "border-[#A8C9FF] group-hover:border-[#3182FF]"
+                    } bg-[#F4F8FF] transition-all duration-300 ${
                       isCyan
-                        ? "group-hover:shadow-[0_0_30px_rgba(34,211,238,0.12)]"
-                        : "group-hover:shadow-[0_0_30px_rgba(59,130,246,0.12)]"
+                        ? "group-hover:shadow-[0_0_30px_rgba(49,130,255,0.15)]"
+                        : "group-hover:shadow-[0_0_30px_rgba(49,130,255,0.15)]"
                     }`}
                   >
-
                     <div
                       className={`absolute h-14 w-14 rounded-full blur-[26px] ${
-                        isCyan
-                          ? "bg-cyan-500/10"
-                          : "bg-blue-500/10"
+                        isCyan ? "bg-blue-500/15" : "bg-blue-500/15"
                       }`}
                     />
 
-                    <Icon
-                      className={`relative text-[34px] transition-transform duration-300 group-hover:scale-110 ${
-                        isCyan
-                          ? "text-cyan-400"
-                          : "text-blue-400"
-                      }`}
-                    />
+                    <motion.div
+                      whileHover={{ scale: 1.15, rotate: 5 }}
+                      transition={{ duration: 0.25 }}
+                    >
+                      <Icon
+                        className={`relative text-[34px] transition-transform duration-300 group-hover:scale-110 ${
+                          isCyan ? "text-[#3182FF]" : "text-[#1769D2]"
+                        }`}
+                      />
+                    </motion.div>
                   </div>
 
                   <h3 className="mt-7 text-[18px] font-bold text-white">
                     {step.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-7 text-slate-400">
+                  <p className="mt-4 text-sm leading-7 text-[#B4C5DE]">
                     {step.description}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:hidden">
+        <motion.div
+          className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:hidden"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {steps.map((step) => {
             const Icon = step.icon;
             const isCyan = step.accent === "cyan";
 
             return (
-              <div
+              <motion.div
                 key={step.number}
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.25 }}
                 className={`group rounded-2xl border ${
                   isCyan
-                    ? "border-cyan-500/30 hover:border-cyan-400/60"
-                    : "border-blue-500/30 hover:border-blue-400/60"
-                } bg-[#07101D]/70 p-6 transition-all duration-300 hover:-translate-y-1`}
+                    ? "border-[#D1E2FF] hover:border-[#3182FF]"
+                    : "border-[#D1E2FF] hover:border-[#3182FF]"
+                } bg-gradient-to-br from-[#FFFFFF] to-[#EDF4FF] p-6 text-[#0B1D3A] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(49,130,255,0.12)]`}
               >
                 <div className="flex items-center gap-4">
-
                   <div
                     className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border ${
                       isCyan
-                        ? "border-cyan-400/60 text-cyan-300"
-                        : "border-blue-400/60 text-blue-300"
-                    } text-xs font-semibold`}
+                        ? "border-[#A8C9FF] text-[#1769D2]"
+                        : "border-[#A8C9FF] text-[#1769D2]"
+                    } bg-[#E6F0FF] text-xs font-semibold`}
                   >
                     {step.number}
                   </div>
 
-                  <div
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.25 }}
                     className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full border ${
                       isCyan
-                        ? "border-cyan-400/50 text-cyan-400"
-                        : "border-blue-400/50 text-blue-400"
-                    }`}
+                        ? "border-[#C7DCFF] text-[#3182FF]"
+                        : "border-[#C7DCFF] text-[#1769D2]"
+                    } bg-[#E6F0FF]`}
                   >
                     <Icon className="text-xl" />
-                  </div>
+                  </motion.div>
 
-                  <h3 className="text-base font-bold text-white">
+                  <h3 className="text-base font-bold text-[#0B1D3A]">
                     {step.title}
                   </h3>
                 </div>
 
-                <p className="mt-5 pl-[70px] text-sm leading-6 text-slate-400">
+                <p className="mt-5 pl-[70px] text-sm leading-6 text-[#506580]">
                   {step.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

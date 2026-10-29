@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
@@ -48,7 +47,7 @@ export default function MyStory() {
         width: "100%",
         padding: "clamp(55px,7vw,90px) clamp(18px,5%,70px)",
         overflow: "hidden",
-        background: "#071225",
+        background: "#071630",
         color: "#FFFFFF",
       }}
     >
@@ -62,7 +61,7 @@ export default function MyStory() {
           height: "clamp(280px,40vw,500px)",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle,rgba(47,128,255,0.14),transparent 70%)",
+            "radial-gradient(circle,rgba(49,130,255,0.14),transparent 70%)",
           filter: "blur(30px)",
           pointerEvents: "none",
         }}
@@ -77,7 +76,7 @@ export default function MyStory() {
           height: "450px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle,rgba(47,128,255,0.08),transparent 70%)",
+            "radial-gradient(circle,rgba(49,130,255,0.08),transparent 70%)",
           filter: "blur(30px)",
           pointerEvents: "none",
         }}
@@ -103,7 +102,7 @@ export default function MyStory() {
             position: "relative",
             width: "100%",
             minHeight: "clamp(360px,42vw,470px)",
-            border: "1px solid rgba(77,163,255,.25)",
+            border: "1px solid rgba(49,130,255,.25)",
             borderRadius: "15px",
             overflow: "hidden",
             background: "#FFFFFF",
@@ -120,7 +119,7 @@ export default function MyStory() {
               height: "280px",
               borderRadius: "50%",
               background:
-                "radial-gradient(circle,rgba(47,128,255,.12),transparent 70%)",
+                "radial-gradient(circle,rgba(49,130,255,.12),transparent 70%)",
               filter: "blur(20px)",
               pointerEvents: "none",
             }}
@@ -134,7 +133,7 @@ export default function MyStory() {
               left: "clamp(25px,4vw,40px)",
               width: "clamp(130px,16vw,180px)",
               height: "clamp(130px,16vw,180px)",
-              border: "1px solid rgba(47,128,255,.18)",
+              border: "1px solid rgba(49,130,255,.18)",
               borderRadius: "50%",
             }}
           />
@@ -147,9 +146,9 @@ export default function MyStory() {
               left: "clamp(45px,5vw,65px)",
               width: "clamp(95px,12vw,130px)",
               height: "clamp(95px,12vw,130px)",
-              border: "1px solid rgba(47,128,255,.30)",
+              border: "1px solid rgba(49,130,255,.30)",
               borderRadius: "50%",
-              boxShadow: "0 0 50px rgba(47,128,255,.08)",
+              boxShadow: "0 0 50px rgba(49,130,255,.08)",
             }}
           />
 
@@ -164,15 +163,15 @@ export default function MyStory() {
               height: "clamp(105px,13vw,145px)",
               display: "grid",
               placeItems: "center",
-              border: "1px solid rgba(47,128,255,.45)",
+              border: "1px solid rgba(49,130,255,.45)",
               borderRadius: "50%",
               background:
-                "radial-gradient(circle,rgba(47,128,255,.10),#FFFFFF 70%)",
-              color: "#071225",
+                "radial-gradient(circle,rgba(49,130,255,.10),#FFFFFF 70%)",
+              color: "#071630",
               fontSize: "clamp(30px,4vw,42px)",
               fontFamily: "monospace",
               fontWeight: 500,
-              boxShadow: "0 0 55px rgba(47,128,255,.10)",
+              boxShadow: "0 0 55px rgba(49,130,255,.10)",
             }}
           >
             {"</>"}
@@ -189,12 +188,12 @@ export default function MyStory() {
               border: "1px solid #D7E3F2",
               borderRadius: "10px",
               background: "#F8FBFF",
-              boxShadow: "0 12px 35px rgba(7,18,37,.08)",
+              boxShadow: "0 12px 35px rgba(7,22,48,.08)",
             }}
           >
             <span
               style={{
-                color: "#287BE8",
+                color: "#3182FF",
                 fontSize: "9px",
                 letterSpacing: "0.18em",
                 fontFamily: "monospace",
@@ -207,7 +206,7 @@ export default function MyStory() {
             <h3
               style={{
                 margin: "8px 0 5px",
-                color: "#071225",
+                color: "#071630",
                 fontFamily: "Georgia,serif",
                 fontSize: "clamp(20px,2.5vw,24px)",
                 fontWeight: 400,
@@ -243,7 +242,7 @@ export default function MyStory() {
               display: "inline-flex",
               alignItems: "center",
               gap: "10px",
-              color: "#4DA3FF",
+              color: "#3182FF",
               fontSize: "10px",
               fontWeight: 700,
               letterSpacing: "0.25em",
@@ -254,7 +253,7 @@ export default function MyStory() {
               style={{
                 width: "28px",
                 height: "1px",
-                background: "#4DA3FF",
+                background: "#3182FF",
                 flexShrink: 0,
               }}
             />
@@ -277,7 +276,7 @@ export default function MyStory() {
             Building with{" "}
             <span
               style={{
-                color: "#4DA3FF",
+                color: "#3182FF",
                 fontStyle: "italic",
               }}
             >
@@ -289,7 +288,7 @@ export default function MyStory() {
           <p
             style={{
               margin: "0 0 18px",
-              color: "#AFC0D5",
+              color: "#B4C5DE",
               fontSize: "clamp(12px,1.3vw,13px)",
               lineHeight: 1.9,
               fontFamily: "Arial,sans-serif",
@@ -303,7 +302,7 @@ export default function MyStory() {
           <p
             style={{
               margin: "0 0 18px",
-              color: "#AFC0D5",
+              color: "#B4C5DE",
               fontSize: "clamp(12px,1.3vw,13px)",
               lineHeight: 1.9,
               fontFamily: "Arial,sans-serif",
@@ -318,7 +317,7 @@ export default function MyStory() {
           <p
             style={{
               margin: "0 0 30px",
-              color: "#AFC0D5",
+              color: "#B4C5DE",
               fontSize: "clamp(12px,1.3vw,13px)",
               lineHeight: 1.9,
               fontFamily: "Arial,sans-serif",
@@ -350,7 +349,7 @@ export default function MyStory() {
                 className="story-skill"
                 style={{
                   padding: "8px 12px",
-                  border: "1px solid rgba(77,163,255,.35)",
+                  border: "1px solid rgba(49,130,255,.35)",
                   borderRadius: "5px",
                   color: "#DCEBFA",
                   background: "rgba(255,255,255,.04)",
@@ -360,17 +359,17 @@ export default function MyStory() {
                   cursor: "default",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#4DA3FF";
+                  e.currentTarget.style.borderColor = "#3182FF";
                   e.currentTarget.style.color = "#FFFFFF";
                   e.currentTarget.style.background =
-                    "rgba(47,128,255,.16)";
+                    "rgba(49,130,255,.16)";
                   e.currentTarget.style.boxShadow =
-                    "0 0 20px rgba(47,128,255,.10)";
+                    "0 0 20px rgba(49,130,255,.10)";
                   e.currentTarget.style.transform = "translateY(-2px)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor =
-                    "rgba(77,163,255,.35)";
+                    "rgba(49,130,255,.35)";
                   e.currentTarget.style.color = "#DCEBFA";
                   e.currentTarget.style.background = "rgba(255,255,255,.04)";
                   e.currentTarget.style.boxShadow = "none";

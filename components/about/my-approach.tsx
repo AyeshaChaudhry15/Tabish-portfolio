@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
@@ -46,13 +47,12 @@ export default function MyApproach() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const heading = sectionRef.current?.querySelector(
-        ".approach-heading"
-      );
+      const heading =
+        sectionRef.current?.querySelector(".approach-heading");
 
       const cards = gsap.utils.toArray<HTMLElement>(".approach-card");
 
-      gsap.set([heading, ...cards], {
+      gsap.set([...(heading ? [heading] : []), ...cards], {
         opacity: 1,
       });
 
@@ -73,7 +73,7 @@ export default function MyApproach() {
               start: "top 82%",
               once: true,
             },
-          }
+          },
         );
       }
 
@@ -93,7 +93,7 @@ export default function MyApproach() {
               duration: 0.65,
               stagger: 0.12,
               ease: "power3.out",
-            }
+            },
           );
         },
       });
@@ -101,7 +101,7 @@ export default function MyApproach() {
       gsap.to(".approach-core", {
         scale: 1.08,
         boxShadow:
-          "0 0 35px rgba(47,128,255,.55),0 0 75px rgba(47,128,255,.16),inset 0 0 30px rgba(78,170,255,.12)",
+          "0 0 35px rgba(49,130,255,.4), 0 0 75px rgba(49,130,255,.12), inset 0 0 30px rgba(49,130,255,.12)",
         duration: 1.8,
         repeat: -1,
         yoyo: true,
@@ -133,15 +133,15 @@ export default function MyApproach() {
       style={{
         position: "relative",
         width: "100%",
-        padding: "140px 5%",
+        padding: "clamp(75px, 10vw, 140px) 5%",
         overflow: "hidden",
-        background: "#071225",
-        color: "#F4F7FC",
+        background: "#071630",
+        color: "#FFFFFF",
       }}
     >
       <div
         style={{
-          width: "min(1180px,100%)",
+          width: "min(1180px, 100%)",
           margin: "0 auto",
         }}
       >
@@ -156,7 +156,7 @@ export default function MyApproach() {
               display: "inline-flex",
               alignItems: "center",
               gap: "9px",
-              color: "#4DA3FF",
+              color: "#3182FF",
               fontFamily: "Arial,sans-serif",
               fontSize: "9px",
               fontWeight: 700,
@@ -167,7 +167,7 @@ export default function MyApproach() {
               style={{
                 width: "27px",
                 height: "1px",
-                background: "#4DA3FF",
+                background: "#3182FF",
               }}
             />
             MY APPROACH
@@ -176,19 +176,19 @@ export default function MyApproach() {
           <h2
             style={{
               margin: "18px 0 0",
-              color: "#F4F7FC",
+              color: "#FFFFFF",
               fontFamily: "Georgia,serif",
-              fontSize: "clamp(40px,6vw,45px)",
+              fontSize: "clamp(28px, 4vw, 45px)",
               fontWeight: 400,
-              lineHeight: 0.98,
+              lineHeight: 1.2,
               letterSpacing: "-.055em",
+              whiteSpace: "nowrap",
             }}
           >
-            From Idea
-            To{" "}
+            From Idea To{" "}
             <em
               style={{
-                color: "#4DA3FF",
+                color: "#3182FF",
                 fontStyle: "italic",
               }}
             >
@@ -198,27 +198,28 @@ export default function MyApproach() {
         </div>
 
         <div
+          className="approach-panel"
           style={{
             position: "relative",
             minHeight: "610px",
             overflow: "hidden",
-            border: "1px solid rgba(120,160,210,.18)",
-            borderRadius: "15px",
+            border: "1px solid rgba(49,130,255,.4)",
+            borderRadius: "18px",
             background:
-              "radial-gradient(circle at center,rgba(47,128,255,.07),transparent 34%),linear-gradient(145deg,rgba(13,31,54,.92),rgba(6,18,34,.98))",
+              "linear-gradient(145deg, #F8FBFF 0%, #EEF4FF 55%, #E5EEFF 100%)",
+            boxShadow: "0 20px 60px rgba(0,0,0,.12)",
           }}
         >
           <div
             style={{
               position: "absolute",
               inset: 0,
-              opacity: 0.13,
+              opacity: 0.5,
               backgroundImage:
-                "linear-gradient(rgba(77,145,220,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(77,145,220,.08) 1px,transparent 1px)",
+                "linear-gradient(rgba(49,130,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(49,130,255,.055) 1px, transparent 1px)",
               backgroundSize: "55px 55px",
             }}
           />
-
 
           <div
             className="approach-core"
@@ -232,14 +233,14 @@ export default function MyApproach() {
               transform: "translate(-50%,-50%)",
               display: "grid",
               placeItems: "center",
-              border: "1px solid rgba(76,170,255,.8)",
+              border: "1px solid rgba(49,130,255,.65)",
               borderRadius: "50%",
               background:
-                "radial-gradient(circle,rgba(47,128,255,.22),rgba(5,20,38,.98) 68%)",
-              color: "#5BB5FF",
+                "radial-gradient(circle, #FFFFFF 0%, #DCEAFF 72%, #C8DDFF 100%)",
+              color: "#1769D2",
               fontSize: "23px",
               boxShadow:
-                "0 0 30px rgba(47,128,255,.4),inset 0 0 25px rgba(47,128,255,.12)",
+                "0 0 30px rgba(49,130,255,.2), inset 0 0 25px rgba(49,130,255,.1)",
             }}
           >
             ✦
@@ -253,11 +254,10 @@ export default function MyApproach() {
               width: "130px",
               height: "130px",
               transform: "translate(-50%,-50%)",
-              border: "1px solid rgba(63,158,255,.25)",
+              border: "1px solid rgba(49,130,255,.25)",
               borderRadius: "50%",
             }}
           />
-
 
           <div
             style={{
@@ -267,7 +267,7 @@ export default function MyApproach() {
               top: "50%",
               height: "1px",
               background:
-                "linear-gradient(90deg,transparent,rgba(65,160,255,.55))",
+                "linear-gradient(90deg, transparent, rgba(49,130,255,.5))",
             }}
           />
 
@@ -279,7 +279,7 @@ export default function MyApproach() {
               top: "50%",
               height: "1px",
               background:
-                "linear-gradient(90deg,rgba(65,160,255,.55),transparent)",
+                "linear-gradient(90deg, rgba(49,130,255,.5), transparent)",
             }}
           />
 
@@ -291,7 +291,7 @@ export default function MyApproach() {
               bottom: "50%",
               width: "1px",
               background:
-                "linear-gradient(180deg,transparent,rgba(65,160,255,.55))",
+                "linear-gradient(180deg, transparent, rgba(49,130,255,.5))",
             }}
           />
 
@@ -303,10 +303,9 @@ export default function MyApproach() {
               bottom: "24%",
               width: "1px",
               background:
-                "linear-gradient(180deg,rgba(65,160,255,.55),transparent)",
+                "linear-gradient(180deg, rgba(49,130,255,.5), transparent)",
             }}
           />
-
 
           <span
             className="approach-dot"
@@ -317,8 +316,8 @@ export default function MyApproach() {
               width: "5px",
               height: "5px",
               borderRadius: "50%",
-              background: "#4DA3FF",
-              boxShadow: "0 0 12px #4DA3FF",
+              background: "#3182FF",
+              boxShadow: "0 0 12px #3182FF",
             }}
           />
 
@@ -331,8 +330,8 @@ export default function MyApproach() {
               width: "5px",
               height: "5px",
               borderRadius: "50%",
-              background: "#4DA3FF",
-              boxShadow: "0 0 12px #4DA3FF",
+              background: "#3182FF",
+              boxShadow: "0 0 12px #3182FF",
             }}
           />
 
@@ -345,8 +344,8 @@ export default function MyApproach() {
               width: "5px",
               height: "5px",
               borderRadius: "50%",
-              background: "#4DA3FF",
-              boxShadow: "0 0 12px #4DA3FF",
+              background: "#3182FF",
+              boxShadow: "0 0 12px #3182FF",
             }}
           />
 
@@ -359,11 +358,10 @@ export default function MyApproach() {
               width: "5px",
               height: "5px",
               borderRadius: "50%",
-              background: "#4DA3FF",
-              boxShadow: "0 0 12px #4DA3FF",
+              background: "#3182FF",
+              boxShadow: "0 0 12px #3182FF",
             }}
           />
-
 
           {steps.map((step) => {
             const left = step.position.includes("left");
@@ -382,27 +380,27 @@ export default function MyApproach() {
                   left: left ? "40px" : "auto",
                   right: !left ? "40px" : "auto",
                   padding: "22px",
-                  border: "1px solid rgba(120,160,210,.18)",
-                  borderRadius: "10px",
+                  border: "1px solid #3182FF",
+                  borderRadius: "14px",
                   background:
-                    "linear-gradient(145deg,rgba(14,34,58,.96),rgba(7,19,35,.98))",
+                    "linear-gradient(145deg, #FFFFFF 0%, #F0F6FF 100%)",
+                  boxShadow: "0 8px 30px rgba(17,55,110,.07)",
                   transition:
-                    "transform .35s ease,border-color .35s ease,box-shadow .35s ease",
+                    "transform .35s ease, border-color .35s ease, box-shadow .35s ease",
+                  boxSizing: "border-box",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform =
                     "translateY(-7px) scale(1.02)";
-                  e.currentTarget.style.borderColor =
-                    "rgba(72,164,255,.7)";
+                  e.currentTarget.style.borderColor = "#3182FF";
                   e.currentTarget.style.boxShadow =
-                    "0 20px 55px rgba(0,0,0,.28),0 0 40px rgba(47,128,255,.16)";
+                    "0 20px 45px rgba(17,55,110,.12), 0 0 30px rgba(49,130,255,.1)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform =
-                    "translateY(0) scale(1)";
-                  e.currentTarget.style.borderColor =
-                    "rgba(120,160,210,.18)";
-                  e.currentTarget.style.boxShadow = "none";
+                  e.currentTarget.style.transform = "translateY(0) scale(1)";
+                  e.currentTarget.style.borderColor = "#3182FF";
+                  e.currentTarget.style.boxShadow =
+                    "0 8px 30px rgba(17,55,110,.07)";
                 }}
               >
                 <div
@@ -419,10 +417,10 @@ export default function MyApproach() {
                       height: "38px",
                       display: "grid",
                       placeItems: "center",
-                      border: "1px solid rgba(65,157,255,.3)",
-                      borderRadius: "7px",
-                      background: "rgba(47,128,255,.05)",
-                      color: "#4DA3FF",
+                      border: "1px solid #C7DCFF",
+                      borderRadius: "9px",
+                      background: "#E6F0FF",
+                      color: "#1769D2",
                       fontFamily: "monospace",
                       fontSize: "15px",
                     }}
@@ -432,7 +430,7 @@ export default function MyApproach() {
 
                   <span
                     style={{
-                      color: "#46627F",
+                      color: "#7C94B5",
                       fontFamily: "monospace",
                       fontSize: "15px",
                     }}
@@ -444,7 +442,7 @@ export default function MyApproach() {
                 <h3
                   style={{
                     margin: "0 0 8px",
-                    color: "#F2F6FC",
+                    color: "#0B1D3A",
                     fontFamily: "Georgia,serif",
                     fontSize: "20px",
                     fontWeight: 400,
@@ -456,9 +454,9 @@ export default function MyApproach() {
                 <p
                   style={{
                     margin: 0,
-                    color: "#8196B0",
+                    color: "#506580",
                     fontFamily: "Arial,sans-serif",
-                    fontSize: "15px",
+                    fontSize: "14px",
                     lineHeight: 1.8,
                   }}
                 >
@@ -469,6 +467,85 @@ export default function MyApproach() {
           })}
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 900px) {
+          .approach-panel {
+            min-height: auto !important;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+          }
+
+          .approach-core,
+          .approach-panel > div:nth-child(3),
+          .approach-panel > div:nth-child(4),
+          .approach-panel > div:nth-child(5),
+          .approach-panel > div:nth-child(6),
+          .approach-dot {
+            display: none;
+          }
+
+          .approach-card {
+            position: relative !important;
+            inset: auto !important;
+            width: 100% !important;
+            min-width: 0;
+          }
+        }
+
+        @media (max-width: 600px) {
+          #approach {
+            padding: 75px 16px !important;
+          }
+
+          .approach-heading {
+            margin-bottom: 35px !important;
+          }
+
+          .approach-heading h2 {
+            font-size: clamp(25px, 6vw, 34px) !important;
+            white-space: normal !important;
+          }
+
+          .approach-panel {
+            padding: 18px;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 16px;
+            border-radius: 14px !important;
+          }
+
+          .approach-card {
+            padding: 19px !important;
+            border-radius: 12px !important;
+          }
+
+          .approach-card h3 {
+            font-size: 19px !important;
+          }
+
+          .approach-card p {
+            font-size: 13px !important;
+            line-height: 1.8 !important;
+          }
+        }
+
+        @media (max-width: 380px) {
+          #approach {
+            padding-left: 14px !important;
+            padding-right: 14px !important;
+          }
+
+          .approach-panel {
+            padding: 12px;
+          }
+
+          .approach-card {
+            padding: 16px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
