@@ -13,7 +13,12 @@ import {
   FaMobileAlt,
   FaChartBar,
 } from "react-icons/fa";
-import { SiFlutter, SiDart, SiFirebase, SiAndroid } from "react-icons/si";
+import {
+  SiFlutter,
+  SiDart,
+  SiFirebase,
+  SiAndroid,
+} from "react-icons/si";
 
 const stats = [
   {
@@ -51,77 +56,75 @@ const stats = [
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const orbitOneRef = useRef<HTMLDivElement>(null);
+  const orbitTwoRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        defaults: {
-          ease: "power3.out",
-        },
+      gsap.from(".hero-content > *", {
+        opacity: 0,
+        y: 25,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: "power3.out",
       });
 
-      tl.fromTo(
-        ".hero-content > *",
-        {
-          y: 25,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.75,
-          stagger: 0.12,
-        },
-      )
-        .fromTo(
-          imageRef.current,
-          {
-            scale: 0.9,
-            opacity: 0,
-          },
-          {
-            scale: 1,
-            opacity: 1,
-            duration: 0.9,
-          },
-          "-=0.45",
-        )
-        .fromTo(
-          ".hero-stat",
-          {
-            y: 15,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            stagger: 0.1,
-          },
-          "-=0.3",
-        );
-
-      gsap.to(".orbit-icon", {
-        y: -9,
-        duration: 2.2,
-        stagger: 0.25,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
+      gsap.from(imageRef.current, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 1.1,
+        delay: 0.2,
+        ease: "power3.out",
       });
 
-      gsap.to(".orbit-ring", {
+      gsap.from(".tech-card", {
+        opacity: 0,
+        scale: 0.6,
+        duration: 0.7,
+        stagger: 0.12,
+        delay: 0.6,
+        ease: "back.out(1.7)",
+      });
+
+      gsap.from(".hero-stat", {
+        opacity: 0,
+        y: 20,
+        duration: 0.7,
+        stagger: 0.1,
+        delay: 0.5,
+        ease: "power3.out",
+      });
+
+      gsap.to(orbitOneRef.current, {
         rotation: 360,
+        duration: 35,
+        repeat: -1,
+        ease: "none",
+        transformOrigin: "center center",
+      });
+
+      gsap.to(orbitTwoRef.current, {
+        rotation: -360,
         duration: 45,
         repeat: -1,
         ease: "none",
         transformOrigin: "center center",
       });
 
-      gsap.to(".profile-glow", {
-        opacity: 0.55,
-        scale: 1.08,
-        duration: 2.5,
+      gsap.to(".tech-card", {
+        y: -7,
+        duration: 2.2,
+        stagger: 0.3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      gsap.to(glowRef.current, {
+        scale: 1.15,
+        opacity: 0.65,
+        duration: 3,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
@@ -138,116 +141,127 @@ export default function Hero() {
       className="relative isolate min-h-screen overflow-hidden bg-[#071630] text-white"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-[20%] top-0 h-[300px] w-[300px] rounded-full bg-[#3182FF]/15 blur-[120px] sm:left-[28%] sm:h-[450px] sm:w-[450px] sm:blur-[140px]" />
+        <div className="absolute left-[20%] top-0 h-[350px] w-[350px] rounded-full bg-blue-500/10 blur-[130px] sm:h-[450px] sm:w-[450px]" />
 
-        <div className="absolute right-[-80px] top-20 h-[280px] w-[280px] rounded-full bg-[#2563EB]/15 blur-[120px] sm:right-[5%] sm:h-[400px] sm:w-[400px] sm:blur-[150px]" />
+        <div className="absolute bottom-0 right-0 h-[350px] w-[350px] rounded-full bg-cyan-500/[0.07] blur-[130px]" />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_35%,rgba(49,130,255,0.10),transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_45%,rgba(49,130,255,0.10),transparent_35%)]" />
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-5 pb-8 pt-2 sm:px-8 sm:pt-4 lg:px-12 lg:pt-6">
-        <div className="grid items-center gap-10 lg:min-h-[500px] lg:grid-cols-[1.05fr_0.95fr] lg:gap-4">
-          <div className="hero-content relative z-20 order-2 max-w-2xl lg:order-1">
-            <div className="mb-5 flex items-center gap-2">
-              <span className="h-px w-6 shrink-0 bg-[#3182FF] sm:w-7" />
+      <div className="mx-auto max-w-[1440px] px-5 pb-8 pt-10 sm:px-8 lg:px-12 lg:pt-12">
+        <div className="grid items-center gap-8 lg:min-h-[590px] lg:grid-cols-[1fr_0.95fr] lg:gap-4">
+          <div className="hero-content relative z-10 order-2 max-w-2xl lg:order-1">
+            <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-blue-400/20 bg-blue-500/[0.06] px-4 py-2">
+              <span className="h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_12px_rgba(96,165,250,0.8)]" />
 
-              <p className="text-[9px] font-bold uppercase tracking-[0.20em] text-[#60A5FA] sm:text-[10px] sm:tracking-[0.24em]">
+              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-blue-300 sm:text-xs">
                 Flutter & App Developer
-              </p>
+              </span>
             </div>
 
-            <h1 className="max-w-[650px] font-serif text-[40px] font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-[50px] xl:text-[60px]">
-              I Build{" "}
-              <span className="bg-gradient-to-r from-[#3182FF] via-[#60A5FA] to-white bg-clip-text text-transparent">
-                Mobile Apps
+            <h1 className="max-w-[650px] text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-[58px] xl:text-[68px]">
+              I Build
+              <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent">
+                Mobile Apps.
               </span>
-              <br />
-              That Matter.
+              <span className="mt-1 block text-white">
+                That Matter.
+              </span>
             </h1>
 
-            <p className="mt-5 max-w-[500px] text-[13px] leading-7 text-blue-100/70 sm:mt-6 sm:text-sm sm:leading-7 md:text-base">
+            <p className="mt-6 max-w-[520px] text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
               I&apos;m Tabish, an App Developer crafting beautiful,
               scalable, and user-friendly mobile applications with Flutter,
               Dart, and Firebase.
             </p>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/projects"
-                className="group inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-[#3182FF] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_25px_rgba(49,130,255,0.18)] transition hover:-translate-y-0.5 hover:bg-[#2563EB] hover:shadow-[0_0_30px_rgba(49,130,255,0.3)] sm:w-auto"
+                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#3182FF] px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_30px_rgba(49,130,255,0.2)] transition duration-300 hover:-translate-y-1 hover:bg-blue-600 hover:shadow-[0_12px_35px_rgba(49,130,255,0.3)]"
               >
                 View My Work
-                <FaArrowRight className="transition-transform group-hover:translate-x-1" />
+                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
 
               <Link
                 href="/contact"
-                className="group inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md border border-[#24416B]/80 bg-[#0A1B3A]/80 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#3182FF] hover:text-[#60A5FA] sm:w-auto"
+                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-blue-400/50 hover:bg-blue-500/[0.07]"
               >
                 Contact Me
-                <FaArrowRight className="transition-transform group-hover:translate-x-1" />
+                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
 
-            <div className="mt-6 flex items-start gap-2.5">
-              <span className="relative mt-1 flex h-2.5 w-2.5 shrink-0">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#3182FF] opacity-60" />
-
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#60A5FA]" />
+            <div className="mt-7 flex items-center gap-3 text-xs text-slate-400 sm:text-sm">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-50" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-blue-400" />
               </span>
 
-              <p className="max-w-[350px] text-xs leading-5 text-blue-100/65">
-                Open to exciting app development opportunities
-              </p>
+              Open to exciting app development opportunities
             </div>
           </div>
 
-          <div
-            ref={imageRef}
-            className="relative order-1 mx-auto flex h-[310px] w-full max-w-[350px] items-center justify-center sm:h-[400px] sm:max-w-[460px] md:h-[450px] lg:order-2 lg:h-[470px] lg:max-w-none"
-          >
-            <div className="profile-glow absolute left-1/2 top-1/2 h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3182FF]/[0.12] blur-[60px] sm:h-[300px] sm:w-[300px] sm:blur-[70px] md:h-[340px] md:w-[340px] lg:h-[370px] lg:w-[370px]" />
+          <div className="relative order-1 mx-auto flex h-[350px] w-full max-w-[360px] items-center justify-center sm:h-[470px] sm:max-w-[490px] md:h-[520px] lg:order-2 lg:h-[590px] lg:max-w-none">
+            <div
+              ref={glowRef}
+              className="absolute left-1/2 top-1/2 h-[230px] w-[230px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/20 blur-[75px] sm:h-[340px] sm:w-[340px] sm:blur-[100px] lg:h-[400px] lg:w-[400px]"
+            />
 
-            <div className="orbit-ring absolute left-1/2 top-1/2 h-[235px] w-[235px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#3182FF]/40 shadow-[0_0_35px_rgba(49,130,255,0.10)] sm:h-[320px] sm:w-[320px] md:h-[350px] md:w-[350px] lg:h-[390px] lg:w-[390px]" />
+            <div
+              ref={orbitOneRef}
+              className="absolute left-1/2 top-1/2 h-[270px] w-[270px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-400/20 sm:h-[400px] sm:w-[400px] lg:h-[470px] lg:w-[470px]"
+            >
+              <span className="absolute left-[12%] top-[15%] h-2.5 w-2.5 rounded-full bg-blue-400 shadow-[0_0_18px_#3182FF]" />
 
-            <div className="absolute left-1/2 top-1/2 h-[215px] w-[215px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#24416B]/60 bg-gradient-to-br from-[#102951]/80 to-[#0A1B3A] sm:h-[295px] sm:w-[295px] md:h-[325px] md:w-[325px] lg:h-[365px] lg:w-[365px]" />
-
-            <div className="absolute left-1/2 top-1/2 h-[195px] w-[195px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0A1B3A] sm:h-[275px] sm:w-[275px] md:h-[305px] md:w-[305px] lg:h-[345px] lg:w-[345px]" />
-
-            <div className="orbit-icon absolute left-[5%] top-[8%] z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white bg-white text-base text-[#3182FF] shadow-lg backdrop-blur sm:left-[7%] sm:top-[9%] sm:h-11 sm:w-11 sm:text-xl md:h-[52px] md:w-[52px]">
-              <SiFlutter />
+              <span className="absolute bottom-[13%] right-[10%] h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_18px_#22D3EE]" />
             </div>
 
-            <div className="orbit-icon absolute right-[5%] top-[7%] z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white bg-white text-sm text-[#3182FF] shadow-lg backdrop-blur sm:right-[7%] sm:top-[9%] sm:h-11 sm:w-11 sm:text-lg md:h-[52px] md:w-[52px]">
-              <SiDart />
+            <div
+              ref={orbitTwoRef}
+              className="absolute left-1/2 top-1/2 h-[235px] w-[235px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-cyan-400/15 sm:h-[350px] sm:w-[350px] lg:h-[415px] lg:w-[415px]"
+            >
+              <span className="absolute right-[8%] top-[22%] h-2 w-2 rounded-full bg-blue-300 shadow-[0_0_15px_#60A5FA]" />
             </div>
 
-            <div className="orbit-icon absolute left-[1%] top-[43%] z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white bg-white text-sm text-[#3182FF] shadow-lg backdrop-blur sm:left-[1%] sm:h-11 sm:w-11 sm:text-lg md:h-[52px] md:w-[52px]">
-              <FaCode />
-            </div>
+            <div className="absolute left-1/2 top-1/2 h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-500/15 to-cyan-400/[0.03] sm:h-[320px] sm:w-[320px] lg:h-[380px] lg:w-[380px]" />
 
-            <div className="orbit-icon absolute right-[1%] top-[43%] z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white bg-white text-sm text-[#3182FF] shadow-lg backdrop-blur sm:right-[1%] sm:h-11 sm:w-11 sm:text-lg md:h-[52px] md:w-[52px]">
-              <SiFirebase />
-            </div>
+            <div
+              ref={imageRef}
+              className="relative z-10 h-[205px] w-[205px] overflow-hidden rounded-full border-2 border-blue-400/60 bg-[#0A1B3A] shadow-[0_0_0_8px_rgba(49,130,255,0.05),0_0_55px_rgba(49,130,255,0.2)] sm:h-[300px] sm:w-[300px] lg:h-[350px] lg:w-[350px]"
+            >
+              <div className="pointer-events-none absolute inset-0 z-10 rounded-full bg-gradient-to-t from-[#071630]/40 via-transparent to-blue-300/[0.05]" />
 
-            <div className="orbit-icon absolute bottom-[8%] left-[9%] z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white bg-white text-sm text-[#3182FF] shadow-lg backdrop-blur sm:bottom-[8%] sm:left-[13%] sm:h-11 sm:w-11 sm:text-lg md:h-[52px] md:w-[52px]">
-              <SiAndroid />
-            </div>
-
-            <div className="orbit-icon absolute bottom-[8%] right-[9%] z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white bg-white text-sm text-[#3182FF] shadow-lg backdrop-blur sm:bottom-[8%] sm:right-[13%] sm:h-11 sm:w-11 sm:text-lg md:h-[52px] md:w-[52px]">
-              <FaMobileAlt />
-            </div>
-
-            <div className="relative z-10 h-[175px] w-[175px] shrink-0 overflow-hidden rounded-full border border-[#3182FF]/60 bg-[#0A1B3A] shadow-[0_0_45px_rgba(49,130,255,0.18)] sm:h-[255px] sm:w-[255px] md:h-[295px] md:w-[295px] lg:h-[355px] lg:w-[355px]">
               <img
                 src="/tabish.jpeg"
-                alt="Tabish - App Developer"
-                className="absolute inset-0 h-full w-full rounded-full object-cover object-center"
+                alt="Tabish - Flutter and App Developer"
+                className="h-full w-full rounded-full object-cover object-center"
               />
             </div>
 
-            <div className="absolute bottom-[2%] right-[-1%] z-30 flex items-center gap-2 rounded-lg border border-[#24416B]/80 bg-[#0A1B3A]/95 px-2.5 py-2 shadow-xl backdrop-blur-md sm:bottom-[5%] sm:right-[3%] sm:gap-3 sm:px-3 sm:py-2.5 md:right-[4%] md:px-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#3182FF]/15 text-base text-[#60A5FA] sm:h-9 sm:w-9 sm:text-lg">
+            <div className="tech-card absolute right-[4%] top-[9%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-[#10213D] text-2xl text-[#60A5FA] shadow-[0_12px_35px_rgba(0,0,0,0.3)] sm:right-[7%] sm:top-[7%] sm:h-[66px] sm:w-[66px] sm:text-3xl">
+              <SiFlutter />
+            </div>
+
+            <div className="tech-card absolute left-[1%] top-[34%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-[#10213D] text-2xl text-cyan-300 shadow-[0_12px_35px_rgba(0,0,0,0.3)] sm:left-[0%] sm:top-[31%] sm:h-[66px] sm:w-[66px] sm:text-3xl">
+              <FaCode />
+            </div>
+
+            <div className="tech-card absolute bottom-[10%] left-[8%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-[#10213D] text-2xl text-blue-300 shadow-[0_12px_35px_rgba(0,0,0,0.3)] sm:bottom-[8%] sm:left-[10%] sm:h-[66px] sm:w-[66px] sm:text-3xl">
+              <SiAndroid />
+            </div>
+
+            <div className="tech-card absolute right-[1%] top-[43%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-[#10213D] text-2xl text-orange-300 shadow-[0_12px_35px_rgba(0,0,0,0.3)] sm:right-[0%] sm:top-[41%] sm:h-[66px] sm:w-[66px] sm:text-3xl">
+              <SiDart />
+            </div>
+
+            <div className="tech-card absolute bottom-[20%] right-[7%] z-20 hidden h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-[#10213D] text-2xl text-cyan-300 shadow-[0_12px_35px_rgba(0,0,0,0.3)] sm:flex">
+              <SiFirebase />
+            </div>
+
+            <div className="absolute bottom-[0%] right-[0%] z-30 flex items-center gap-3 rounded-xl border border-blue-400/20 bg-[#0A1B3A]/95 px-3 py-2.5 shadow-[0_15px_40px_rgba(0,0,0,0.3)] backdrop-blur-md sm:bottom-[3%] sm:right-[2%] sm:px-4 sm:py-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500/15 text-lg text-blue-300 sm:h-10 sm:w-10">
                 <FaChartBar />
               </div>
 
@@ -255,8 +269,7 @@ export default function Hero() {
                 <p className="text-base font-bold leading-tight text-white sm:text-lg">
                   10+
                 </p>
-
-                <p className="text-[9px] text-blue-100/65 sm:text-[10px]">
+                <p className="mt-1 whitespace-nowrap text-[9px] text-slate-400 sm:text-[10px]">
                   Apps & Projects
                 </p>
               </div>
@@ -264,18 +277,18 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-0 overflow-hidden rounded-xl border border-[#3182FF]/40 bg-[#102951] sm:grid-cols-3 lg:mt-5 lg:grid-cols-5">
+        <div className="mt-8 grid grid-cols-2 overflow-hidden rounded-xl border border-blue-400/20 bg-[#0A1B3A]/80 sm:grid-cols-3 lg:mt-4 lg:grid-cols-5">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
 
             return (
               <div
                 key={stat.label}
-                className={`hero-stat flex min-h-[100px] flex-col items-center justify-center gap-2 border-[#3182FF]/30 bg-[#102951] px-3 py-5 text-center transition hover:bg-[#143461] sm:min-h-[110px] ${
+                className={`hero-stat flex min-h-[100px] flex-col items-center justify-center gap-2 border-blue-400/15 px-3 py-5 text-center transition-colors duration-300 hover:bg-blue-500/[0.06] sm:min-h-[110px] ${
                   index !== 0 ? "border-l" : ""
-                } ${
-                  index >= 2 ? "border-t sm:border-t-0" : ""
-                } ${index === 3 ? "sm:border-l-0 lg:border-l" : ""}`}
+                } ${index >= 2 ? "border-t sm:border-t-0" : ""} ${
+                  index === 3 ? "sm:border-l-0 lg:border-l" : ""
+                }`}
               >
                 <Icon className={`text-xl ${stat.color}`} />
 
@@ -283,7 +296,7 @@ export default function Hero() {
                   {stat.value}
                 </p>
 
-                <p className="text-[10px] text-blue-100/65 sm:text-xs">
+                <p className="text-[10px] text-slate-400 sm:text-xs">
                   {stat.label}
                 </p>
               </div>
@@ -293,12 +306,6 @@ export default function Hero() {
       </div>
 
       <style jsx>{`
-        @media (max-width: 640px) {
-          #home {
-            min-height: auto;
-          }
-        }
-
         @media (min-width: 641px) and (max-width: 1023px) {
           .hero-content {
             margin-left: auto;
@@ -326,7 +333,7 @@ export default function Hero() {
 
         @media (max-width: 500px) {
           .hero-stat:nth-child(2) {
-            border-left: 1px solid rgba(49, 130, 255, 0.3) !important;
+            border-left: 1px solid rgba(49, 130, 255, 0.2) !important;
           }
 
           .hero-stat:nth-child(3),
@@ -338,11 +345,7 @@ export default function Hero() {
 
         @media (max-width: 380px) {
           .hero-content h1 {
-            font-size: 36px;
-          }
-
-          .hero-content p {
-            font-size: 12px;
+            font-size: 35px;
           }
         }
       `}</style>

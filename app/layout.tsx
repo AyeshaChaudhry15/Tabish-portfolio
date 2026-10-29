@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kiran Fatima | Flutter & App Developer",
+  title: "Tabish | Flutter & App Developer",
   description:
     "Kiran Fatima is a Flutter & App Developer building fast, reliable, scalable, and user-friendly mobile applications.",
 };
