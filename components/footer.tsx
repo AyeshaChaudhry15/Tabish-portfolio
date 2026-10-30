@@ -61,16 +61,6 @@ export default function Footer() {
                 <FaLinkedinIn className="text-sm" />
               </Link>
 
-              {/* <Link
-                href="https://github.com/kirankiran12"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-slate-300 transition duration-300 hover:-translate-y-1 hover:bg-[#3182FF] hover:text-white"
-              >
-                <FaGithub className="text-sm" />
-              </Link> */}
-
               <Link
                 href="https://www.facebook.com/share/1DjZiuCkU8/"
                 target="_blank"
@@ -109,23 +99,38 @@ export default function Footer() {
             </p>
 
             <nav className="mt-5 flex flex-col gap-2.5">
-              <Link href="/" className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white">
+              <Link
+                href="/"
+                className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white"
+              >
                 Home
               </Link>
 
-              <Link href="/about" className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white">
+              <Link
+                href="/about"
+                className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white"
+              >
                 About
               </Link>
 
-              <Link href="/skills" className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white">
+              <Link
+                href="/skills"
+                className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white"
+              >
                 Skills
               </Link>
 
-              <Link href="/projects" className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white">
+              <Link
+                href="/projects"
+                className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white"
+              >
                 Projects
               </Link>
 
-              <Link href="/experience" className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white">
+              <Link
+                href="/experience"
+                className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white"
+              >
                 Experience
               </Link>
             </nav>
@@ -137,7 +142,10 @@ export default function Footer() {
             </p>
 
             <nav className="mt-5 flex flex-col gap-2.5">
-              <Link href="/contact" className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white">
+              <Link
+                href="/contact"
+                className="w-fit text-sm text-slate-300 transition hover:translate-x-1 hover:text-white"
+              >
                 Contact
               </Link>
 
@@ -155,7 +163,7 @@ export default function Footer() {
                 className="mt-1 flex items-center gap-2 text-sm text-slate-300 transition hover:text-white"
               >
                 <FaWhatsapp className="shrink-0 text-base text-[#25D366]" />
-                +92 3458717993
+                +92 3436943543
               </a>
 
               <a
@@ -163,7 +171,7 @@ export default function Footer() {
                 className="mt-1 flex items-center gap-2 text-sm text-slate-300 transition hover:text-white"
               >
                 <FaEnvelope className="shrink-0 text-sm text-[#60A5FA]" />
-                kiranfatima.tech@gmail.com
+                info.tabishtech@gmail.com
               </a>
             </nav>
           </div>

@@ -372,7 +372,6 @@ export default function Hero() {
             margin: "0 auto",
           }}
         >
-          {/* Blue Glow */}
           <div
             style={{
               position: "absolute",
@@ -450,7 +449,6 @@ export default function Hero() {
                 gap: "16px",
               }}
             >
-              {/* CARD 1 - APP DEVELOPER */}
               <div
                 className="inner-developer-card"
                 style={{

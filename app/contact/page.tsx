@@ -327,7 +327,7 @@ export default function ContactPage() {
                   <p className="text-xs font-semibold text-[#071630]">Email</p>
 
                   <a className="mt-1 block text-sm text-slate-600 transition hover:text-[#3182FF]">
-                    kiranfatima.tech@gmail.com
+                    info.tabishtech@gmail.com
                   </a>
                 </div>
               </div>
@@ -344,7 +344,7 @@ export default function ContactPage() {
                     href="tel:+923267100227"
                     className="mt-1 block text-sm text-slate-600 transition hover:text-[#3182FF]"
                   >
-                    +92 3458717993
+                    +92 3436943543
                   </a>
                 </div>
               </div>
@@ -376,7 +376,7 @@ export default function ContactPage() {
 
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href="https://www.facebook.com/profile.php?id=61594014940399"
+                href="https://www.facebook.com/share/1DjZiuCkU8/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -386,7 +386,7 @@ export default function ContactPage() {
               </Link>
 
               <Link
-                href="https://www.instagram.com/kiranfatima.official/"
+                href="https://www.instagram.com/evermontdeveloper?exln=bjl0NmtiZjl3eDh4"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -396,7 +396,7 @@ export default function ContactPage() {
               </Link>
 
               <Link
-                href="https://www.linkedin.com/in/kiran-fatima-evermont/?isSelfProfile=true"
+                href="https://www.linkedin.com/in/muhammad-tabish-nadeem-529007322?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -509,9 +509,7 @@ export default function ContactPage() {
                 />
 
                 {errors.subject && (
-                  <p className="mt-2 text-xs text-red-500">
-                    {errors.subject}
-                  </p>
+                  <p className="mt-2 text-xs text-red-500">{errors.subject}</p>
                 )}
               </div>
 
@@ -538,9 +536,7 @@ export default function ContactPage() {
                 />
 
                 {errors.message && (
-                  <p className="mt-2 text-xs text-red-500">
-                    {errors.message}
-                  </p>
+                  <p className="mt-2 text-xs text-red-500">{errors.message}</p>
                 )}
               </div>
 
