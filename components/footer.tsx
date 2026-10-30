@@ -52,7 +52,7 @@ export default function Footer() {
 
             <div className="mt-4 flex items-center gap-2.5">
               <Link
-                href="https://www.linkedin.com/in/kiran-fatima-evermont"
+                href="https://www.linkedin.com/in/muhammad-tabish-nadeem-529007322?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -61,7 +61,7 @@ export default function Footer() {
                 <FaLinkedinIn className="text-sm" />
               </Link>
 
-              <Link
+              {/* <Link
                 href="https://github.com/kirankiran12"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -69,10 +69,10 @@ export default function Footer() {
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-slate-300 transition duration-300 hover:-translate-y-1 hover:bg-[#3182FF] hover:text-white"
               >
                 <FaGithub className="text-sm" />
-              </Link>
+              </Link> */}
 
               <Link
-                href="https://www.facebook.com/profile.php?id=61594014940399"
+                href="https://www.facebook.com/share/1DjZiuCkU8/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -82,7 +82,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="https://www.instagram.com/kiranfatima.official/"
+                href="https://www.instagram.com/evermontdeveloper?exln=bjl0NmtiZjl3eDh4"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -92,7 +92,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="https://www.tiktok.com/@ceo_kiranfatima"
+                href="https://www.tiktok.com/@ranatabishnadeem?_r=1&_t=ZS-9Ayut4TGXfJ"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"

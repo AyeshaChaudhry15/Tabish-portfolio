@@ -76,9 +76,7 @@ export default function Hero() {
         color: "#FFFFFF",
       }}
     >
-      {/* ================= BACKGROUND EFFECTS ================= */}
-
-      {/* Main blue glow */}
+      {/* Background Glow */}
       <div
         style={{
           position: "absolute",
@@ -94,7 +92,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Right blue glow */}
       <div
         style={{
           position: "absolute",
@@ -110,7 +107,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Center glow */}
       <div
         style={{
           position: "absolute",
@@ -126,7 +122,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Subtle grid */}
+      {/* Grid Background */}
       <div
         style={{
           position: "absolute",
@@ -145,7 +141,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Decorative blue arc */}
+      {/* Decorative Circles */}
       <div
         style={{
           position: "absolute",
@@ -172,7 +168,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Decorative dots */}
+      {/* Dot Patterns */}
       <div
         style={{
           position: "absolute",
@@ -203,8 +199,7 @@ export default function Hero() {
         }}
       />
 
-      {/* ================= MAIN CONTAINER ================= */}
-
+      {/* Main Container */}
       <div
         className="hero-container"
         style={{
@@ -219,10 +214,8 @@ export default function Hero() {
           transform: "translateY(0)",
         }}
       >
-        {/* ================= LEFT CONTENT ================= */}
-
+        {/* Left Content */}
         <div>
-          {/* Badge */}
           <div
             className="hero-badge"
             style={{
@@ -249,7 +242,6 @@ export default function Hero() {
             FULL STACK APP DEVELOPER
           </div>
 
-          {/* Heading */}
           <h1
             className="hero-title"
             style={{
@@ -274,7 +266,6 @@ export default function Hero() {
             </em>
           </h1>
 
-          {/* Description */}
           <p
             className="hero-description"
             style={{
@@ -302,7 +293,6 @@ export default function Hero() {
               marginTop: "34px",
             }}
           >
-            {/* Primary */}
             <Link
               href="/projects"
               className="hero-btn hero-btn-primary"
@@ -326,6 +316,7 @@ export default function Hero() {
               }}
             >
               View My Work
+
               <span
                 style={{
                   fontSize: "18px",
@@ -336,7 +327,6 @@ export default function Hero() {
               </span>
             </Link>
 
-            {/* Secondary */}
             <Link
               href="#journey"
               className="hero-btn hero-btn-secondary"
@@ -359,6 +349,7 @@ export default function Hero() {
               }}
             >
               View My Journey
+
               <span
                 style={{
                   fontSize: "17px",
@@ -371,8 +362,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ================= RIGHT CARD ================= */}
-
+        {/* RIGHT SIDE DEVELOPER CARDS */}
         <div
           className="hero-card"
           style={{
@@ -382,7 +372,7 @@ export default function Hero() {
             margin: "0 auto",
           }}
         >
-          {/* Card Glow */}
+          {/* Blue Glow */}
           <div
             style={{
               position: "absolute",
@@ -398,7 +388,7 @@ export default function Hero() {
             }}
           />
 
-          {/* WHITE OUTER CARD */}
+          {/* Main White Card */}
           <div
             style={{
               position: "relative",
@@ -410,7 +400,7 @@ export default function Hero() {
                 "0 35px 100px rgba(0,15,45,.30), 0 0 50px rgba(47,130,255,.08)",
             }}
           >
-            {/* Header */}
+            {/* Card Header */}
             <div
               style={{
                 display: "flex",
@@ -453,14 +443,14 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Inner Cards */}
+            {/* Developer Cards Container */}
             <div
               style={{
                 display: "grid",
                 gap: "16px",
               }}
             >
-              {/* CARD 1 */}
+              {/* CARD 1 - APP DEVELOPER */}
               <div
                 className="inner-developer-card"
                 style={{
@@ -474,7 +464,6 @@ export default function Hero() {
                   overflow: "hidden",
                 }}
               >
-                {/* Small blue glow */}
                 <div
                   style={{
                     position: "absolute",
@@ -499,7 +488,6 @@ export default function Hero() {
                     marginBottom: "28px",
                   }}
                 >
-                  {/* Icon Box */}
                   <div
                     style={{
                       width: "48px",
@@ -518,7 +506,6 @@ export default function Hero() {
                     {"</>"}
                   </div>
 
-                  {/* Label */}
                   <span
                     style={{
                       padding: "6px 10px",
@@ -562,7 +549,6 @@ export default function Hero() {
                   Flutter · Next.js · Node.js
                 </p>
 
-                {/* Arrow */}
                 <div
                   style={{
                     position: "absolute",
@@ -583,7 +569,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* CARD 2 */}
+              {/* CARD 2 - FLUTTER DEVELOPER */}
               <div
                 className="inner-developer-card"
                 style={{
@@ -597,7 +583,7 @@ export default function Hero() {
                   overflow: "hidden",
                 }}
               >
-                {/* Small blue glow */}
+                {/* Blue Glow */}
                 <div
                   style={{
                     position: "absolute",
@@ -622,7 +608,6 @@ export default function Hero() {
                     marginBottom: "28px",
                   }}
                 >
-                  {/* Icon Box */}
                   <div
                     style={{
                       width: "48px",
@@ -641,7 +626,6 @@ export default function Hero() {
                     {"</>"}
                   </div>
 
-                  {/* Label */}
                   <span
                     style={{
                       padding: "6px 10px",
@@ -669,7 +653,7 @@ export default function Hero() {
                     fontWeight: 400,
                   }}
                 >
-                  App Developer
+                  Flutter Developer
                 </h3>
 
                 <p
@@ -685,7 +669,6 @@ export default function Hero() {
                   Mobile · Web · Backend · Cloud
                 </p>
 
-                {/* Arrow */}
                 <div
                   style={{
                     position: "absolute",
@@ -710,8 +693,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ================= RESPONSIVE ================= */}
-
+      {/* Responsive Styling */}
       <style jsx>{`
         .hero-btn {
           cursor: pointer;

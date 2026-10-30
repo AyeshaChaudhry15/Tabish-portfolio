@@ -51,7 +51,6 @@ export default function MyStory() {
         color: "#FFFFFF",
       }}
     >
-      {/* Background Glow */}
       <div
         style={{
           position: "absolute",
@@ -82,7 +81,6 @@ export default function MyStory() {
         }}
       />
 
-      {/* Container */}
       <div
         style={{
           position: "relative",
@@ -95,7 +93,6 @@ export default function MyStory() {
           alignItems: "center",
         }}
       >
-        {/* Visual */}
         <div
           className="story-visual"
           style={{
@@ -125,7 +122,6 @@ export default function MyStory() {
             }}
           />
 
-          {/* Outer Orbit */}
           <div
             style={{
               position: "absolute",
@@ -138,7 +134,6 @@ export default function MyStory() {
             }}
           />
 
-          {/* Inner Orbit */}
           <div
             style={{
               position: "absolute",
@@ -152,7 +147,6 @@ export default function MyStory() {
             }}
           />
 
-          {/* Center Developer Icon */}
           <div
             style={{
               position: "absolute",
@@ -177,7 +171,6 @@ export default function MyStory() {
             {"</>"}
           </div>
 
-          {/* Developer Card */}
           <div
             style={{
               position: "absolute",
@@ -228,7 +221,6 @@ export default function MyStory() {
           </div>
         </div>
 
-        {/* Story Content */}
         <div
           className="story-content"
           style={{
@@ -236,7 +228,6 @@ export default function MyStory() {
             minWidth: 0,
           }}
         >
-          {/* Eyebrow */}
           <span
             style={{
               display: "inline-flex",
@@ -261,7 +252,6 @@ export default function MyStory() {
             MY STORY
           </span>
 
-          {/* Heading */}
           <h2
             style={{
               margin: "18px 0 25px",
@@ -339,7 +329,7 @@ export default function MyStory() {
             {[
               "Flutter",
               "Dart",
-              "Firebase",
+              "AI Integration",
               "Next.js",
               "Node.js",
               "APIs",

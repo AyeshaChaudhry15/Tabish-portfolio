@@ -19,7 +19,7 @@ const experiences = [
   {
     company: "Evermont Global Technologies",
     companyType: "Full-time",
-    role: "CEO & Founder",
+    role: "COO",
     date: "Jan 2026 — Present",
     duration: "10 mos",
     location: "Bahawalpur, Punjab, Pakistan · On-site",
@@ -43,23 +43,6 @@ const experiences = [
     icon: FaBriefcase,
     accent: "cyan",
   },
-
-
-  {
-    company: "CAS Center for Advance Solutions",
-    companyType: "Full-time",
-    role: "Flutter Developer",
-    date: "Mar 2024 — Aug 2025",
-    duration: "1 yr 6 mos",
-    location: "Bahawalpur, Punjab, Pakistan",
-    description:
-      "Developed cross-platform mobile applications using Flutter & Dart. Integrated Firebase, REST APIs, and third-party services to build reliable mobile solutions.",
-    skills: "Project Management, Android Development and +3 skills",
-    icon: FaCode,
-    accent: "blue",
-  },
-
-
 
   {
     company: "ITSH Tech Solution House",

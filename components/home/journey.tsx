@@ -1,8 +1,8 @@
+
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import Link from "next/link";
-import gsap from "gsap";
 import {
   FaArrowRight,
   FaMapMarkerAlt,
@@ -17,14 +17,6 @@ import {
 
 const experiences = [
   {
-    company: "CAS",
-    position: "App Developer",
-    location: "Bahawalpur, Pakistan",
-    date: "Early Career",
-    description:
-      "Started my professional journey at CAS, where I learned the fundamentals of software development, strengthened my problem-solving skills, and gained hands-on experience working on real-world projects.",
-  },
-  {
     company: "Code's Thinker",
     position: "Flutter App Developer",
     location: "Bahawalpur, Pakistan",
@@ -34,7 +26,7 @@ const experiences = [
   },
   {
     company: "Evermont Global Technologies",
-    position: "CEO",
+    position: "COO",
     location: "Pakistan",
     date: "Present",
     description:
@@ -53,7 +45,7 @@ const expertise = [
   },
   {
     icon: SiFirebase,
-    title: "Firebase Integration",
+    title: "AI Integration",
   },
   {
     icon: FaCode,
@@ -68,87 +60,13 @@ const expertise = [
 export default function Journey() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        defaults: {
-          ease: "power3.out",
-        },
-      });
-
-      tl.fromTo(
-        ".journey-header > *",
-        {
-          y: 25,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          stagger: 0.12,
-        },
-      )
-        .fromTo(
-          ".journey-experience",
-          {
-            y: 35,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            stagger: 0.15,
-          },
-          "-=0.3",
-        )
-        .fromTo(
-          ".journey-expertise",
-          {
-            x: 30,
-            opacity: 0,
-          },
-          {
-            x: 0,
-            opacity: 1,
-            duration: 0.8,
-          },
-          "-=0.55",
-        )
-        .fromTo(
-          ".journey-button",
-          {
-            y: 15,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-          },
-          "-=0.35",
-        );
-
-      gsap.to(".journey-dot", {
-        boxShadow:
-          "0 0 0 5px rgba(49,130,255,0.08), 0 0 22px rgba(49,130,255,0.55)",
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section
       ref={sectionRef}
       id="journey"
       className="relative isolate overflow-hidden bg-[#071630] px-4 py-16 text-white sm:px-6 sm:py-20 md:px-8 md:py-24 lg:px-10 lg:py-28 xl:px-12"
     >
+      {/* Background Effects */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-[5%] top-10 h-[260px] w-[260px] rounded-full bg-[#3182FF]/15 blur-[100px] sm:h-[320px] sm:w-[320px] sm:blur-[120px] lg:h-[420px] lg:w-[420px] lg:blur-[140px]" />
 
@@ -157,7 +75,9 @@ export default function Journey() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_35%,rgba(49,130,255,0.08),transparent_42%)]" />
       </div>
 
-      <div className="mx-auto w-full max-w-[1440px]">
+      <div className="mx-auto w-full max-w-[1600px]">
+
+        {/* Header */}
         <div className="journey-header">
           <div className="mb-3 flex items-center gap-2 sm:mb-4">
             <span className="h-px w-6 bg-[#3182FF] sm:w-7" />
@@ -181,39 +101,44 @@ export default function Journey() {
           </p>
         </div>
 
-        <div className="mt-12 grid items-start gap-12 sm:mt-14 md:mt-16 lg:grid-cols-[minmax(0,1.6fr)_minmax(280px,0.6fr)] lg:gap-10 xl:gap-12">
+        {/* Main Layout */}
+        <div className="mt-12 grid items-start gap-10 sm:mt-14 md:mt-16 lg:grid-cols-[minmax(0,2fr)_minmax(300px,0.75fr)] lg:gap-10 xl:gap-12">
+
+          {/* Experience Section */}
           <div className="relative min-w-0">
+
+            {/* Timeline Line */}
             <div className="absolute left-0 right-0 top-[9px] hidden h-px bg-gradient-to-r from-[#24416B]/40 via-[#3182FF]/70 to-[#60A5FA]/50 md:block" />
 
             <div className="absolute bottom-0 left-[8px] top-0 w-px bg-gradient-to-b from-[#3182FF]/50 via-[#3182FF]/25 to-transparent md:hidden" />
 
-            <div className="grid gap-10 sm:gap-12 md:grid-cols-3 md:gap-4 lg:gap-5 xl:gap-6">
+            {/* Two Experience Cards */}
+            <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 md:gap-6 lg:gap-8 xl:gap-10">
+
               {experiences.map((experience, index) => (
                 <article
                   key={experience.company}
-                  className="journey-experience relative min-w-0 rounded-xl border border-[#24416B] bg-gradient-to-br from-[#102951] to-[#0A1B3A] p-5 pl-8 pt-5 shadow-[0_10px_35px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#3182FF]/60 hover:shadow-[0_18px_40px_rgba(49,130,255,0.16)] md:pl-5 md:pt-8 lg:p-6 lg:pt-8"
+                  className="journey-experience relative min-w-0 rounded-xl border border-[#24416B] bg-gradient-to-br from-[#102951] to-[#0A1B3A] p-5 pl-8 pt-5 shadow-[0_10px_35px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#3182FF]/60 hover:shadow-[0_18px_40px_rgba(49,130,255,0.16)] md:pl-5 md:pt-8 lg:p-7 lg:pt-8 xl:p-8"
                 >
+
+                  {/* Timeline Dot */}
                   <div
                     className={`journey-dot absolute left-0 top-5 h-[18px] w-[18px] rounded-full border-2 bg-[#071630] md:left-5 md:top-0 md:h-5 md:w-5 ${
                       index === 0
                         ? "border-[#2563EB] shadow-[0_0_0_4px_rgba(37,99,235,0.08),0_0_18px_rgba(37,99,235,0.25)]"
-                        : index === 1
-                          ? "border-[#3182FF] shadow-[0_0_0_4px_rgba(49,130,255,0.08),0_0_18px_rgba(49,130,255,0.25)]"
-                          : "border-[#60A5FA] shadow-[0_0_0_4px_rgba(96,165,250,0.08),0_0_18px_rgba(96,165,250,0.25)]"
+                        : "border-[#3182FF] shadow-[0_0_0_4px_rgba(49,130,255,0.08),0_0_18px_rgba(49,130,255,0.25)]"
                     }`}
                   >
                     <span
                       className={`absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full ${
                         index === 0
                           ? "bg-[#2563EB]"
-                          : index === 1
-                            ? "bg-[#3182FF]"
-                            : "bg-[#60A5FA]"
+                          : "bg-[#3182FF]"
                       }`}
                     />
                   </div>
 
-                  <h3 className="max-w-full break-words text-[19px] font-bold leading-tight tracking-tight text-white sm:text-[21px] md:text-[20px] lg:text-[21px] xl:text-[23px]">
+                  <h3 className="max-w-full break-words text-[19px] font-bold leading-tight tracking-tight text-white sm:text-[21px] md:text-[20px] lg:text-[22px] xl:text-[24px]">
                     {experience.company}
                   </h3>
 
@@ -236,10 +161,13 @@ export default function Journey() {
                   <p className="mt-4 max-w-full text-[12px] leading-6 text-blue-100/75 sm:text-[13px] sm:leading-7 md:text-[12px] lg:text-[13px] xl:text-[14px]">
                     {experience.description}
                   </p>
+
                 </article>
               ))}
+
             </div>
 
+            {/* More Button */}
             <Link
               href="/journey"
               className="journey-button group mt-10 inline-flex min-h-11 w-full items-center justify-center gap-3 rounded-md border border-[#3182FF]/50 bg-[#0A1B3A] px-4 py-3 text-[10px] font-bold tracking-wide text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#60A5FA] hover:bg-[#102951] hover:shadow-[0_10px_30px_rgba(49,130,255,0.12)] sm:mt-12 sm:min-h-12 sm:w-auto sm:px-5 sm:text-xs"
@@ -248,9 +176,12 @@ export default function Journey() {
 
               <FaArrowRight className="text-[#60A5FA] transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
+
           </div>
 
+          {/* Expertise Sidebar */}
           <div className="journey-expertise mx-auto w-full max-w-[400px] rounded-2xl border border-[#D8E5F7] bg-white p-4 shadow-[0_12px_35px_rgba(0,0,0,0.12)] sm:p-5 md:max-w-[420px] lg:mx-0 lg:max-w-none lg:justify-self-end">
+
             <div className="mb-4 sm:mb-5">
               <div className="flex items-center gap-2">
                 <span className="h-px w-5 bg-[#3182FF]" />
@@ -287,61 +218,11 @@ export default function Journey() {
                 );
               })}
             </div>
+
           </div>
+
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 767px) {
-          #journey {
-            overflow-x: hidden;
-          }
-
-          .journey-experience {
-            width: 100%;
-          }
-
-          .journey-experience > p {
-            max-width: 100%;
-          }
-        }
-
-        @media (min-width: 768px) and (max-width: 1023px) {
-          .journey-experience {
-            min-width: 0;
-          }
-        }
-
-        @media (min-width: 1024px) and (max-width: 1199px) {
-          .journey-experience h3 {
-            font-size: 19px;
-          }
-
-          .journey-experience > p {
-            font-size: 12px;
-          }
-        }
-
-        @media (min-width: 1536px) {
-          .journey-experience h3 {
-            font-size: 23px;
-          }
-
-          .journey-experience > p {
-            font-size: 14px;
-          }
-        }
-
-        @media (max-width: 380px) {
-          .journey-expertise {
-            padding: 12px;
-          }
-
-          .journey-experience {
-            padding-left: 28px;
-          }
-        }
-      `}</style>
     </section>
   );
 }

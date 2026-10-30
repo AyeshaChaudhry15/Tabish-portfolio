@@ -19,7 +19,7 @@ const experiences = [
   {
     period: "Jan 2026 — Present",
     company: "Evermont Global Technologies",
-    role: "CEO & Founder",
+    role: "COO",
     type: "Leadership",
     location: "Bahawalpur, Punjab, Pakistan · On-site",
     description:
@@ -31,25 +31,13 @@ const experiences = [
   {
     period: "Oct 2025 — Jan 2026",
     company: "Code's Thinker",
-    role: "Senior Software Engineer",
+    role: "Senior Flutter Developer",
     type: "Professional",
     location: "Bahawalpur, Punjab, Pakistan",
     description:
       "Delivered real-time tracking solutions, WebSocket communication and route optimization for fleet management applications while improving operational efficiency and integrating REST API solutions.",
     icon: FaCode,
     side: "right",
-  },
-
-  {
-    period: "Mar 2023 — Mar 2024",
-    company: "CAS — Center for Advance Solutions",
-    role: "Android Developer",
-    type: "Professional",
-    location: "Punjab, Pakistan",
-    description:
-      "Developed native Android applications using Java and integrated REST APIs and Firebase for real-time data management and application functionality.",
-    icon: FaCode,
-    side: "left",
   },
 
   {
@@ -61,7 +49,7 @@ const experiences = [
     description:
       "Identified and recruited qualified candidates for IT and software development roles through LinkedIn, job portals and professional networks while supporting technical recruitment processes.",
     icon: FaUsers,
-    side: "right",
+    side: "left",
   },
 ];
 

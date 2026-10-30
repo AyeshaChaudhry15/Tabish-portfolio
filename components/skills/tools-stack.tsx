@@ -6,6 +6,7 @@ const tools = [
   "VS Code",
   "Git",
   "GitHub",
+  "Ai Integration",
   "REST APIs",
   "Postman",
   "Figma",
